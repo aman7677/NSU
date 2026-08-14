@@ -3,7 +3,7 @@
 @import "@fontsource/space-grotesk/latin-600.css";
 @import "@fontsource/space-grotesk/latin-700.css";
 @import "tailwindcss";
-@theme { --color-ink: #000000; --color-paper: #ffffff; --color-off-white: #f5f5f5; --color-dark-gray: #111111; --color-signal: #ff3417; --color-pigment-red: #ff3417; --color-pigment-magenta: #ef1678; --color-pigment-orange: #ff761c; --color-pigment-yellow: #ffbc16; --color-pigment-pink: #ff75b7; --font-sans: "Space Grotesk", Arial, sans-serif; }
+@theme { --color-ink: #000000; --color-paper: #ffffff; --color-off-white: #f5f5f5; --color-dark-gray: #111111; --color-signal: #ff3417; --color-pigment-red: #ff3417; --color-pigment-magenta: #ef1678; --color-pigment-orange: #ff761c; --color-pigment-yellow: #ffbc16; --color-pigment-pink: #ff75b7; --font-sans: "Space Grotesk", Arial, sans-serif; --animate-gradient: gradient 5s ease infinite; @keyframes gradient { 0%, 100% { background-position: 0% center; } 50% { background-position: 100% center; } } }
 @layer base { html { scroll-behavior: smooth; } body { @apply m-0 overflow-x-clip bg-white text-black antialiased; } *, *::before, *::after { box-sizing: border-box; } a { @apply no-underline text-inherit; } button, input, textarea { font: inherit; } #root { @apply min-h-screen overflow-x-clip; } ::selection { @apply bg-pigment-yellow text-black; } :focus-visible { @apply outline-2 outline-offset-4 outline-pigment-magenta; } }
 
 @media (prefers-reduced-motion: reduce) {
