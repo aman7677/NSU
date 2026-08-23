@@ -3,10 +3,323 @@
 @import "@fontsource/space-grotesk/latin-600.css";
 @import "@fontsource/space-grotesk/latin-700.css";
 @import "tailwindcss";
-@theme { --color-ink: #000000; --color-paper: #ffffff; --color-off-white: #f5f5f5; --color-dark-gray: #111111; --color-signal: #ff3417; --color-pigment-red: #ff3417; --color-pigment-magenta: #ef1678; --color-pigment-orange: #ff761c; --color-pigment-yellow: #ffbc16; --color-pigment-pink: #ff75b7; --font-sans: "Space Grotesk", Arial, sans-serif; --animate-gradient: gradient 5s ease infinite; @keyframes gradient { 0%, 100% { background-position: 0% center; } 50% { background-position: 100% center; } } }
-@layer base { html { scroll-behavior: smooth; } body { @apply m-0 overflow-x-clip bg-white text-black antialiased; } *, *::before, *::after { box-sizing: border-box; } a { @apply no-underline text-inherit; } button, input, textarea { font: inherit; } #root { @apply min-h-screen overflow-x-clip; } ::selection { @apply bg-pigment-yellow text-black; } :focus-visible { @apply outline-2 outline-offset-4 outline-pigment-magenta; } }
+
+:root {
+  /* Dark theme as default */
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-card: #1e293b;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --border-color: #334155;
+  --accent-color: #ef476f;
+
+  /* Backwards compatible aliases used across the codebase */
+  --accent: var(--accent-color);
+  --border: var(--border-color);
+  --text-h: var(--text-primary);
+  --social-bg: rgba(255, 255, 255, 0.03);
+  --shadow: 0 6px 20px rgba(2, 6, 23, 0.6);
+  --accent-bg: rgba(239, 34, 120, 0.06);
+  --accent-border: rgba(239, 34, 120, 0.18);
+
+  /* Colour used for text displayed on bright accent backgrounds (e.g. pigment yellow) */
+  --on-accent: #0f172a;
+
+  /* RGB fallbacks for opacity helpers */
+  --text-primary-rgb: 248, 250, 252;
+  --text-secondary-rgb: 148, 163, 184;
+  --bg-primary-rgb: 15, 23, 42;
+  --bg-card-rgb: 30, 41, 59;
+  --border-rgb: 51, 65, 85;
+}
+
+html.light {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-card: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #1f2937;
+  --border-color: #e6edf3;
+  --accent-color: #2563eb;
+
+  --accent: var(--accent-color);
+  --border: var(--border-color);
+  --text-h: var(--text-primary);
+  --social-bg: rgba(15, 23, 42, 0.03);
+  --shadow: 0 6px 20px rgba(2, 6, 23, 0.06);
+  --accent-bg: rgba(37, 99, 235, 0.06);
+  --accent-border: rgba(37, 99, 235, 0.18);
+
+  --on-accent: #0f172a;
+
+  /* RGB fallbacks for opacity helpers (light theme)
+     Note: keep same variable names so helper classes work in both themes */
+  --text-primary-rgb: 15, 23, 42;
+  --text-secondary-rgb: 31, 41, 55;
+  --bg-primary-rgb: 255, 255, 255;
+  --bg-card-rgb: 255, 255, 255;
+  --border-rgb: 230, 237, 243;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply m-0 overflow-x-clip antialiased;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  a {
+    @apply no-underline text-inherit;
+  }
+
+  button,
+  input,
+  textarea {
+    font: inherit;
+  }
+
+  #root {
+    @apply min-h-screen overflow-x-clip;
+  }
+
+  ::selection {
+    background: var(--accent-color);
+    color: var(--bg-primary);
+  }
+
+  :focus-visible {
+    box-shadow: 0 0 0 4px rgba(239, 34, 120, 0.12);
+  }
+
+  /* Semantic helpers used in components */
+  .site-header {
+    background: color-mix(in srgb, var(--bg-primary) 90%, transparent);
+    border-bottom: 1px solid color-mix(in srgb, var(--border-color) 55%, transparent);
+    color: var(--text-primary);
+  }
+
+  html.light .site-header {
+    background:
+      radial-gradient(circle at 18% 0%, rgba(239, 22, 120, 0.14), transparent 32%),
+      radial-gradient(circle at 76% 0%, rgba(255, 194, 28, 0.18), transparent 30%),
+      linear-gradient(100deg, rgba(255, 255, 255, 0.94), rgba(255, 246, 237, 0.9) 48%, rgba(255, 241, 247, 0.9));
+    border-bottom-color: rgba(239, 71, 111, 0.18);
+    backdrop-filter: blur(18px);
+  }
+
+  .site-footer {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+  }
+
+  .mobile-nav {
+    background: var(--bg-card);
+    color: var(--text-primary);
+  }
+
+  .skip-link {
+    background: var(--bg-card);
+    color: var(--text-primary);
+  }
+
+  html.light body {
+    background:
+      radial-gradient(circle at 12% 8%, rgba(239, 22, 120, 0.1), transparent 28%),
+      radial-gradient(circle at 84% 18%, rgba(255, 194, 28, 0.16), transparent 30%),
+      linear-gradient(120deg, #ffffff 0%, #fff7ed 48%, #fff1f7 100%);
+  }
+}
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Smooth color transitions for components */
+* {
+  transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+}
+
+/* Map common Tailwind utility color classes to CSS variables so components adapt */
+.bg-black {
+  background-color: var(--bg-card) !important;
+}
+
+.text-white {
+  color: var(--text-primary) !important;
+}
+
+.border-white {
+  border-color: var(--border) !important;
+}
+
+.text-black {
+  color: var(--text-primary) !important;
+}
+
+.bg-white {
+  background-color: var(--bg-primary) !important;
+}
+
+.border-black {
+  border-color: var(--border) !important;
+}
+
+/* Common opacity variants used in the codebase (escape slashes) */
+.text-black\/40 {
+  color: rgba(var(--text-primary-rgb), 0.4) !important;
+}
+
+.text-black\/45 {
+  color: rgba(var(--text-primary-rgb), 0.45) !important;
+}
+
+.text-black\/70 {
+  color: rgba(var(--text-primary-rgb), 0.7) !important;
+}
+
+.text-white\/55 {
+  color: var(--text-secondary) !important;
+}
+
+.text-white\/65 {
+  color: rgba(var(--text-primary-rgb), 0.78) !important;
+}
+
+.border-black\/15 {
+  border-color: rgba(var(--border-rgb), 0.15) !important;
+}
+
+.text-black\/40 {
+  color: rgba(var(--text-primary-rgb), 0.4) !important;
+}
+
+/* Semantic theme helpers */
+.bg-primary {
+  background-color: var(--bg-primary) !important;
+}
+
+html.light .bg-primary {
+  background:
+    radial-gradient(circle at 18% 0%, rgba(239, 22, 120, 0.1), transparent 30%),
+    radial-gradient(circle at 82% 12%, rgba(255, 194, 28, 0.14), transparent 32%),
+    linear-gradient(120deg, #ffffff 0%, #fff8ef 48%, #fff3f8 100%) !important;
+}
+
+.bg-secondary {
+  background-color: var(--bg-secondary) !important;
+}
+
+html.light .bg-secondary {
+  background:
+    radial-gradient(circle at 14% 6%, rgba(239, 22, 120, 0.08), transparent 28%),
+    radial-gradient(circle at 88% 20%, rgba(255, 194, 28, 0.12), transparent 30%),
+    linear-gradient(120deg, #fffaf5 0%, #fff5eb 48%, #fff0f6 100%) !important;
+}
+
+.bg-card {
+  background-color: var(--bg-card) !important;
+}
+
+html.light .bg-card {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(255, 247, 237, 0.9) 52%, rgba(255, 242, 248, 0.92)) !important;
+}
+
+.text-primary {
+  color: var(--text-primary) !important;
+}
+
+.text-secondary {
+  color: var(--text-secondary) !important;
+}
+
+.border-theme {
+  border-color: var(--border) !important;
+}
+
+.bg-accent {
+  background-color: var(--accent-color) !important;
+}
+
+.text-accent {
+  color: var(--accent-color) !important;
+}
+
+/* Text color for use on bright accent backgrounds (ensures readable contrast) */
+.text-on-accent {
+  color: var(--on-accent) !important;
+}
+
+@keyframes heroGradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.hero-gradient-text {
+  color: #ffd166;
+  background-image: linear-gradient(90deg, #ef476f 0%, #f77f00 52%, #ffd166 100%);
+  background-size: 200% auto;
+  animation: heroGradientShift 4s linear infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@supports not (-webkit-background-clip: text) {
+  .hero-gradient-text {
+    background-image: none;
+    animation: none;
+    -webkit-text-fill-color: initial;
+    color: #ffd166;
+  }
+}
+
+.hero-cta-btn {
+  background-image: linear-gradient(100deg, #ef476f 0%, #ffd166 100%);
+  color: #111827 !important;
+  border-color: transparent !important;
+  box-shadow: 0 12px 28px rgba(239, 71, 111, 0.25);
+}
+
+.hero-cta-btn:hover {
+  background-image: linear-gradient(100deg, #f77f00 0%, #ef476f 100%);
+  border-color: transparent !important;
+  box-shadow: 0 16px 36px rgba(247, 127, 0, 0.3);
+}
+
+/* FAQ rows use a visible theme-aware lift in both themes. */
+.faq-question:hover,
+.faq-question:focus-visible {
+  background: color-mix(in srgb, var(--bg-card) 78%, var(--accent-color) 22%);
 }

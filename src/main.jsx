@@ -1,10 +1,22 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
-import { MotionConfig } from 'framer-motion'
-import './index.css'
-import App from './App.jsx'
+// Ensure initial theme class is set synchronously to avoid flash
+try {
+  const _saved = localStorage.getItem("theme") || "dark";
+  document.documentElement.classList.add(_saved === "dark" ? "dark" : "light");
+} catch (e) {}
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode><MotionConfig reducedMotion="user"><BrowserRouter><App /></BrowserRouter></MotionConfig></StrictMode>,
-)
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import { MotionConfig } from "framer-motion";
+import "./index.css";
+import App from "./App.jsx";
+
+createRoot(document.getElementById("root")).render(
+  <StrictMode>
+    <MotionConfig reducedMotion="user">
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </MotionConfig>
+  </StrictMode>,
+);

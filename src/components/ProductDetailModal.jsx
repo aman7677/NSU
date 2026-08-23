@@ -1,19 +1,129 @@
-import { motion } from 'framer-motion'
-import { ArrowUpRight, X } from 'lucide-react'
-import { useEffect, useRef } from 'react'
-import Button from './Button'
-import { PigmentVisual } from './ProductCatalogueCard'
+import { motion } from "framer-motion";
+import { ArrowUpRight, X } from "lucide-react";
+import { useEffect, useRef } from "react";
+import Button from "./Button";
+import { PigmentVisual } from "./ProductCatalogueCard";
 
-const item = { hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.42 } } }
+const item = {
+  hidden: { opacity: 0, y: 16 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.42 } },
+};
 
 export default function ProductDetailModal({ product, onClose }) {
-  const closeRef = useRef(null)
+  const closeRef = useRef(null);
   useEffect(() => {
-    closeRef.current?.focus()
-    const onKeyDown = (event) => { if (event.key === 'Escape') onClose() }
-    document.addEventListener('keydown', onKeyDown)
-    document.body.style.overflow = 'hidden'
-    return () => { document.removeEventListener('keydown', onKeyDown); document.body.style.overflow = '' }
-  }, [onClose])
-  return <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onMouseDown={onClose} className="fixed inset-0 z-[70] flex items-end bg-black/65 backdrop-blur-sm md:items-center md:justify-center md:p-8"><motion.section role="dialog" aria-modal="true" aria-labelledby="product-detail-title" onMouseDown={(event) => event.stopPropagation()} initial={{ y: 48, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: 48, opacity: 0 }} transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }} className="max-h-[92dvh] w-full max-w-6xl overflow-y-auto bg-white md:max-h-[86dvh]"><button ref={closeRef} type="button" onClick={onClose} aria-label="Close product details" className="sticky right-4 top-4 z-20 float-right mr-4 mt-4 inline-flex h-11 w-11 items-center justify-center border border-black/15 bg-white/90 backdrop-blur hover:border-black"><X size={21} /></button><div className="grid md:grid-cols-2"><motion.div initial={{ clipPath: 'inset(0 100% 0 0)' }} animate={{ clipPath: 'inset(0 0% 0 0)' }} transition={{ duration: 0.7, ease: [0.77, 0, 0.18, 1] }} className="min-h-[310px] md:min-h-[640px]"><PigmentVisual product={product} mode="packet" className="h-full" /></motion.div><motion.div variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1, delayChildren: 0.18 } } }} initial="hidden" animate="visible" className="p-6 md:p-10 lg:p-12"><motion.p variants={item} className="text-[10px] font-bold uppercase tracking-[.18em] text-pigment-magenta">{product.category}</motion.p><motion.h1 variants={item} id="product-detail-title" className="mt-5 text-4xl font-semibold leading-[.92] tracking-[-.07em] md:text-6xl">{product.name}</motion.h1><motion.div variants={item} className="mt-8 flex items-center gap-3"><span className="h-5 w-5 rounded-full border border-black/10" style={{ backgroundColor: product.pigment }} /><span className="text-sm font-medium">{product.colour}</span></motion.div><motion.p variants={item} className="mt-7 text-base leading-relaxed text-black/65">{product.description}</motion.p><motion.div variants={item} className="mt-9 border-t border-black/15"><div className="border-b border-black/15 py-5"><p className="text-[10px] font-bold uppercase tracking-[.16em] text-black/45">Available shades</p><p className="mt-2 text-sm leading-relaxed">{product.colour}. Custom shades available subject to discussion.</p></div><div className="border-b border-black/15 py-5"><p className="text-[10px] font-bold uppercase tracking-[.16em] text-black/45">Typical application</p><p className="mt-2 text-sm leading-relaxed">{product.application}</p></div><div className="border-b border-black/15 py-5"><p className="text-[10px] font-bold uppercase tracking-[.16em] text-black/45">Packaging information</p><p className="mt-2 text-sm leading-relaxed">Packaging options available on request.</p></div><div className="border-b border-black/15 py-5"><p className="text-[10px] font-bold uppercase tracking-[.16em] text-black/45">Technical specifications</p><p className="mt-2 text-sm leading-relaxed">Technical specifications available on request.</p></div></motion.div><motion.div variants={item} className="mt-8"><Button to="/contact" className="w-full justify-between">Request Product Information <ArrowUpRight size={17} /></Button></motion.div></motion.div></div></motion.section></motion.div>
+    closeRef.current?.focus();
+    const onKeyDown = (event) => {
+      if (event.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", onKeyDown);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = "";
+    };
+  }, [onClose]);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      onMouseDown={onClose}
+      className="fixed inset-0 z-[70] flex items-end modal-backdrop backdrop-blur-sm md:items-center md:justify-center md:p-8"
+    >
+      <motion.section
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="product-detail-title"
+        onMouseDown={(event) => event.stopPropagation()}
+        initial={{ y: 48, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        exit={{ y: 48, opacity: 0 }}
+        transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+        className="max-h-[92dvh] w-full max-w-6xl overflow-y-auto bg-card md:max-h-[86dvh]"
+      >
+        <button
+          ref={closeRef}
+          type="button"
+          onClick={onClose}
+          aria-label="Close product details"
+          className="sticky right-4 top-4 z-20 float-right mr-4 mt-4 inline-flex h-11 w-11 items-center justify-center border border-theme bg-card backdrop-blur"
+        >
+          <X size={21} />
+        </button>
+
+        <div className="grid md:grid-cols-2">
+          <motion.div
+            initial={{ clipPath: "inset(0 100% 0 0)" }}
+            animate={{ clipPath: "inset(0 0% 0 0)" }}
+            transition={{ duration: 0.7, ease: [0.77, 0, 0.18, 1] }}
+            className="min-h-[310px] md:min-h-[640px]"
+          >
+            <PigmentVisual product={product} mode="packet" className="h-full" />
+          </motion.div>
+
+          <motion.div
+            variants={{
+              hidden: {},
+              visible: {
+                transition: { staggerChildren: 0.1, delayChildren: 0.18 },
+              },
+            }}
+            initial="hidden"
+            animate="visible"
+            className="p-6 md:p-10 lg:p-12"
+          >
+            <motion.p
+              variants={item}
+              className="text-[10px] font-bold uppercase tracking-[.18em] text-pigment-magenta"
+            >
+              {product.category}
+            </motion.p>
+            <motion.h1
+              variants={item}
+              id="product-detail-title"
+              className="mt-5 text-4xl font-semibold leading-[.92] tracking-[-.07em] md:text-6xl"
+            >
+              {product.name}
+            </motion.h1>
+
+            <motion.div
+              variants={item}
+              className="mt-8 flex items-center gap-3"
+            >
+              <span
+                className="h-5 w-5 rounded-full border border-theme"
+                style={{ backgroundColor: product.pigment }}
+              />
+              <span className="text-sm font-medium">{product.colour}</span>
+            </motion.div>
+
+            <motion.p
+              variants={item}
+              className="mt-7 text-base leading-relaxed text-secondary"
+            >
+              {product.description}
+            </motion.p>
+
+            <motion.div
+              variants={item}
+              className="mt-7 flex items-center gap-4"
+            >
+              <span className="text-sm font-medium text-secondary">
+                Applications
+              </span>
+              <span className="text-sm">{product.application}</span>
+            </motion.div>
+
+            <motion.div variants={item} className="mt-8">
+              <Button href="#" className="inline-flex items-center gap-3">
+                Contact us <ArrowUpRight size={14} />
+              </Button>
+            </motion.div>
+          </motion.div>
+        </div>
+      </motion.section>
+    </motion.div>
+  );
 }

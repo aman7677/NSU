@@ -1,4 +1,4 @@
-# NSU
+# NSU1st
 
 ## Project Overview
 

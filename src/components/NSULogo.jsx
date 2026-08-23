@@ -1,10 +1,12 @@
-/** The supplied animated NSU logo, shared by the navigation and footer. */
+/** The supplied NSU logo, shared by the navigation and footer. */
 export default function NSULogo({ className = '', showTagline = false }) {
   return (
     <div className={`inline-flex flex-col ${className}`}>
-      <video autoPlay loop muted playsInline preload="metadata" aria-label="NSU animated logo" className="h-auto w-[100px] object-contain">
-        <source src="/nsu-logo.mp4" type="video/mp4" />
-      </video>
+      <img
+        src="/NSU-logo.png"
+        alt="Narayan Sindoor Udyog"
+        className="h-auto w-[100px] object-contain"
+      />
       {showTagline && <span className="mt-1 text-[7px] font-bold tracking-[0.16em]">COLOURS THAT MAKE AN IMPACT.</span>}
     </div>
   )
