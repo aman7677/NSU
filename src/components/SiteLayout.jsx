@@ -190,7 +190,7 @@ export default function SiteLayout({ children }) {
                   to={path}
                   onClick={() => setIsOpen(false)}
                   className={({ isActive }) =>
-                    `flex items-center justify-between px-6 py-4 text-lg font-semibold transition-colors ${isActive ? "text-[var(--accent-color)]" : "text-secondary hover:text-primary"}`
+                    `flex items-center justify-between px-6 py-4 text-lg font-semibold transition-colors ${isActive ? "text-[var(--accent-color)]" : "text-[#f8fafc] hover:text-[#f8fafc]"}`
                   }
                 >
                   <span>{label}</span>
@@ -244,9 +244,9 @@ export default function SiteLayout({ children }) {
           className="pointer-events-none absolute left-0 top-0 h-px w-[300px] bg-[linear-gradient(90deg,transparent,#ef1678,#ffc21c,transparent)]"
         />
         <div className="relative z-10 mx-auto max-w-[1440px]">
-          <div className="grid gap-12 border-b border-[rgba(248,250,252,.15)] pb-14 md:grid-cols-12 md:gap-8">
-            <div className="md:col-span-12 lg:col-span-3">
-              <NSULogo className="text-[#f8fafc] [&_video]:w-[176px]" showTagline />
+          <div className="grid grid-cols-2 gap-x-6 gap-y-10 border-b border-[rgba(248,250,252,.15)] pb-14 md:grid-cols-12 md:gap-8">
+            <div className="col-span-2 md:col-span-12 lg:col-span-3 flex items-center justify-center lg:justify-start md:pl-12 lg:pl-12 lg:pr-6">
+              <NSULogo className="text-[#f8fafc] [&_img]:h-auto [&_img]:w-[190px]" showTagline />
             </div>
             <div className="md:col-span-3 lg:col-span-2">
               <p className="text-[10px] font-bold uppercase tracking-[.17em] text-[#f8fafc]">
@@ -305,23 +305,42 @@ export default function SiteLayout({ children }) {
                   </span>
                   <span>{companyDetails.phone}</span>
                 </a>
-                {companyDetails.socialLinks.map(({ name, href, icon }) => (
-                  <a
-                    key={name}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`group inline-flex items-center gap-2 text-sm font-semibold transition-colors hover:opacity-80 ${socialColorClasses[name] || "text-[#f8fafc]"}`}
-                    aria-label={`Visit our ${name}`}
-                  >
-                    <span
-                      className="inline-flex h-8 w-8 items-center justify-center"
+                {companyDetails.socialLinks
+                  .filter(({ name }) => name === "WhatsApp")
+                  .map(({ name, href, icon }) => (
+                    <a
+                      key={name}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`group inline-flex items-center gap-2 text-sm font-semibold transition-colors hover:opacity-80 ${socialColorClasses[name]}`}
+                      aria-label={`Visit our ${name}`}
+                    >
+                      <span className="inline-flex h-8 w-8 items-center justify-center">
+                        <SocialIcon name={icon} />
+                      </span>
+                      <span>{name}</span>
+                    </a>
+                  ))}
+              </div>
+              <p className="mt-7 text-[10px] font-bold uppercase tracking-[.17em] text-[#f8fafc]">
+                Follow us
+              </p>
+              <div className="mt-3 flex items-center gap-4">
+                {companyDetails.socialLinks
+                  .filter(({ name }) => name !== "WhatsApp")
+                  .map(({ name, href, icon }) => (
+                    <a
+                      key={name}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`inline-flex h-9 w-9 items-center justify-center border border-current transition-opacity hover:opacity-75 ${socialColorClasses[name] || "text-[#f8fafc]"}`}
+                      aria-label={`Visit our ${name}`}
                     >
                       <SocialIcon name={icon} />
-                    </span>
-                    <span>{name}</span>
-                  </a>
-                ))}
+                    </a>
+                  ))}
               </div>
             </div>
           </div>

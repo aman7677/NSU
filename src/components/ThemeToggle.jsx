@@ -26,7 +26,8 @@ export default function ThemeToggle({ className = "" }) {
       </span>
       <span
         aria-hidden="true"
-        className={`relative z-10 flex h-6 w-6 items-center justify-center rounded-full bg-accent text-on-accent shadow-sm transition-transform duration-300 ease-out ${isDark ? "translate-x-7" : "translate-x-0"}`}
+        className={`relative z-10 flex h-6 w-6 items-center justify-center rounded-full text-white shadow-sm transition-transform duration-300 ease-out ${isDark ? "translate-x-7" : "translate-x-0"}`}
+        style={{ backgroundColor: isDark ? "#ef4444" : "#2563eb" }}
       >
         {isDark ? <Moon size={12} strokeWidth={2.4} /> : <Sun size={12} strokeWidth={2.4} />}
       </span>
