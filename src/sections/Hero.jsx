@@ -7,12 +7,16 @@ const lines = ["COLOUR", "WITHOUT", "LIMITS"];
 
 export default function Hero() {
   return (
-    <section className="relative isolate flex min-h-[680px] overflow-hidden bg-[#0b1120] text-[#f8fafc] sm:min-h-[720px] md:min-h-[860px]">
+    <section
+      className="relative isolate flex min-h-[680px] overflow-x-clip overflow-y-visible sm:min-h-[720px] md:min-h-[860px]"
+      style={{ backgroundColor: "var(--hero-bg)", color: "var(--hero-text)" }}
+    >
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.15, ease: "easeOut" }}
-        className="absolute inset-0 bg-[radial-gradient(circle_at_72%_38%,rgba(239,22,120,.24)_0%,transparent_32%),radial-gradient(circle_at_88%_72%,rgba(255,194,28,.18)_0%,transparent_30%),linear-gradient(115deg,#050816_0%,#0f172a_45%,#111827_100%)]"
+        className="absolute inset-0"
+        style={{ background: "var(--hero-gradient)" }}
       />
       <motion.div
         initial={{ opacity: 0 }}
@@ -27,32 +31,40 @@ export default function Hero() {
             scale: [1, 1.1, 0.95, 1],
           }}
           transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -right-[34%] top-[12%] h-[22rem] w-[22rem] rounded-full bg-[#ef1678]/30 blur-[100px] sm:-right-[17%] sm:h-[27rem] sm:w-[27rem] md:h-[36rem] md:w-[36rem]"
+          className="absolute -right-[34%] top-[12%] h-[22rem] w-[22rem] rounded-full blur-[100px] sm:-right-[17%] sm:h-[27rem] sm:w-[27rem] md:h-[36rem] md:w-[36rem]"
+          style={{ backgroundColor: "var(--hero-orb-pink)" }}
         />
         <motion.div
           animate={{ x: [0, -30, 18, 0], y: [0, 22, -15, 0] }}
           transition={{ duration: 21, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute right-[-16%] top-[42%] h-[14rem] w-[18rem] rounded-[48%] bg-[#ff761c]/30 blur-[88px] sm:right-[4%] sm:h-[18rem] sm:w-[22rem] md:h-[27rem] md:w-[33rem]"
+          className="absolute right-[-16%] top-[42%] h-[14rem] w-[18rem] rounded-[48%] blur-[88px] sm:right-[4%] sm:h-[18rem] sm:w-[22rem] md:h-[27rem] md:w-[33rem]"
+          style={{ backgroundColor: "var(--hero-orb-orange)" }}
         />
         <motion.div
           animate={{ x: [0, 18, -20, 0], y: [0, -18, 12, 0] }}
           transition={{ duration: 19, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -bottom-[16%] right-[26%] h-[13rem] w-[20rem] rounded-full bg-[#d91818]/28 blur-[88px] sm:h-[17rem] sm:w-[24rem] md:h-[25rem] md:w-[36rem]"
+          className="absolute -bottom-[16%] right-[26%] h-[13rem] w-[20rem] rounded-full blur-[88px] sm:h-[17rem] sm:w-[24rem] md:h-[25rem] md:w-[36rem]"
+          style={{ backgroundColor: "var(--hero-orb-red)" }}
         />
         <motion.div
           animate={{ x: [0, -15, 17, 0], y: [0, 14, -17, 0] }}
           transition={{ duration: 17, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute right-[34%] top-[16%] hidden h-36 w-36 rounded-full bg-[#ffc21c]/30 blur-[64px] sm:block"
+          className="absolute right-[34%] top-[16%] hidden h-36 w-36 rounded-full blur-[64px] sm:block"
+          style={{ backgroundColor: "var(--hero-orb-gold)" }}
         />
       </motion.div>
       <ColourParticles />
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(2,6,23,.92)_0%,rgba(15,23,42,.72)_45%,rgba(15,23,42,.22)_78%),radial-gradient(circle_at_72%_48%,transparent_0%,rgba(2,6,23,.2)_52%,rgba(2,6,23,.82)_100%)]" />
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{ background: "var(--hero-vignette)" }}
+      />
       <div className="relative z-20 mx-auto flex w-full max-w-[1440px] flex-col px-6 pb-8 pt-32 sm:pt-40 md:px-10 md:pb-10 md:pt-48 lg:px-14">
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 0.55 }}
-          className="mb-8 text-[10px] font-bold uppercase tracking-[0.2em] text-[#ffc21c]"
+          className="mb-8 text-[10px] font-bold uppercase tracking-[0.2em]"
+          style={{ color: "var(--hero-tagline)" }}
         >
           NSU Colour Solutions
         </motion.p>
@@ -80,7 +92,10 @@ export default function Hero() {
           transition={{ delay: 1.45, duration: 0.65 }}
           className="mt-10 flex flex-col items-start gap-7 md:mt-12 md:flex-row md:items-end md:justify-between"
         >
-          <p className="max-w-md text-base leading-relaxed text-slate-200/75 md:text-lg">
+          <p
+            className="max-w-md text-base leading-relaxed md:text-lg"
+            style={{ color: "var(--hero-body)" }}
+          >
             Vibrant colour and pigment solutions designed to make every
             application stand out.
           </p>
@@ -97,7 +112,8 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.75, duration: 0.6 }}
-          className="mt-12 flex items-center gap-2 text-[10px] font-bold uppercase tracking-[.18em] text-slate-300/70"
+          className="mt-12 flex items-center gap-2 text-[10px] font-bold uppercase tracking-[.18em]"
+          style={{ color: "var(--hero-scroll)" }}
         >
           <span>Scroll to explore</span>
           <motion.span

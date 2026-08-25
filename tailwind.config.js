@@ -3,6 +3,9 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      fontFamily: {
+        devanagari: ["'Noto Sans Devanagari'", "sans-serif"],
+      },
       animation: {
         gradient: "gradient 4s linear infinite",
       },

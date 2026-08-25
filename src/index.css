@@ -4,6 +4,19 @@
 @import "@fontsource/space-grotesk/latin-700.css";
 @import "tailwindcss";
 
+@theme {
+  --color-pigment-magenta: #ef476f;
+  --color-pigment-pink: #ef1678;
+  --color-pigment-orange: #ff761c;
+  --color-pigment-yellow: #ffc21c;
+  --color-pigment-red: #d91818;
+  --color-signal: #ffc21c;
+  --color-ink: #f8fafc;
+  --color-foreground: #0f172a;
+  --color-background: #f8fafc;
+  --font-family-devanagari: 'Noto Sans Devanagari', sans-serif;
+}
+
 :root {
   /* Dark theme as default */
   --bg-primary: #0f172a;
@@ -32,6 +45,38 @@
   --bg-primary-rgb: 15, 23, 42;
   --bg-card-rgb: 30, 41, 59;
   --border-rgb: 51, 65, 85;
+
+  /* ── Hero section theme variables ── */
+  --hero-bg: #0b1120;
+  --hero-text: #f8fafc;
+  --hero-tagline: #ffc21c;
+  --hero-body: rgba(226, 232, 240, 0.75);
+  --hero-scroll: rgba(203, 213, 225, 0.9);
+
+  /* Gradient background layers */
+  --hero-gradient: radial-gradient(circle at 72% 38%,
+      rgba(239, 22, 120, 0.24) 0%,
+      transparent 32%),
+    radial-gradient(circle at 88% 72%,
+      rgba(255, 194, 28, 0.18) 0%,
+      transparent 30%),
+    linear-gradient(115deg, #050816 0%, #0f172a 45%, #111827 100%);
+
+  /* Glowing orbs */
+  --hero-orb-pink: rgba(239, 22, 120, 0.3);
+  --hero-orb-orange: rgba(255, 118, 28, 0.3);
+  --hero-orb-red: rgba(217, 24, 24, 0.28);
+  --hero-orb-gold: rgba(255, 194, 28, 0.3);
+
+  /* Vignette overlay */
+  --hero-vignette: linear-gradient(90deg,
+      rgba(2, 6, 23, 0.92) 0%,
+      rgba(15, 23, 42, 0.72) 45%,
+      rgba(15, 23, 42, 0.22) 78%),
+    radial-gradient(circle at 72% 48%,
+      transparent 0%,
+      rgba(2, 6, 23, 0.2) 52%,
+      rgba(2, 6, 23, 0.82) 100%);
 }
 
 html.light {
@@ -60,6 +105,35 @@ html.light {
   --bg-primary-rgb: 255, 255, 255;
   --bg-card-rgb: 255, 255, 255;
   --border-rgb: 230, 237, 243;
+
+  /* ── Hero section – light theme overrides ── */
+  --hero-bg: #fffaf5;
+  --hero-text: #0f172a;
+  --hero-tagline: #ef476f;
+  --hero-body: rgba(15, 23, 42, 0.65);
+  --hero-scroll: rgba(15, 23, 42, 0.7);
+
+  --hero-gradient: radial-gradient(circle at 72% 38%,
+      rgba(239, 22, 120, 0.12) 0%,
+      transparent 32%),
+    radial-gradient(circle at 88% 72%,
+      rgba(255, 194, 28, 0.14) 0%,
+      transparent 30%),
+    linear-gradient(115deg, #ffffff 0%, #fff7ed 45%, #fff1f7 100%);
+
+  --hero-orb-pink: rgba(239, 22, 120, 0.14);
+  --hero-orb-orange: rgba(255, 118, 28, 0.14);
+  --hero-orb-red: rgba(217, 24, 24, 0.12);
+  --hero-orb-gold: rgba(255, 194, 28, 0.16);
+
+  --hero-vignette: linear-gradient(90deg,
+      rgba(255, 255, 255, 0.82) 0%,
+      rgba(255, 247, 237, 0.52) 45%,
+      rgba(255, 241, 247, 0.12) 78%),
+    radial-gradient(circle at 72% 48%,
+      transparent 0%,
+      rgba(255, 255, 255, 0.08) 52%,
+      rgba(255, 255, 255, 0.48) 100%);
 }
 
 @layer base {
@@ -90,6 +164,7 @@ html.light {
     font: inherit;
   }
 
+
   #root {
     @apply min-h-screen overflow-x-clip;
   }
@@ -103,20 +178,26 @@ html.light {
     box-shadow: 0 0 0 4px rgba(239, 34, 120, 0.12);
   }
 
-  /* Semantic helpers used in components */
+  /* Header — always dark regardless of active theme */
   .site-header {
-    background: color-mix(in srgb, var(--bg-primary) 90%, transparent);
-    border-bottom: 1px solid color-mix(in srgb, var(--border-color) 55%, transparent);
-    color: var(--text-primary);
+    background: color-mix(in srgb, #0f172a 90%, transparent);
+    border-bottom: 1px solid rgba(51, 65, 85, 0.55);
+    color: #f8fafc;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
   }
 
-  html.light .site-header {
-    background:
-      radial-gradient(circle at 18% 0%, rgba(239, 22, 120, 0.14), transparent 32%),
-      radial-gradient(circle at 76% 0%, rgba(255, 194, 28, 0.18), transparent 30%),
-      linear-gradient(100deg, rgba(255, 255, 255, 0.94), rgba(255, 246, 237, 0.9) 48%, rgba(255, 241, 247, 0.9));
-    border-bottom-color: rgba(239, 71, 111, 0.18);
-    backdrop-filter: blur(18px);
+  /* Override inherited light-theme colors inside the header */
+  .site-header,
+  .site-header *,
+  .site-header a,
+  .site-header button {
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --border-color: #334155;
+    --bg-card: #1e293b;
+    --border: #334155;
+    --accent-color: #ef476f;
   }
 
   .site-footer {
@@ -125,8 +206,8 @@ html.light {
   }
 
   .mobile-nav {
-    background: var(--bg-card);
-    color: var(--text-primary);
+    background: #1e293b;
+    color: #f8fafc;
   }
 
   .skip-link {
@@ -323,3 +404,11 @@ html.light .bg-card {
 .faq-question:focus-visible {
   background: color-mix(in srgb, var(--bg-card) 78%, var(--accent-color) 22%);
 }
+.text-eyebrow {
+  color: var(--color-signal) !important;
+}
+
+html.light .text-eyebrow {
+  color: var(--color-pigment-magenta) !important;
+}
+

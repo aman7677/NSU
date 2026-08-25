@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, X } from "lucide-react";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Button from "./Button";
 import { PigmentVisual } from "./ProductCatalogueCard";
 
@@ -11,6 +11,7 @@ const item = {
 
 export default function ProductDetailModal({ product, onClose }) {
   const closeRef = useRef(null);
+  const [copied, setCopied] = useState(false);
   useEffect(() => {
     closeRef.current?.focus();
     const onKeyDown = (event) => {
@@ -30,7 +31,7 @@ export default function ProductDetailModal({ product, onClose }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       onMouseDown={onClose}
-      className="fixed inset-0 z-[70] flex items-end modal-backdrop backdrop-blur-sm md:items-center md:justify-center md:p-8"
+      className="fixed inset-0 z-[70] flex items-end modal-backdrop backdrop-blur-sm bg-black/40 md:items-center md:justify-center md:p-8"
     >
       <motion.section
         role="dialog"
@@ -41,14 +42,14 @@ export default function ProductDetailModal({ product, onClose }) {
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: 48, opacity: 0 }}
         transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-        className="max-h-[92dvh] w-full max-w-6xl overflow-y-auto bg-card md:max-h-[86dvh]"
+        className="relative max-h-[92dvh] w-full max-w-6xl overflow-y-auto bg-card md:max-h-[86dvh]"
       >
         <button
           ref={closeRef}
           type="button"
           onClick={onClose}
           aria-label="Close product details"
-          className="sticky right-4 top-4 z-20 float-right mr-4 mt-4 inline-flex h-11 w-11 items-center justify-center border border-theme bg-card backdrop-blur"
+          className="absolute right-4 top-4 z-50 inline-flex h-11 w-11 items-center justify-center border border-theme bg-card backdrop-blur transition-colors hover:text-pigment-magenta"
         >
           <X size={21} />
         </button>
@@ -92,11 +93,25 @@ export default function ProductDetailModal({ product, onClose }) {
               variants={item}
               className="mt-8 flex items-center gap-3"
             >
-              <span
-                className="h-5 w-5 rounded-full border border-theme"
-                style={{ backgroundColor: product.pigment }}
-              />
-              <span className="text-sm font-medium">{product.colour}</span>
+              <button
+                type="button"
+                onClick={() => {
+                  navigator.clipboard.writeText(product.pigment);
+                  setCopied(true);
+                  setTimeout(() => setCopied(false), 2000);
+                }}
+                className="flex items-center gap-3 transition-opacity hover:opacity-75"
+                title="Copy HEX code"
+                aria-live="polite"
+              >
+                <span
+                  className="h-5 w-5 rounded-full border border-theme"
+                  style={{ backgroundColor: product.pigment }}
+                />
+                <span className="text-sm font-medium">
+                  {copied ? "Copied!" : product.colour}
+                </span>
+              </button>
             </motion.div>
 
             <motion.p

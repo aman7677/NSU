@@ -173,8 +173,8 @@ export default function SiteLayout({ children }) {
             transition={{ duration: 0.3 }}
             className="fixed inset-x-0 top-20 z-40 border-b lg:hidden"
             style={{
-              borderColor: "var(--border)",
-              background: "color-mix(in srgb, var(--bg-primary) 68%, transparent)",
+              borderColor: "#334155",
+              background: "color-mix(in srgb, #0f172a 68%, transparent)",
               backdropFilter: "blur(20px) saturate(135%)",
               WebkitBackdropFilter: "blur(20px) saturate(135%)",
             }}
@@ -207,20 +207,12 @@ export default function SiteLayout({ children }) {
         {children}
       </main>
       <footer className="relative isolate overflow-hidden bg-[#0b1120] px-6 pb-6 pt-14 text-[#f8fafc] md:px-10 md:pt-20 lg:px-14">
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[rgba(248,250,252,.25)]" />
-        <motion.div
-          animate={{ x: ["-15%", "112%"] }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut",
-            repeatDelay: 1.5,
-          }}
-          className="pointer-events-none absolute top-0 h-px w-[24%] bg-[linear-gradient(90deg,#ff3417,#ef1678,#ffc21c)]"
-        />
-        <ColourParticles particleCount={72} interactive={false} speed={0.55} />
+        {/* Background Gradients */}
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_74%_24%,rgba(239,22,120,.24)_0%,transparent_32%),radial-gradient(circle_at_90%_70%,rgba(255,194,28,.16)_0%,transparent_28%),linear-gradient(115deg,#050816_0%,#0f172a_48%,#111827_100%)]" />
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(2,6,23,.92)_0%,rgba(15,23,42,.62)_48%,rgba(15,23,42,.28)_100%)]" />
+        
+        {/* Particles and Background Accents */}
+        <ColourParticles particleCount={55} interactive={true} speed={0.65} />
         <div className="pointer-events-none absolute right-[12%] top-12 hidden h-36 w-36 rounded-full bg-[#ef1678]/20 blur-[65px] md:block" />
         <div className="pointer-events-none absolute left-[35%] top-20 hidden h-1.5 w-1.5 rounded-full bg-[#ffc21c] md:block" />
         <motion.div
@@ -228,12 +220,35 @@ export default function SiteLayout({ children }) {
           transition={{ duration: 3.4, repeat: Infinity, ease: "easeInOut" }}
           className="pointer-events-none absolute right-[31%] top-24 hidden h-1.5 w-1.5 rounded-full bg-[#ff75b7] md:block"
         />
+
+        {/* Top Animated Border */}
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[rgba(248,250,252,.15)]" />
+        <motion.div
+          animate={{ x: ["-300px", "100vw"] }}
+          transition={{
+            duration: 4.5,
+            repeat: Infinity,
+            ease: "linear",
+            repeatDelay: 0.5,
+          }}
+          className="pointer-events-none absolute left-0 top-0 h-[2px] w-[300px] bg-[linear-gradient(90deg,transparent,#ef1678,#ffc21c,transparent)] blur-[1px]"
+        />
+        <motion.div
+          animate={{ x: ["-300px", "100vw"] }}
+          transition={{
+            duration: 4.5,
+            repeat: Infinity,
+            ease: "linear",
+            repeatDelay: 0.5,
+          }}
+          className="pointer-events-none absolute left-0 top-0 h-px w-[300px] bg-[linear-gradient(90deg,transparent,#ef1678,#ffc21c,transparent)]"
+        />
         <div className="relative z-10 mx-auto max-w-[1440px]">
           <div className="grid gap-12 border-b border-[rgba(248,250,252,.15)] pb-14 md:grid-cols-12 md:gap-8">
-            <div className="md:col-span-6">
+            <div className="md:col-span-12 lg:col-span-3">
               <NSULogo className="text-[#f8fafc] [&_video]:w-[176px]" showTagline />
             </div>
-            <div className="md:col-span-3 md:col-start-8">
+            <div className="md:col-span-3 lg:col-span-2">
               <p className="text-[10px] font-bold uppercase tracking-[.17em] text-[#f8fafc]">
                 Navigate
               </p>
@@ -245,14 +260,38 @@ export default function SiteLayout({ children }) {
                   <Link
                     key={path}
                     to={path}
-                    className="text-sm font-medium text-[#f8fafc] transition-colors hover:text-[#ffc21c]"
+                    className="text-sm font-medium text-[#f8fafc] transition-all duration-300 hover:translate-x-1 hover:text-[#ffc21c]"
                   >
                     {label}
                   </Link>
                 ))}
               </nav>
             </div>
-            <div className="md:col-span-2 md:-ml-8 lg:-ml-12">
+            <div className="md:col-span-4 lg:col-span-2">
+              <p className="text-[10px] font-bold uppercase tracking-[.17em] text-[#f8fafc]">
+                Head Office
+              </p>
+              <div className="mt-5 flex flex-col gap-1.5 text-sm font-medium text-[#f8fafc]">
+                <p>Nai Sadak Chowk,</p>
+                <p>Patna City</p>
+                <p>District : Patna</p>
+                <p>Bihar, India</p>
+                <p>PIN-800008</p>
+              </div>
+            </div>
+            <div className="md:col-span-5 lg:col-span-2">
+              <p className="text-[10px] font-bold uppercase tracking-[.17em] text-[#f8fafc]">
+                Manufacturing Unit
+              </p>
+              <div className="mt-5 flex flex-col gap-1.5 text-sm font-medium text-[#f8fafc]">
+                <p>Hajipur Industrial Area,</p>
+                <p> Hajipur</p>
+                <p>District: Vaishali</p>
+                <p>Bihar, India</p>
+                <p>PIN-844102</p>
+              </div>
+            </div>
+            <div className="md:col-span-12 lg:col-span-3 md:mt-6 lg:mt-0">
               <p className="text-[10px] font-bold uppercase tracking-[.17em] text-[#f8fafc]">
                 Talk to NSU
               </p>
@@ -287,7 +326,7 @@ export default function SiteLayout({ children }) {
             </div>
           </div>
           <div className="flex flex-col items-center justify-between gap-5 py-8 text-center text-xs font-medium text-[#f8fafc] sm:flex-row sm:text-left">
-            <p>&copy; 2024 NSU TECHNOLOGIES. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} NARAYAN SINDOOR UDYOG. All rights reserved.</p>
             <div className="flex gap-6">
               {[
                 ["Privacy Policy", "#"],

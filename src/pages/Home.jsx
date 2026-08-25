@@ -3,13 +3,16 @@ import { Link } from "react-router-dom";
 import Container from "../components/Container";
 import SectionTitle from "../components/SectionTitle";
 import Hero from "../sections/Hero";
+import Features from "../sections/Features";
 import ProductShowcase from "../sections/ProductShowcase";
+import Testimonials from "../sections/Testimonials";
 import FAQSection from "../components/FAQSection";
 
 export default function Home() {
   return (
     <>
       <Hero />
+      <Features />
       <ProductShowcase />
       <section className="bg-primary py-16 text-primary md:py-24">
         <Container>
@@ -27,6 +30,7 @@ export default function Home() {
           </Link>
         </Container>
       </section>
+      <Testimonials />
       <FAQSection />
     </>
   );

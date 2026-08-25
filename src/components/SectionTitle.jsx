@@ -13,7 +13,7 @@ export default function SectionTitle({
         {label && <Badge>{label}</Badge>}
       </div>
       <div className="md:col-span-8 md:col-start-5">
-        <h2 className="max-w-4xl text-4xl font-semibold leading-[.92] tracking-[-0.075em] md:text-6xl">
+        <h2 className="max-w-4xl text-4xl font-extrabold leading-[.92] tracking-[-0.075em] md:text-6xl">
           {title}
         </h2>
         {description && (

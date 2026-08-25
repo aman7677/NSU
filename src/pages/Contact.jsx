@@ -3,6 +3,30 @@ import EnquiryForm from "../components/EnquiryForm";
 import PageIntro from "../components/PageIntro";
 import { companyDetails } from "../data/company";
 
+/*
+ * ─── Recommended form state for <EnquiryForm /> ───
+ *
+ * When adding submission handling to the EnquiryForm component,
+ * consider adding these React state variables:
+ *
+ *   const [isSubmitting, setIsSubmitting] = useState(false);
+ *     → true while the form request is in-flight; use to show a
+ *       loading spinner and disable the submit button.
+ *
+ *   const [isSuccess, setIsSuccess] = useState(false);
+ *     → true after a successful submission; swap the form for a
+ *       success/thank-you message.
+ *
+ *   const [error, setError] = useState(null);
+ *     → holds an error message string (or null). Display inline
+ *       above the submit button so the user can correct and retry.
+ *
+ * Typical flow:
+ *   1. User clicks submit → setIsSubmitting(true), setError(null)
+ *   2. API call succeeds  → setIsSubmitting(false), setIsSuccess(true)
+ *   3. API call fails     → setIsSubmitting(false), setError(err.message)
+ */
+
 export default function Contact() {
   return (
     <>
@@ -24,7 +48,8 @@ export default function Contact() {
             </div>
             <address className="mt-10 not-italic">
               <div className="border-t border-theme">
-                <div className="border-b border-black/15 py-5">
+                {/* Contact person */}
+                <div className="border-b border-theme py-5">
                   <p className="text-[10px] font-bold uppercase tracking-[.15em] text-secondary">
                     Contact person
                   </p>
@@ -32,30 +57,53 @@ export default function Contact() {
                     {companyDetails.contactName}
                   </p>
                 </div>
-                <div className="border-b border-black/15 py-5">
+
+                {/* Phone */}
+                <div className="border-b border-theme py-5">
                   <p className="text-[10px] font-bold uppercase tracking-[.15em] text-secondary">
                     Phone
                   </p>
                   <a
-                    className="mt-2 inline-block text-sm font-medium underline decoration-pigment-magenta decoration-2 underline-offset-4 hover:text-pigment-magenta"
+                    className="mt-2 inline-block text-sm font-medium decoration-pigment-magenta decoration-2 underline-offset-4 hover:text-pigment-magenta"
                     href={companyDetails.phoneHref}
+                    aria-label={"Call us at " + companyDetails.phone}
                   >
                     {companyDetails.phone}
                   </a>
                 </div>
-                <div className="border-b border-black/15 py-5">
+
+                {/* Email (conditionally rendered) */}
+                {companyDetails.email && (
+                  <div className="border-b border-theme py-5">
+                    <p className="text-[10px] font-bold uppercase tracking-[.15em] text-secondary">
+                      Email
+                    </p>
+                    <a
+                      className="mt-2 inline-block text-sm font-medium decoration-pigment-magenta decoration-2 underline-offset-4 hover:text-pigment-magenta"
+                      href={"mailto:" + companyDetails.email}
+                      aria-label={"Email us at " + companyDetails.email}
+                    >
+                      {companyDetails.email}
+                    </a>
+                  </div>
+                )}
+
+                {/* Office address */}
+                <div className="border-b border-theme py-5">
                   <p className="text-[10px] font-bold uppercase tracking-[.15em] text-secondary">
                     Office address
                   </p>
-                  <p className="mt-2 text-sm leading-relaxed">
+                  <p className="mt-2 whitespace-pre-wrap text-sm leading-relaxed">
                     {companyDetails.address}
                   </p>
                 </div>
-                <div className="border-b border-black/15 py-5">
+
+                {/* Manufacturing unit */}
+                <div className="border-b border-theme py-5">
                   <p className="text-[10px] font-bold uppercase tracking-[.15em] text-secondary">
                     Manufacturing unit
                   </p>
-                  <p className="mt-2 text-sm leading-relaxed">
+                  <p className="mt-2 whitespace-pre-wrap text-sm leading-relaxed">
                     {companyDetails.manufacturingUnit}
                   </p>
                 </div>

@@ -16,18 +16,27 @@ export default function Applications() {
         <div className="mb-10 flex items-center justify-between border-y border-theme py-5 text-[10px] font-bold uppercase tracking-[.18em] text-primary md:mb-14 md:py-6">
           <span className="text-secondary">Application index</span>
           <span>
-            <CountUp value={6} suffix=" areas" />
+            <CountUp value={applications?.length || 0} suffix=" areas" />
           </span>
         </div>
-        <div>
-          {applications.map((application, index) => (
-            <ApplicationFeature
-              key={application.number}
-              application={application}
-              index={index}
-            />
-          ))}
-        </div>
+        {!applications || applications.length === 0 ? (
+          <div className="text-center">No applications currently available.</div>
+        ) : (
+          <ul className="grid grid-cols-1 gap-8 lg:gap-12">
+            {applications.map((application, index) => (
+              <li
+                key={application.number}
+                className="animate-fade-in-up"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <ApplicationFeature
+                  application={application}
+                  index={index}
+                />
+              </li>
+            ))}
+          </ul>
+        )}
       </Container>
     </>
   );
