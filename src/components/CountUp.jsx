@@ -1,14 +1,33 @@
-import { useInView, useMotionValue, useMotionValueEvent, useReducedMotion, useSpring } from 'framer-motion'
-import { useEffect, useRef, useState } from 'react'
+import { useInView, useReducedMotion, animate } from 'framer-motion';
+import { useEffect, useRef } from 'react';
 
-export default function CountUp({ value, suffix = '' }) {
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: true, amount: 0.7 })
-  const reduceMotion = useReducedMotion()
-  const count = useMotionValue(0)
-  const spring = useSpring(count, { stiffness: 70, damping: 20 })
-  const [display, setDisplay] = useState(0)
-  useMotionValueEvent(spring, 'change', (latest) => setDisplay(Math.round(latest)))
-  useEffect(() => { if (inView) count.set(reduceMotion ? value : value) }, [count, inView, reduceMotion, value])
-  return <span ref={ref}>{display}{suffix}</span>
+export default function CountUp({ value, suffix = '', duration = 2.5 }) {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, amount: 0.5 });
+  const reduceMotion = useReducedMotion();
+
+  useEffect(() => {
+    if (inView && ref.current) {
+      if (reduceMotion) {
+        ref.current.textContent = value;
+        return;
+      }
+
+      const controls = animate(0, value, {
+        duration,
+        ease: [0.22, 1, 0.36, 1],
+        onUpdate: (latest) => {
+          if (ref.current) ref.current.textContent = Math.round(latest);
+        },
+      });
+      return controls.stop;
+    }
+  }, [inView, value, duration, reduceMotion]);
+
+  return (
+    <span>
+      <span ref={ref}>0</span>
+      {suffix}
+    </span>
+  );
 }
