@@ -5,6 +5,7 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import NSULogo from "./NSULogo";
 import ThemeToggle from "./ThemeToggle";
 import ColourParticles from "./ColourParticles";
+import Chatbot from "./Chatbot";
 import { companyDetails } from "../data/company";
 
 const links = [
@@ -363,6 +364,7 @@ export default function SiteLayout({ children }) {
           </div>
         </div>
       </footer>
+      <Chatbot />
     </div>
   );
 }

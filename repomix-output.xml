@@ -1,0 +1,4146 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+public/
+  bright-color.png
+  custom-color.png
+  favicon.svg
+  fluorescent-pigments-powder.png
+  icons.svg
+  nsu-logo.mp4
+  NSU-logo.png
+  sindoor.png
+src/
+  assets/
+    hero.png
+    react.svg
+    vite.svg
+  components/
+    ApplicationFeature.jsx
+    Badge.jsx
+    Button.jsx
+    ColourParticles.jsx
+    Container.jsx
+    CountUp.jsx
+    EnquiryForm.jsx
+    FAQSection.jsx
+    ImageReveal.jsx
+    NSULogo.jsx
+    PageIntro.jsx
+    ProductCard.jsx
+    ProductCatalogueCard.jsx
+    ProductDetailModal.jsx
+    SectionTitle.jsx
+    Seo.jsx
+    SiteLayout.jsx
+    ThemeToggle.jsx
+  data/
+    applications.js
+    company.js
+    products.js
+    siteData.js
+  hooks/
+    useTheme.jsx
+  pages/
+    About.jsx
+    Applications.jsx
+    Contact.jsx
+    Home.jsx
+    NotFound.jsx
+    Products.jsx
+  sections/
+    .gitkeep
+    Features.jsx
+    Hero.jsx
+    ProductShowcase.jsx
+    Testimonials.jsx
+  utils/
+    .gitkeep
+    motion.js
+  App.css
+  App.jsx
+  index.css
+  main.jsx
+.env.example
+.gitignore
+eslint.config.js
+index.html
+package.json
+README.md
+tailwind.config.js
+vite.config.js
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="public/favicon.svg">
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="46" fill="none" viewBox="0 0 48 46"><path fill="#863bff" d="M25.946 44.938c-.664.845-2.021.375-2.021-.698V33.937a2.26 2.26 0 0 0-2.262-2.262H10.287c-.92 0-1.456-1.04-.92-1.788l7.48-10.471c1.07-1.497 0-3.578-1.842-3.578H1.237c-.92 0-1.456-1.04-.92-1.788L10.013.474c.214-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.471c-1.07 1.498 0 3.579 1.842 3.579h11.377c.943 0 1.473 1.088.89 1.83L25.947 44.94z" style="fill:#863bff;fill:color(display-p3 .5252 .23 1);fill-opacity:1"/><mask id="a" width="48" height="46" x="0" y="0" maskUnits="userSpaceOnUse" style="mask-type:alpha"><path fill="#000" d="M25.842 44.938c-.664.844-2.021.375-2.021-.698V33.937a2.26 2.26 0 0 0-2.262-2.262H10.183c-.92 0-1.456-1.04-.92-1.788l7.48-10.471c1.07-1.498 0-3.579-1.842-3.579H1.133c-.92 0-1.456-1.04-.92-1.787L9.91.473c.214-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.471c-1.07 1.498 0 3.578 1.842 3.578h11.377c.943 0 1.473 1.088.89 1.832L25.843 44.94z" style="fill:#000;fill-opacity:1"/></mask><g mask="url(#a)"><g filter="url(#b)"><ellipse cx="5.508" cy="14.704" fill="#ede6ff" rx="5.508" ry="14.704" style="fill:#ede6ff;fill:color(display-p3 .9275 .9033 1);fill-opacity:1" transform="matrix(.00324 1 1 -.00324 -4.47 31.516)"/></g><g filter="url(#c)"><ellipse cx="10.399" cy="29.851" fill="#ede6ff" rx="10.399" ry="29.851" style="fill:#ede6ff;fill:color(display-p3 .9275 .9033 1);fill-opacity:1" transform="matrix(.00324 1 1 -.00324 -39.328 7.883)"/></g><g filter="url(#d)"><ellipse cx="5.508" cy="30.487" fill="#7e14ff" rx="5.508" ry="30.487" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.814 -25.913 -14.639)scale(1 -1)"/></g><g filter="url(#e)"><ellipse cx="5.508" cy="30.599" fill="#7e14ff" rx="5.508" ry="30.599" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.814 -32.644 -3.334)scale(1 -1)"/></g><g filter="url(#f)"><ellipse cx="5.508" cy="30.599" fill="#7e14ff" rx="5.508" ry="30.599" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="matrix(.00324 1 1 -.00324 -34.34 30.47)"/></g><g filter="url(#g)"><ellipse cx="14.072" cy="22.078" fill="#ede6ff" rx="14.072" ry="22.078" style="fill:#ede6ff;fill:color(display-p3 .9275 .9033 1);fill-opacity:1" transform="rotate(93.35 24.506 48.493)scale(-1 1)"/></g><g filter="url(#h)"><ellipse cx="3.47" cy="21.501" fill="#7e14ff" rx="3.47" ry="21.501" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.009 28.708 47.59)scale(-1 1)"/></g><g filter="url(#i)"><ellipse cx="3.47" cy="21.501" fill="#7e14ff" rx="3.47" ry="21.501" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.009 28.708 47.59)scale(-1 1)"/></g><g filter="url(#j)"><ellipse cx=".387" cy="8.972" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(39.51 .387 8.972)"/></g><g filter="url(#k)"><ellipse cx="47.523" cy="-6.092" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 47.523 -6.092)"/></g><g filter="url(#l)"><ellipse cx="41.412" cy="6.333" fill="#47bfff" rx="5.971" ry="9.665" style="fill:#47bfff;fill:color(display-p3 .2799 .748 1);fill-opacity:1" transform="rotate(37.892 41.412 6.333)"/></g><g filter="url(#m)"><ellipse cx="-1.879" cy="38.332" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 -1.88 38.332)"/></g><g filter="url(#n)"><ellipse cx="-1.879" cy="38.332" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 -1.88 38.332)"/></g><g filter="url(#o)"><ellipse cx="35.651" cy="29.907" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 35.651 29.907)"/></g><g filter="url(#p)"><ellipse cx="38.418" cy="32.4" fill="#47bfff" rx="5.971" ry="15.297" style="fill:#47bfff;fill:color(display-p3 .2799 .748 1);fill-opacity:1" transform="rotate(37.892 38.418 32.4)"/></g></g><defs><filter id="b" width="60.045" height="41.654" x="-19.77" y="16.149" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="7.659"/></filter><filter id="c" width="90.34" height="51.437" x="-54.613" y="-7.533" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="7.659"/></filter><filter id="d" width="79.355" height="29.4" x="-49.64" y="2.03" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="e" width="79.579" height="29.4" x="-45.045" y="20.029" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="f" width="79.579" height="29.4" x="-43.513" y="21.178" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="g" width="74.749" height="58.852" x="15.756" y="-17.901" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="7.659"/></filter><filter id="h" width="61.377" height="25.362" x="23.548" y="2.284" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="i" width="61.377" height="25.362" x="23.548" y="2.284" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="j" width="56.045" height="63.649" x="-27.636" y="-22.853" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="k" width="54.814" height="64.646" x="20.116" y="-38.415" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="l" width="33.541" height="35.313" x="24.641" y="-11.323" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="m" width="54.814" height="64.646" x="-29.286" y="6.009" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="n" width="54.814" height="64.646" x="-29.286" y="6.009" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="o" width="54.814" height="64.646" x="8.244" y="-2.416" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="p" width="39.409" height="43.623" x="18.713" y="10.588" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter></defs></svg>
+</file>
+
+<file path="public/icons.svg">
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="bluesky-icon" viewBox="0 0 16 17">
+    <g clip-path="url(#bluesky-clip)"><path fill="#08060d" d="M7.75 7.735c-.693-1.348-2.58-3.86-4.334-5.097-1.68-1.187-2.32-.981-2.74-.79C.188 2.065.1 2.812.1 3.251s.241 3.602.398 4.13c.52 1.744 2.367 2.333 4.07 2.145-2.495.37-4.71 1.278-1.805 4.512 3.196 3.309 4.38-.71 4.987-2.746.608 2.036 1.307 5.91 4.93 2.746 2.72-2.746.747-4.143-1.747-4.512 1.702.189 3.55-.4 4.07-2.145.156-.528.397-3.691.397-4.13s-.088-1.186-.575-1.406c-.42-.19-1.06-.395-2.741.79-1.755 1.24-3.64 3.752-4.334 5.099"/></g>
+    <defs><clipPath id="bluesky-clip"><path fill="#fff" d="M.1.85h15.3v15.3H.1z"/></clipPath></defs>
+  </symbol>
+  <symbol id="discord-icon" viewBox="0 0 20 19">
+    <path fill="#08060d" d="M16.224 3.768a14.5 14.5 0 0 0-3.67-1.153c-.158.286-.343.67-.47.976a13.5 13.5 0 0 0-4.067 0c-.128-.306-.317-.69-.476-.976A14.4 14.4 0 0 0 3.868 3.77C1.546 7.28.916 10.703 1.231 14.077a14.7 14.7 0 0 0 4.5 2.306q.545-.748.965-1.587a9.5 9.5 0 0 1-1.518-.74q.191-.14.372-.293c2.927 1.369 6.107 1.369 8.999 0q.183.152.372.294-.723.437-1.52.74.418.838.963 1.588a14.6 14.6 0 0 0 4.504-2.308c.37-3.911-.63-7.302-2.644-10.309m-9.13 8.234c-.878 0-1.599-.82-1.599-1.82 0-.998.705-1.82 1.6-1.82.894 0 1.614.82 1.599 1.82.001 1-.705 1.82-1.6 1.82m5.91 0c-.878 0-1.599-.82-1.599-1.82 0-.998.705-1.82 1.6-1.82.893 0 1.614.82 1.599 1.82 0 1-.706 1.82-1.6 1.82"/>
+  </symbol>
+  <symbol id="documentation-icon" viewBox="0 0 21 20">
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="m15.5 13.333 1.533 1.322c.645.555.967.833.967 1.178s-.322.623-.967 1.179L15.5 18.333m-3.333-5-1.534 1.322c-.644.555-.966.833-.966 1.178s.322.623.966 1.179l1.534 1.321"/>
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="M17.167 10.836v-4.32c0-1.41 0-2.117-.224-2.68-.359-.906-1.118-1.621-2.08-1.96-.599-.21-1.349-.21-2.848-.21-2.623 0-3.935 0-4.983.369-1.684.591-3.013 1.842-3.641 3.428C3 6.449 3 7.684 3 10.154v2.122c0 2.558 0 3.838.706 4.726q.306.383.713.671c.76.536 1.79.64 3.581.66"/>
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="M3 10a2.78 2.78 0 0 1 2.778-2.778c.555 0 1.209.097 1.748-.047.48-.129.854-.503.982-.982.145-.54.048-1.194.048-1.749a2.78 2.78 0 0 1 2.777-2.777"/>
+  </symbol>
+  <symbol id="github-icon" viewBox="0 0 19 19">
+    <path fill="#08060d" fill-rule="evenodd" d="M9.356 1.85C5.05 1.85 1.57 5.356 1.57 9.694a7.84 7.84 0 0 0 5.324 7.44c.387.079.528-.168.528-.376 0-.182-.013-.805-.013-1.454-2.165.467-2.616-.935-2.616-.935-.349-.91-.864-1.143-.864-1.143-.71-.48.051-.48.051-.48.787.051 1.2.805 1.2.805.695 1.194 1.817.857 2.268.649.064-.507.27-.857.49-1.052-1.728-.182-3.545-.857-3.545-3.87 0-.857.31-1.558.8-2.104-.078-.195-.349-1 .077-2.078 0 0 .657-.208 2.14.805a7.5 7.5 0 0 1 1.946-.26c.657 0 1.328.092 1.946.26 1.483-1.013 2.14-.805 2.14-.805.426 1.078.155 1.883.078 2.078.502.546.799 1.247.799 2.104 0 3.013-1.818 3.675-3.558 3.87.284.247.528.714.528 1.454 0 1.052-.012 1.896-.012 2.156 0 .208.142.455.528.377a7.84 7.84 0 0 0 5.324-7.441c.013-4.338-3.48-7.844-7.773-7.844" clip-rule="evenodd"/>
+  </symbol>
+  <symbol id="social-icon" viewBox="0 0 20 20">
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="M12.5 6.667a4.167 4.167 0 1 0-8.334 0 4.167 4.167 0 0 0 8.334 0"/>
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="M2.5 16.667a5.833 5.833 0 0 1 8.75-5.053m3.837.474.513 1.035c.07.144.257.282.414.309l.93.155c.596.1.736.536.307.965l-.723.73a.64.64 0 0 0-.152.531l.207.903c.164.715-.213.991-.84.618l-.872-.52a.63.63 0 0 0-.577 0l-.872.52c-.624.373-1.003.094-.84-.618l.207-.903a.64.64 0 0 0-.152-.532l-.723-.729c-.426-.43-.289-.864.306-.964l.93-.156a.64.64 0 0 0 .412-.31l.513-1.034c.28-.562.735-.562 1.012 0"/>
+  </symbol>
+  <symbol id="x-icon" viewBox="0 0 19 19">
+    <path fill="#08060d" fill-rule="evenodd" d="M1.893 1.98c.052.072 1.245 1.769 2.653 3.77l2.892 4.114c.183.261.333.48.333.486s-.068.089-.152.183l-.522.593-.765.867-3.597 4.087c-.375.426-.734.834-.798.905a1 1 0 0 0-.118.148c0 .01.236.017.664.017h.663l.729-.83c.4-.457.796-.906.879-.999a692 692 0 0 0 1.794-2.038c.034-.037.301-.34.594-.675l.551-.624.345-.392a7 7 0 0 1 .34-.374c.006 0 .93 1.306 2.052 2.903l2.084 2.965.045.063h2.275c1.87 0 2.273-.003 2.266-.021-.008-.02-1.098-1.572-3.894-5.547-2.013-2.862-2.28-3.246-2.273-3.266.008-.019.282-.332 2.085-2.38l2-2.274 1.567-1.782c.022-.028-.016-.03-.65-.03h-.674l-.3.342a871 871 0 0 1-1.782 2.025c-.067.075-.405.458-.75.852a100 100 0 0 1-.803.91c-.148.172-.299.344-.99 1.127-.304.343-.32.358-.345.327-.015-.019-.904-1.282-1.976-2.808L6.365 1.85H1.8zm1.782.91 8.078 11.294c.772 1.08 1.413 1.973 1.425 1.984.016.017.241.02 1.05.017l1.03-.004-2.694-3.766L7.796 5.75 5.722 2.852l-1.039-.004-1.039-.004z" clip-rule="evenodd"/>
+  </symbol>
+</svg>
+</file>
+
+<file path="src/assets/react.svg">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--logos" width="35.93" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 228"><path fill="#00D8FF" d="M210.483 73.824a171.49 171.49 0 0 0-8.24-2.597c.465-1.9.893-3.777 1.273-5.621c6.238-30.281 2.16-54.676-11.769-62.708c-13.355-7.7-35.196.329-57.254 19.526a171.23 171.23 0 0 0-6.375 5.848a155.866 155.866 0 0 0-4.241-3.917C100.759 3.829 77.587-4.822 63.673 3.233C50.33 10.957 46.379 33.89 51.995 62.588a170.974 170.974 0 0 0 1.892 8.48c-3.28.932-6.445 1.924-9.474 2.98C17.309 83.498 0 98.307 0 113.668c0 15.865 18.582 31.778 46.812 41.427a145.52 145.52 0 0 0 6.921 2.165a167.467 167.467 0 0 0-2.01 9.138c-5.354 28.2-1.173 50.591 12.134 58.266c13.744 7.926 36.812-.22 59.273-19.855a145.567 145.567 0 0 0 5.342-4.923a168.064 168.064 0 0 0 6.92 6.314c21.758 18.722 43.246 26.282 56.54 18.586c13.731-7.949 18.194-32.003 12.4-61.268a145.016 145.016 0 0 0-1.535-6.842c1.62-.48 3.21-.974 4.76-1.488c29.348-9.723 48.443-25.443 48.443-41.52c0-15.417-17.868-30.326-45.517-39.844Zm-6.365 70.984c-1.4.463-2.836.91-4.3 1.345c-3.24-10.257-7.612-21.163-12.963-32.432c5.106-11 9.31-21.767 12.459-31.957c2.619.758 5.16 1.557 7.61 2.4c23.69 8.156 38.14 20.213 38.14 29.504c0 9.896-15.606 22.743-40.946 31.14Zm-10.514 20.834c2.562 12.94 2.927 24.64 1.23 33.787c-1.524 8.219-4.59 13.698-8.382 15.893c-8.067 4.67-25.32-1.4-43.927-17.412a156.726 156.726 0 0 1-6.437-5.87c7.214-7.889 14.423-17.06 21.459-27.246c12.376-1.098 24.068-2.894 34.671-5.345a134.17 134.17 0 0 1 1.386 6.193ZM87.276 214.515c-7.882 2.783-14.16 2.863-17.955.675c-8.075-4.657-11.432-22.636-6.853-46.752a156.923 156.923 0 0 1 1.869-8.499c10.486 2.32 22.093 3.988 34.498 4.994c7.084 9.967 14.501 19.128 21.976 27.15a134.668 134.668 0 0 1-4.877 4.492c-9.933 8.682-19.886 14.842-28.658 17.94ZM50.35 144.747c-12.483-4.267-22.792-9.812-29.858-15.863c-6.35-5.437-9.555-10.836-9.555-15.216c0-9.322 13.897-21.212 37.076-29.293c2.813-.98 5.757-1.905 8.812-2.773c3.204 10.42 7.406 21.315 12.477 32.332c-5.137 11.18-9.399 22.249-12.634 32.792a134.718 134.718 0 0 1-6.318-1.979Zm12.378-84.26c-4.811-24.587-1.616-43.134 6.425-47.789c8.564-4.958 27.502 2.111 47.463 19.835a144.318 144.318 0 0 1 3.841 3.545c-7.438 7.987-14.787 17.08-21.808 26.988c-12.04 1.116-23.565 2.908-34.161 5.309a160.342 160.342 0 0 1-1.76-7.887Zm110.427 27.268a347.8 347.8 0 0 0-7.785-12.803c8.168 1.033 15.994 2.404 23.343 4.08c-2.206 7.072-4.956 14.465-8.193 22.045a381.151 381.151 0 0 0-7.365-13.322Zm-45.032-43.861c5.044 5.465 10.096 11.566 15.065 18.186a322.04 322.04 0 0 0-30.257-.006c4.974-6.559 10.069-12.652 15.192-18.18ZM82.802 87.83a323.167 323.167 0 0 0-7.227 13.238c-3.184-7.553-5.909-14.98-8.134-22.152c7.304-1.634 15.093-2.97 23.209-3.984a321.524 321.524 0 0 0-7.848 12.897Zm8.081 65.352c-8.385-.936-16.291-2.203-23.593-3.793c2.26-7.3 5.045-14.885 8.298-22.6a321.187 321.187 0 0 0 7.257 13.246c2.594 4.48 5.28 8.868 8.038 13.147Zm37.542 31.03c-5.184-5.592-10.354-11.779-15.403-18.433c4.902.192 9.899.29 14.978.29c5.218 0 10.376-.117 15.453-.343c-4.985 6.774-10.018 12.97-15.028 18.486Zm52.198-57.817c3.422 7.8 6.306 15.345 8.596 22.52c-7.422 1.694-15.436 3.058-23.88 4.071a382.417 382.417 0 0 0 7.859-13.026a347.403 347.403 0 0 0 7.425-13.565Zm-16.898 8.101a358.557 358.557 0 0 1-12.281 19.815a329.4 329.4 0 0 1-23.444.823c-7.967 0-15.716-.248-23.178-.732a310.202 310.202 0 0 1-12.513-19.846h.001a307.41 307.41 0 0 1-10.923-20.627a310.278 310.278 0 0 1 10.89-20.637l-.001.001a307.318 307.318 0 0 1 12.413-19.761c7.613-.576 15.42-.876 23.31-.876H128c7.926 0 15.743.303 23.354.883a329.357 329.357 0 0 1 12.335 19.695a358.489 358.489 0 0 1 11.036 20.54a329.472 329.472 0 0 1-11 20.722Zm22.56-122.124c8.572 4.944 11.906 24.881 6.52 51.026c-.344 1.668-.73 3.367-1.15 5.09c-10.622-2.452-22.155-4.275-34.23-5.408c-7.034-10.017-14.323-19.124-21.64-27.008a160.789 160.789 0 0 1 5.888-5.4c18.9-16.447 36.564-22.941 44.612-18.3ZM128 90.808c12.625 0 22.86 10.235 22.86 22.86s-10.235 22.86-22.86 22.86s-22.86-10.235-22.86-22.86s10.235-22.86 22.86-22.86Z"></path></svg>
+</file>
+
+<file path="src/assets/vite.svg">
+<svg xmlns="http://www.w3.org/2000/svg" width="77" height="47" fill="none" aria-labelledby="vite-logo-title" viewBox="0 0 77 47"><title id="vite-logo-title">Vite</title><style>.parenthesis{fill:#000}@media (prefers-color-scheme:dark){.parenthesis{fill:#fff}}</style><path fill="#9135ff" d="M40.151 45.71c-.663.844-2.02.374-2.02-.699V34.708a2.26 2.26 0 0 0-2.262-2.262H24.493c-.92 0-1.457-1.04-.92-1.788l7.479-10.471c1.07-1.498 0-3.578-1.842-3.578H15.443c-.92 0-1.456-1.04-.92-1.788l9.696-13.576c.213-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.472c-1.07 1.497 0 3.578 1.842 3.578h11.376c.944 0 1.474 1.087.89 1.83L40.153 45.712z"/><mask id="a" width="48" height="47" x="14" y="0" maskUnits="userSpaceOnUse" style="mask-type:alpha"><path fill="#000" d="M40.047 45.71c-.663.843-2.02.374-2.02-.699V34.708a2.26 2.26 0 0 0-2.262-2.262H24.389c-.92 0-1.457-1.04-.92-1.788l7.479-10.472c1.07-1.497 0-3.578-1.842-3.578H15.34c-.92 0-1.456-1.04-.92-1.788l9.696-13.575c.213-.297.556-.474.92-.474H53.93c.92 0 1.456 1.04.92 1.788L47.37 13.03c-1.07 1.498 0 3.578 1.842 3.578h11.376c.944 0 1.474 1.088.89 1.831L40.049 45.712z"/></mask><g mask="url(#a)"><g filter="url(#b)"><ellipse cx="5.508" cy="14.704" fill="#eee6ff" rx="5.508" ry="14.704" transform="rotate(269.814 20.96 11.29)scale(-1 1)"/></g><g filter="url(#c)"><ellipse cx="10.399" cy="29.851" fill="#eee6ff" rx="10.399" ry="29.851" transform="rotate(89.814 -16.902 -8.275)scale(1 -1)"/></g><g filter="url(#d)"><ellipse cx="5.508" cy="30.487" fill="#8900ff" rx="5.508" ry="30.487" transform="rotate(89.814 -19.197 -7.127)scale(1 -1)"/></g><g filter="url(#e)"><ellipse cx="5.508" cy="30.599" fill="#8900ff" rx="5.508" ry="30.599" transform="rotate(89.814 -25.928 4.177)scale(1 -1)"/></g><g filter="url(#f)"><ellipse cx="5.508" cy="30.599" fill="#8900ff" rx="5.508" ry="30.599" transform="rotate(89.814 -25.738 5.52)scale(1 -1)"/></g><g filter="url(#g)"><ellipse cx="14.072" cy="22.078" fill="#eee6ff" rx="14.072" ry="22.078" transform="rotate(93.35 31.245 55.578)scale(-1 1)"/></g><g filter="url(#h)"><ellipse cx="3.47" cy="21.501" fill="#8900ff" rx="3.47" ry="21.501" transform="rotate(89.009 35.419 55.202)scale(-1 1)"/></g><g filter="url(#i)"><ellipse cx="3.47" cy="21.501" fill="#8900ff" rx="3.47" ry="21.501" transform="rotate(89.009 35.419 55.202)scale(-1 1)"/></g><g filter="url(#j)"><ellipse cx="14.592" cy="9.743" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(39.51 14.592 9.743)"/></g><g filter="url(#k)"><ellipse cx="61.728" cy="-5.321" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 61.728 -5.32)"/></g><g filter="url(#l)"><ellipse cx="55.618" cy="7.104" fill="#00c2ff" rx="5.971" ry="9.665" transform="rotate(37.892 55.618 7.104)"/></g><g filter="url(#m)"><ellipse cx="12.326" cy="39.103" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 12.326 39.103)"/></g><g filter="url(#n)"><ellipse cx="12.326" cy="39.103" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 12.326 39.103)"/></g><g filter="url(#o)"><ellipse cx="49.857" cy="30.678" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 49.857 30.678)"/></g><g filter="url(#p)"><ellipse cx="52.623" cy="33.171" fill="#00c2ff" rx="5.971" ry="15.297" transform="rotate(37.892 52.623 33.17)"/></g></g><path d="M6.919 0c-9.198 13.166-9.252 33.575 0 46.789h6.215c-9.25-13.214-9.196-33.623 0-46.789zm62.424 0h-6.215c9.198 13.166 9.252 33.575 0 46.789h6.215c9.25-13.214 9.196-33.623 0-46.789" class="parenthesis"/><defs><filter id="b" width="60.045" height="41.654" x="-5.564" y="16.92" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="7.659"/></filter><filter id="c" width="90.34" height="51.437" x="-40.407" y="-6.762" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="7.659"/></filter><filter id="d" width="79.355" height="29.4" x="-35.435" y="2.801" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="e" width="79.579" height="29.4" x="-30.84" y="20.8" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="f" width="79.579" height="29.4" x="-29.307" y="21.949" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="g" width="74.749" height="58.852" x="29.961" y="-17.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="7.659"/></filter><filter id="h" width="61.377" height="25.362" x="37.754" y="3.055" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="i" width="61.377" height="25.362" x="37.754" y="3.055" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="j" width="56.045" height="63.649" x="-13.43" y="-22.082" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="k" width="54.814" height="64.646" x="34.321" y="-37.644" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="l" width="33.541" height="35.313" x="38.847" y="-10.552" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="m" width="54.814" height="64.646" x="-15.081" y="6.78" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="n" width="54.814" height="64.646" x="-15.081" y="6.78" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="o" width="54.814" height="64.646" x="22.45" y="-1.645" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="p" width="39.409" height="43.623" x="32.919" y="11.36" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter></defs></svg>
+</file>
+
+<file path="src/components/Badge.jsx">
+export default function Badge({ children, className = '' }) {
+  return <span className={`inline-flex border border-current px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.16em] ${className}`}>{children}</span>
+}
+</file>
+
+<file path="src/components/ColourParticles.jsx">
+import { useEffect, useRef } from 'react'
+
+const defaultColors = ['#ff3417', '#c71545', '#ef1678', '#ff75b7', '#ff761c', '#ffbc16', '#a855f7', '#22d3ee']
+const colorWeights = [23, 11, 20, 8, 18, 15, 4, 1]
+
+const pickColor = (colors) => {
+  const total = colorWeights.slice(0, colors.length).reduce((sum, weight) => sum + weight, 0)
+  let random = Math.random() * total
+  for (let index = 0; index < colors.length; index += 1) {
+    random -= colorWeights[index] || 1
+    if (random <= 0) return colors[index]
+  }
+  return colors[0]
+}
+
+export default function ColourParticles({ particleCount, colors = defaultColors, interactive = true, speed = 1 }) {
+  const canvasRef = useRef(null)
+
+  useEffect(() => {
+    const canvas = canvasRef.current
+    const context = canvas.getContext('2d')
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const coarsePointer = window.matchMedia('(pointer: coarse)').matches
+    let frameId
+    let width = 0
+    let height = 0
+    let particles = []
+    const pointer = { x: -1000, y: -1000, active: false }
+
+    const getCount = () => particleCount || (width < 640 ? 70 : width < 1024 ? 125 : 190)
+    const createParticle = () => {
+      const depth = Math.random()
+      const layer = depth < 0.45 ? 0 : depth < 0.82 ? 1 : 2
+      const scale = layer === 0 ? 0.55 : layer === 1 ? 1 : 1.7
+      return {
+        x: Math.random() * width,
+        y: Math.random() * height,
+        baseX: 0,
+        baseY: 0,
+        radius: (0.65 + Math.random() * 2.4) * scale,
+        opacity: (layer === 0 ? 0.16 : layer === 1 ? 0.28 : 0.42) + Math.random() * 0.22,
+        velocityX: (Math.random() - 0.5) * (layer + 0.45) * 0.16 * speed,
+        velocityY: (Math.random() - 0.5) * (layer + 0.45) * 0.14 * speed,
+        phase: Math.random() * Math.PI * 2,
+        drift: 0.08 + Math.random() * 0.22,
+        color: pickColor(colors),
+      }
+    }
+    const resize = () => {
+      const bounds = canvas.getBoundingClientRect()
+      width = bounds.width
+      height = bounds.height
+      const pixelRatio = Math.min(window.devicePixelRatio || 1, 2)
+      canvas.width = Math.floor(width * pixelRatio)
+      canvas.height = Math.floor(height * pixelRatio)
+      context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0)
+      particles = Array.from({ length: getCount() }, createParticle)
+    }
+    const movePointer = (event) => {
+      const bounds = canvas.getBoundingClientRect()
+      if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) {
+        pointer.active = false
+        return
+      }
+      pointer.x = event.clientX - bounds.left
+      pointer.y = event.clientY - bounds.top
+      pointer.active = true
+    }
+    const leavePointer = () => { pointer.active = false }
+    const draw = (time = 0) => {
+      context.clearRect(0, 0, width, height)
+      particles.forEach((particle) => {
+        if (!reducedMotion) {
+          particle.x += particle.velocityX + Math.sin(time * 0.00035 + particle.phase) * particle.drift
+          particle.y += particle.velocityY + Math.cos(time * 0.0003 + particle.phase) * particle.drift
+          if (particle.x < -12) particle.x = width + 12
+          if (particle.x > width + 12) particle.x = -12
+          if (particle.y < -12) particle.y = height + 12
+          if (particle.y > height + 12) particle.y = -12
+          if (interactive && !coarsePointer && pointer.active) {
+            const dx = particle.x - pointer.x
+            const dy = particle.y - pointer.y
+            const distance = Math.hypot(dx, dy)
+            if (distance < 120 && distance > 0.1) {
+              const force = (1 - distance / 120) * 0.65
+              particle.x += (dx / distance) * force
+              particle.y += (dy / distance) * force
+            }
+          }
+        }
+        const shimmer = reducedMotion ? 1 : 0.78 + Math.sin(time * 0.001 + particle.phase) * 0.22
+        context.globalAlpha = particle.opacity * shimmer
+        context.fillStyle = particle.color
+        context.beginPath()
+        context.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2)
+        context.fill()
+      })
+      context.globalAlpha = 1
+      if (!reducedMotion) frameId = window.requestAnimationFrame(draw)
+    }
+
+    const observer = new ResizeObserver(resize)
+    observer.observe(canvas)
+    window.addEventListener('pointermove', movePointer, { passive: true })
+    window.addEventListener('pointerleave', leavePointer)
+    resize()
+    draw()
+    return () => {
+      observer.disconnect()
+      window.removeEventListener('pointermove', movePointer)
+      window.removeEventListener('pointerleave', leavePointer)
+      window.cancelAnimationFrame(frameId)
+    }
+  }, [particleCount, colors, interactive, speed])
+
+  return <canvas ref={canvasRef} aria-hidden="true" className="pointer-events-none absolute inset-0 h-full w-full" />
+}
+</file>
+
+<file path="src/components/Container.jsx">
+export default function Container({ children, className = '', as: Tag = 'div' }) {
+  return <Tag className={`mx-auto w-full max-w-[1440px] px-6 md:px-10 lg:px-14 ${className}`}>{children}</Tag>
+}
+</file>
+
+<file path="src/components/FAQSection.jsx">
+import { AnimatePresence, motion } from "framer-motion";
+import { Minus, Plus } from "lucide-react";
+import { useState } from "react";
+import Container from "./Container";
+
+const faqItems = [
+  {
+    question: "What types of colour products does NSU specialize in?",
+    answer:
+      "NSU specializes in traditional colour products, with a primary focus on high-quality Sindoor and other cultural colour applications shaped around your visual and practical requirements.",
+  },
+  {
+    question: "Are NSU's traditional colours safe for personal and cultural use?",
+    answer:
+      "Yes, our products are crafted with strict quality control to ensure they are safe and reliable, reflecting the trust we've built with our customers since 1983.",
+  },
+  {
+    question: "Do you supply different grades of Sindoor based on specific needs?",
+    answer:
+      "Absolutely. We offer suitable grades of our colour products depending on your specific application requirements and shade selection.",
+  },
+  {
+    question: "Does NSU supply products in bulk for wholesale?",
+    answer:
+      "Yes, our structured and globally trusted manufacturing process allows us to fulfill both standard and bulk orders to meet the demands of our partners.",
+  },
+  {
+    question: "What makes NSU's Sindoor unique?",
+    answer:
+      "Our Sindoor is deeply connected to Indian traditions, culture, and emotions. It is more than just a product; it represents decades of dedication, patience, and a commitment to quality.",
+  },
+];
+
+export default function FAQSection() {
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggleItem = (index) => {
+    setOpenIndex((currentIndex) =>
+      currentIndex === index ? null : index,
+    );
+  };
+
+  return (
+    <section className="border-y border-theme bg-secondary py-20 text-primary md:py-28">
+      <Container>
+        <div className="mx-auto max-w-4xl">
+          <p className="mb-5 text-[10px] font-bold uppercase tracking-[.18em] text-pigment-magenta">
+            Questions, answered
+          </p>
+          <h2 className="max-w-3xl font-semibold text-4xl leading-[.95] tracking-[-.065em] md:text-6xl">
+            Frequently Asked Questions
+          </h2>
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-secondary md:text-lg">
+            A few helpful details about NSU, our colour products, and how we work with partners.
+          </p>
+
+          <div className="mt-12 border-t border-theme">
+            {faqItems.map((item, index) => {
+              const isOpen = openIndex === index;
+              const answerId = `faq-answer-${index}`;
+
+              return (
+                <div key={item.question} className="border-b border-theme">
+                  <button
+                    type="button"
+                    aria-expanded={isOpen}
+                    aria-controls={answerId}
+                    onClick={() => toggleItem(index)}
+                    className="flex w-full cursor-pointer items-center justify-between gap-6 py-5 text-left transition-colors duration-300 ease-in-out faq-question md:py-6"
+                  >
+                    <span className="text-base font-semibold leading-snug tracking-[-.02em] md:text-lg">
+                      {item.question}
+                    </span>
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center border border-theme text-pigment-magenta transition-colors duration-300">
+                      {isOpen ? <Minus size={16} /> : <Plus size={16} />}
+                    </span>
+                  </button>
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        id={answerId}
+                        key="answer"
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                        className="overflow-hidden"
+                      >
+                        <p className="max-w-3xl pb-6 pr-12 text-sm leading-relaxed text-secondary md:text-base">
+                          {item.answer}
+                        </p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
+}
+</file>
+
+<file path="src/components/ImageReveal.jsx">
+import { motion, useReducedMotion } from 'framer-motion'
+export default function ImageReveal({ children, className = '', delay = 0 }) {
+  const reduceMotion = useReducedMotion()
+  return <motion.div initial={reduceMotion ? { opacity: 0 } : { clipPath: 'inset(0 100% 0 0)' }} whileInView={reduceMotion ? { opacity: 1 } : { clipPath: 'inset(0 0% 0 0)' }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: reduceMotion ? 0.2 : 0.75, delay, ease: [0.77, 0, 0.18, 1] }} className={`overflow-hidden ${className}`}>{children}</motion.div>
+}
+</file>
+
+<file path="src/components/Seo.jsx">
+import { useEffect } from 'react'
+
+const pages = {
+  '/': { title: 'NSU — Colour Solutions & Pigments', description: 'NSU provides vibrant colour and pigment solutions for distinctive products and application-led colour requirements.' },
+  '/products': { title: 'NSU — Sindoor Colour & Fluorescent Pigments', description: 'Explore NSU sindoor colours, fluorescent pigments, bright colour powders and custom colour solutions.' },
+  '/applications': { title: 'NSU — Colour Pigment Applications', description: 'Explore colour pigment discussions for traditional colour products, textiles, polymers, printing, industrial uses and custom development.' },
+  '/about': { title: 'About NSU — Colour Solutions', description: 'Learn about NSU’s application-led approach to vibrant colour and pigment solutions.' },
+  '/contact': { title: 'Contact NSU — Product Enquiries', description: 'Contact NSU to discuss colour pigments, product requirements and application-led colour solutions.' },
+}
+
+export default function Seo({ pathname }) {
+  const page = pages[pathname] || { title: 'Page not found — NSU', description: 'The requested NSU page could not be found.' }
+  useEffect(() => {
+    document.title = page.title
+    let description = document.querySelector('meta[name="description"]')
+    if (!description) { description = document.createElement('meta'); description.name = 'description'; document.head.appendChild(description) }
+    description.content = page.description
+  }, [page.description, page.title])
+  return null
+}
+</file>
+
+<file path="src/data/applications.js">
+export const applications = [
+  { number: '01', title: 'Sindoor & Traditional Colour Products', accent: '#d91818', visual: 'radial', description: 'Colour directions for traditional colour products, with shade selection guided by the intended product requirements.' },
+  { number: '02', title: 'Textile Applications', accent: '#ef1678', visual: 'threads', description: 'Colour pigment conversations for textile-focused applications where the required substrate and process should guide grade selection.' },
+  { number: '03', title: 'Plastic & Polymer Applications', accent: '#ff761c', visual: 'layers', description: 'Colour options for polymer-led applications, considered against processing needs and the desired final visual effect.' },
+  { number: '04', title: 'Printing & Ink Applications', accent: '#ffc21c', visual: 'dots', description: 'Bold colour directions for print and ink-related applications where visual coverage and process needs are part of the brief.' },
+  { number: '05', title: 'Industrial Colour Applications', accent: '#ee1c48', visual: 'grid', description: 'Application-led colour solutions for industrial product contexts, developed around the requirements of the use case.' },
+  { number: '06', title: 'Custom Colour Development', accent: '#d91179', visual: 'spectrum', description: 'A collaborative starting point for colour development, bringing your target shade and intended application into focus.' },
+]
+</file>
+
+<file path="src/data/products.js">
+export const productFilters = [
+  { id: 'all', label: 'All' },
+  { id: 'sindoor', label: 'Sindoor' },
+  { id: 'fluorescent', label: 'Fluorescent' },
+  { id: 'colour-powder', label: 'Colour Powder' },
+  { id: 'custom', label: 'Custom' },
+]
+
+export const products = [
+  { id: 'sindoor-red', name: 'Red Sindoor Colour', category: 'Sindoor Colour', colour: 'Classic red', application: 'Traditional colour products', description: 'A vivid red colour option with a direct, recognisable visual character.', filter: 'sindoor', pigment: '#d91818' },
+  { id: 'sindoor-bright-red', name: 'Bright Red Sindoor', category: 'Sindoor Colour', colour: 'Bright red', application: 'Traditional colour products', description: 'A high-impact bright red shade for a more immediate colour impression.', filter: 'sindoor', pigment: '#ff3220' },
+  { id: 'sindoor-deep-red', name: 'Deep Red Sindoor', category: 'Sindoor Colour', colour: 'Deep red', application: 'Traditional colour products', description: 'A deeper red direction with visual richness and a considered finish.', filter: 'sindoor', pigment: '#850414' },
+  { id: 'sindoor-custom', name: 'Custom Shade Sindoor', category: 'Sindoor Colour', colour: 'Custom shade', application: 'Product development', description: 'A starting point for shade-led discussions tailored to a specific product brief.', filter: 'custom', pigment: '#b90b52' },
+  { id: 'fluorescent-red', name: 'Fluorescent Red', category: 'Fluorescent Pigments', colour: 'Fluorescent red', application: 'High-visibility colour applications', description: 'An energetic fluorescent red pigment option for attention-led colour design.', filter: 'fluorescent', pigment: '#ff2435' },
+  { id: 'fluorescent-pink', name: 'Fluorescent Pink', category: 'Fluorescent Pigments', colour: 'Fluorescent pink', application: 'High-visibility colour applications', description: 'A bright pink pigment direction with an unmistakably expressive presence.', filter: 'fluorescent', pigment: '#ff3ea5' },
+  { id: 'fluorescent-orange', name: 'Fluorescent Orange', category: 'Fluorescent Pigments', colour: 'Fluorescent orange', application: 'High-visibility colour applications', description: 'A vivid orange pigment option for bold graphic and product colour treatments.', filter: 'fluorescent', pigment: '#ff7219' },
+  { id: 'fluorescent-yellow', name: 'Fluorescent Yellow', category: 'Fluorescent Pigments', colour: 'Fluorescent yellow', application: 'High-visibility colour applications', description: 'A bright yellow pigment direction designed for visual prominence.', filter: 'fluorescent', pigment: '#ffe21a' },
+  { id: 'fluorescent-green', name: 'Fluorescent Green', category: 'Fluorescent Pigments', colour: 'Fluorescent green', application: 'High-visibility colour applications', description: 'A bold green pigment option for energetic, high-contrast colour palettes.', filter: 'fluorescent', pigment: '#70ed27' },
+  { id: 'fluorescent-magenta', name: 'Fluorescent Magenta', category: 'Fluorescent Pigments', colour: 'Fluorescent magenta', application: 'High-visibility colour applications', description: 'A saturated magenta pigment direction for vivid colour-focused applications.', filter: 'fluorescent', pigment: '#ed167e' },
+  { id: 'powder-bright-red', name: 'Bright Red', category: 'Colour Powders', colour: 'Bright red', application: 'Decorative colour applications', description: 'A direct, high-energy red powder colour for expressive product treatments.', filter: 'colour-powder', pigment: '#ed231e' },
+  { id: 'powder-orange', name: 'Orange', category: 'Colour Powders', colour: 'Orange', application: 'Decorative colour applications', description: 'A luminous orange powder colour that introduces warmth and visual impact.', filter: 'colour-powder', pigment: '#ff761c' },
+  { id: 'powder-yellow', name: 'Yellow', category: 'Colour Powders', colour: 'Yellow', application: 'Decorative colour applications', description: 'A clear yellow powder colour for bright, confident colour directions.', filter: 'colour-powder', pigment: '#ffc21c' },
+  { id: 'powder-pink', name: 'Pink', category: 'Colour Powders', colour: 'Pink', application: 'Decorative colour applications', description: 'A lively pink powder colour designed to bring personality to the surface.', filter: 'colour-powder', pigment: '#fa5fa7' },
+  { id: 'powder-magenta', name: 'Magenta', category: 'Colour Powders', colour: 'Magenta', application: 'Decorative colour applications', description: 'A saturated magenta powder colour for high-chroma visual expression.', filter: 'colour-powder', pigment: '#d91179' },
+  { id: 'powder-custom', name: 'Custom Shades', category: 'Colour Powders', colour: 'Custom shade', application: 'Product development', description: 'A flexible colour-powder starting point for your desired palette direction.', filter: 'custom', pigment: '#7830cb' },
+]
+</file>
+
+<file path="src/hooks/useTheme.jsx">
+import { useCallback, useEffect, useState } from "react";
+
+export default function useTheme() {
+  const [theme, setTheme] = useState(() => {
+    try {
+      return localStorage.getItem("theme") || "dark";
+    } catch (e) {
+      return "dark";
+    }
+  });
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (theme === "dark") {
+      root.classList.remove("light");
+      root.classList.add("dark");
+    } else {
+      root.classList.remove("dark");
+      root.classList.add("light");
+    }
+    try {
+      localStorage.setItem("theme", theme);
+    } catch (e) {}
+  }, [theme]);
+
+  const toggle = useCallback(
+    () => setTheme((t) => (t === "dark" ? "light" : "dark")),
+    [],
+  );
+
+  return { theme, setTheme, toggle };
+}
+</file>
+
+<file path="src/pages/NotFound.jsx">
+import { Link } from 'react-router-dom'
+import PageIntro from '../components/PageIntro'
+export default function NotFound() { return <><PageIntro eyebrow="404" title="This colour is out of range." description="The page you are looking for does not exist." /><div className="mx-auto max-w-7xl px-6 pb-20 md:px-10"><Link className="font-semibold text-signal" to="/">Return home →</Link></div></> }
+</file>
+
+<file path="src/sections/.gitkeep">
+
+</file>
+
+<file path="src/sections/Features.jsx">
+import { motion } from "framer-motion";
+import { Shield, Palette, Target } from "lucide-react";
+import Container from "../components/Container";
+
+const features = [
+  {
+    icon: Shield,
+    title: "Durability",
+    description:
+      "Engineered to withstand heat, moisture, and time — our pigments maintain their intensity through demanding conditions and extended use.",
+    accent: "var(--color-pigment-magenta)",
+  },
+  {
+    icon: Palette,
+    title: "Vibrancy",
+    description:
+      "Rich, saturated colour that captures attention. From traditional sindoor to fluorescent solutions, every shade is crafted for visual impact.",
+    accent: "var(--color-pigment-orange)",
+  },
+  {
+    icon: Target,
+    title: "Consistency",
+    description:
+      "Batch after batch, year after year. Our structured manufacturing process ensures uniform colour output trusted by partners globally.",
+    accent: "var(--color-pigment-yellow)",
+  },
+];
+
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.15 },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 32 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
+export default function Features() {
+  return (
+    <section className="border-y border-theme bg-primary py-20 text-primary md:py-28">
+      <Container>
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.55 }}
+          className="mb-14 md:mb-18"
+        >
+          <p className="mb-5 text-[10px] font-bold uppercase tracking-[.18em] text-pigment-magenta">
+            Why NSU
+          </p>
+          <h2 className="max-w-3xl text-4xl font-extrabold leading-[.92] tracking-[-0.065em] md:text-6xl">
+            Built different. Proven better.
+          </h2>
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-secondary md:text-lg">
+            Three pillars that define every NSU product — from formulation to
+            final delivery.
+          </p>
+        </motion.div>
+
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
+        >
+          {features.map((feature) => {
+            const Icon = feature.icon;
+            return (
+              <motion.article
+                key={feature.title}
+                variants={cardVariants}
+                className="group relative overflow-hidden rounded-2xl border border-theme bg-card p-8 transition-colors duration-300 md:p-10"
+              >
+                {/* Accent glow on hover */}
+                <div
+                  className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full opacity-0 blur-[64px] transition-opacity duration-500 group-hover:opacity-100"
+                  style={{ backgroundColor: feature.accent }}
+                />
+
+                <span
+                  className="relative z-10 mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl transition-transform duration-300 group-hover:scale-110"
+                  style={{
+                    backgroundColor: `color-mix(in srgb, ${feature.accent} 14%, transparent)`,
+                    color: feature.accent,
+                  }}
+                >
+                  <Icon size={24} strokeWidth={1.8} />
+                </span>
+
+                <h3 className="relative z-10 mb-3 text-xl font-bold tracking-[-0.03em]">
+                  {feature.title}
+                </h3>
+                <p className="relative z-10 text-sm leading-relaxed text-secondary md:text-base">
+                  {feature.description}
+                </p>
+              </motion.article>
+            );
+          })}
+        </motion.div>
+      </Container>
+    </section>
+  );
+}
+</file>
+
+<file path="src/sections/Testimonials.jsx">
+import { motion } from "framer-motion";
+import { Quote, Star } from "lucide-react";
+import Container from "../components/Container";
+import CountUp from "../components/CountUp";
+
+const testimonials = [
+  {
+    quote:
+      "NSU's sindoor quality is unmatched — the vibrancy has remained consistent across every order for over a decade. Our customers trust the colour, and we trust NSU.",
+    name: "Rajesh Gupta",
+    role: "Wholesale Distributor, Delhi",
+    rating: 5,
+  },
+  {
+    quote:
+      "We switched to NSU pigments three years ago and have never looked back. The consistency across batches has eliminated every quality complaint we used to receive.",
+    name: "Meena Sharma",
+    role: "Production Manager, Mumbai",
+    rating: 5,
+  },
+  {
+    quote:
+      "What sets NSU apart is their deep understanding of colour science combined with decades of practical experience. A truly reliable partner for any colour application.",
+    name: "Arjun Patel",
+    role: "Colour Solutions Buyer, Ahmedabad",
+    rating: 5,
+  },
+];
+
+const stats = [
+  { value: 40, suffix: "+", label: "Years of Excellence" },
+  { value: 500, suffix: "+", label: "Trusted Partners" },
+  { value: 99, suffix: "%", label: "Batch Consistency" },
+  { value: 12, suffix: "+", label: "States Served" },
+];
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 28 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.12,
+      duration: 0.6,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  }),
+};
+
+export default function Testimonials() {
+  return (
+    <section className="border-y border-theme bg-primary py-20 text-primary md:py-28">
+      <Container>
+        {/* Section header */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.55 }}
+        >
+          <p className="mb-5 text-[10px] font-bold uppercase tracking-[.18em] text-pigment-yellow">
+            Trusted by partners
+          </p>
+          <h2 className="max-w-3xl text-4xl font-extrabold leading-[.92] tracking-[-0.065em] md:text-6xl">
+            Words from those who know colour
+          </h2>
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-secondary md:text-lg">
+            Decades of trust built through consistent quality and reliable
+            partnership across India.
+          </p>
+        </motion.div>
+
+        {/* Stats row */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.55, delay: 0.15 }}
+          className="mt-14 grid grid-cols-2 gap-5 sm:grid-cols-4"
+        >
+          {stats.map((stat) => (
+            <div
+              key={stat.label}
+              className="rounded-xl border border-theme bg-card px-5 py-6 text-center transition-colors duration-300 md:px-6 md:py-8"
+            >
+              <p className="text-3xl font-extrabold tracking-[-0.04em] text-pigment-magenta md:text-4xl">
+                <CountUp value={stat.value} suffix={stat.suffix} />
+              </p>
+              <p className="mt-2 text-xs font-semibold uppercase tracking-[.12em] text-secondary">
+                {stat.label}
+              </p>
+            </div>
+          ))}
+        </motion.div>
+
+        {/* Testimonial cards */}
+        <div className="mt-14 grid gap-5 md:grid-cols-3">
+          {testimonials.map((testimonial, index) => (
+            <motion.blockquote
+              key={testimonial.name}
+              custom={index}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.25 }}
+              className="group relative flex flex-col overflow-hidden rounded-2xl border border-theme bg-card p-8 transition-colors duration-300 md:p-10"
+            >
+              {/* Decorative quote icon */}
+              <Quote
+                size={32}
+                strokeWidth={1.4}
+                className="mb-5 text-pigment-yellow opacity-40 transition-opacity duration-300 group-hover:opacity-70"
+              />
+
+              {/* Stars */}
+              <div className="mb-4 flex gap-0.5">
+                {Array.from({ length: testimonial.rating }).map((_, i) => (
+                  <Star
+                    key={i}
+                    size={14}
+                    className="fill-pigment-yellow text-pigment-yellow"
+                  />
+                ))}
+              </div>
+
+              <p className="flex-1 text-sm leading-relaxed text-secondary md:text-base">
+                &ldquo;{testimonial.quote}&rdquo;
+              </p>
+
+              <footer className="mt-6 border-t border-theme pt-5">
+                <cite className="not-italic">
+                  <p className="text-sm font-bold tracking-[-0.01em]">
+                    {testimonial.name}
+                  </p>
+                  <p className="mt-1 text-xs text-secondary">
+                    {testimonial.role}
+                  </p>
+                </cite>
+              </footer>
+            </motion.blockquote>
+          ))}
+        </div>
+      </Container>
+    </section>
+  );
+}
+</file>
+
+<file path="src/utils/.gitkeep">
+
+</file>
+
+<file path="src/utils/motion.js">
+export const motionEase = [0.22, 1, 0.36, 1]
+export const revealUp = {
+  hidden: { opacity: 0, y: 22 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.56, ease: motionEase } },
+}
+export const maskReveal = {
+  hidden: { y: '105%' },
+  visible: { y: 0, transition: { duration: 0.76, ease: [0.16, 1, 0.3, 1] } },
+}
+export const viewportOnce = { once: true, amount: 0.2 }
+</file>
+
+<file path="src/App.css">
+.counter {
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+  margin-bottom: 24px;
+
+  &:hover {
+    border-color: var(--accent-border);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+.hero {
+  position: relative;
+
+  .base,
+  .framework,
+  .vite {
+    inset-inline: 0;
+    margin: 0 auto;
+  }
+
+  .base {
+    width: 170px;
+    position: relative;
+    z-index: 0;
+  }
+
+  .framework,
+  .vite {
+    position: absolute;
+  }
+
+  .framework {
+    z-index: 1;
+    top: 34px;
+    height: 28px;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
+      scale(1.4);
+  }
+
+  .vite {
+    z-index: 0;
+    top: 107px;
+    height: 26px;
+    width: auto;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
+      scale(0.8);
+  }
+}
+
+#center {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  place-content: center;
+  place-items: center;
+  flex-grow: 1;
+
+  @media (max-width: 1024px) {
+    padding: 32px 20px 24px;
+    gap: 18px;
+  }
+}
+
+#next-steps {
+  display: flex;
+  border-top: 1px solid var(--border);
+  text-align: left;
+
+  & > div {
+    flex: 1 1 0;
+    padding: 32px;
+    @media (max-width: 1024px) {
+      padding: 24px 20px;
+    }
+  }
+
+  .icon {
+    margin-bottom: 16px;
+    width: 22px;
+    height: 22px;
+  }
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+#docs {
+  border-right: 1px solid var(--border);
+
+  @media (max-width: 1024px) {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+#next-steps ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 8px;
+  margin: 32px 0 0;
+
+  .logo {
+    height: 18px;
+  }
+
+  a {
+    color: var(--text-h);
+    font-size: 16px;
+    border-radius: 6px;
+    background: var(--social-bg);
+    display: flex;
+    padding: 6px 12px;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: box-shadow 0.3s;
+
+    &:hover {
+      box-shadow: var(--shadow);
+    }
+    .button-icon {
+      height: 18px;
+      width: 18px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    li {
+      flex: 1 1 calc(50% - 8px);
+    }
+
+    a {
+      width: 100%;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+  }
+}
+
+#spacer {
+  height: 88px;
+  border-top: 1px solid var(--border);
+  @media (max-width: 1024px) {
+    height: 48px;
+  }
+}
+
+.ticks {
+  position: relative;
+  width: 100%;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: -4.5px;
+    border: 5px solid transparent;
+  }
+
+  &::before {
+    left: 0;
+    border-left-color: var(--border);
+  }
+  &::after {
+    right: 0;
+    border-right-color: var(--border);
+  }
+}
+</file>
+
+<file path=".env.example">
+VITE_EMAILJS_SERVICE_ID=your_emailjs_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_emailjs_template_id
+VITE_EMAILJS_PUBLIC_KEY=your_emailjs_public_key
+</file>
+
+<file path="eslint.config.js">
+import js from '@eslint/js'
+import globals from 'globals'
+import reactHooks from 'eslint-plugin-react-hooks'
+import reactRefresh from 'eslint-plugin-react-refresh'
+import { defineConfig, globalIgnores } from 'eslint/config'
+
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{js,jsx}'],
+    extends: [
+      js.configs.recommended,
+      reactHooks.configs.flat.recommended,
+      reactRefresh.configs.vite,
+    ],
+    languageOptions: {
+      globals: globals.browser,
+      parserOptions: { ecmaFeatures: { jsx: true } },
+    },
+  },
+])
+</file>
+
+<file path="src/components/ApplicationFeature.jsx">
+import { motion } from "framer-motion";
+
+export default function ApplicationFeature({ application, index }) {
+  const reverse = index % 2 === 1;
+
+  return (
+    <motion.article
+      initial={{ opacity: 0, y: 18 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.18 }}
+      transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+      className="group grid grid-cols-[4.5rem_minmax(0,1fr)] gap-x-4 border-t border-theme px-1 py-12 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-card sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:gap-x-7 sm:px-6 md:grid-cols-[10rem_minmax(0,1fr)] md:gap-x-10 md:py-16 lg:grid-cols-[12rem_minmax(0,1fr)] lg:px-10"
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="pt-1"
+      >
+        <span
+          className="block text-4xl font-bold leading-none tracking-[-.09em] sm:text-5xl md:text-6xl"
+          style={{ color: application.accent }}
+        >
+          {application.number}
+        </span>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, x: reverse ? -24 : 24 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.08 }}
+        className="min-w-0"
+      >
+        <h2 className="max-w-5xl text-3xl font-bold leading-[.94] tracking-[-.065em] text-primary sm:text-4xl md:text-5xl lg:text-6xl">
+          {application.title}
+        </h2>
+        <p className="mt-6 max-w-4xl text-base leading-relaxed text-secondary md:mt-7 md:text-lg">
+          {application.description}
+        </p>
+        <p
+          className="mt-8 max-w-4xl border-l-2 pl-4 text-sm font-medium leading-relaxed text-secondary md:mt-10 md:pl-5"
+          style={{ borderColor: application.accent }}
+        >
+          Suitable grades available depending on application requirements.
+        </p>
+      </motion.div>
+    </motion.article>
+  );
+}
+</file>
+
+<file path="src/components/Button.jsx">
+import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
+
+export default function Button({
+  children,
+  to,
+  href,
+  variant = "primary",
+  icon = true,
+  className = "",
+  ...props
+}) {
+  const styles =
+    variant === "primary"
+      ? "bg-card text-primary border-theme hover:bg-pigment-magenta hover:border-pigment-magenta"
+      : "border-theme bg-primary text-primary hover:border-pigment-orange hover:text-pigment-orange";
+  const content = (
+    <>
+      {children}
+      {icon && (
+        <span className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+          <ArrowUpRight size={17} strokeWidth={2.2} />
+        </span>
+      )}
+    </>
+  );
+  const classes = `group inline-flex items-center justify-center gap-3 border px-5 py-3 text-xs font-bold uppercase tracking-[0.14em] transition-all duration-300 hover:scale-[1.015] active:scale-[0.99] ${styles} ${className}`;
+  if (to)
+    return (
+      <Link to={to} className={classes} {...props}>
+        {content}
+      </Link>
+    );
+  if (href)
+    return (
+      <a href={href} className={classes} {...props}>
+        {content}
+      </a>
+    );
+  return (
+    <button type="button" className={classes} {...props}>
+      {content}
+    </button>
+  );
+}
+</file>
+
+<file path="src/components/CountUp.jsx">
+import { useInView, useReducedMotion, animate } from 'framer-motion';
+import { useEffect, useRef } from 'react';
+
+export default function CountUp({ value, suffix = '', duration = 2.5 }) {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, amount: 0.5 });
+  const reduceMotion = useReducedMotion();
+
+  useEffect(() => {
+    if (inView && ref.current) {
+      if (reduceMotion) {
+        ref.current.textContent = value;
+        return;
+      }
+
+      const controls = animate(0, value, {
+        duration,
+        ease: [0.22, 1, 0.36, 1],
+        onUpdate: (latest) => {
+          if (ref.current) ref.current.textContent = Math.round(latest);
+        },
+      });
+      return controls.stop;
+    }
+  }, [inView, value, duration, reduceMotion]);
+
+  return (
+    <span>
+      <span ref={ref}>0</span>
+      {suffix}
+    </span>
+  );
+}
+</file>
+
+<file path="src/components/ThemeToggle.jsx">
+import { Sun, Moon } from "lucide-react";
+import useTheme from "../hooks/useTheme";
+
+export default function ThemeToggle({ className = "" }) {
+  const { theme, toggle } = useTheme();
+  const isDark = theme === "dark";
+
+  return (
+    <button
+      type="button"
+      aria-label={`Switch to ${isDark ? "light" : "dark"} theme`}
+      aria-pressed={isDark}
+      onClick={toggle}
+      className={`relative inline-flex h-8 w-[60px] shrink-0 items-center rounded-full border p-1 transition-colors duration-300 focus-visible:outline-none ${className}`}
+      style={{
+        borderColor: "var(--border)",
+        backgroundColor: "var(--bg-card)",
+      }}
+    >
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 flex items-center justify-between px-2 text-[var(--text-secondary)]"
+      >
+        <Sun size={12} strokeWidth={2.2} />
+        <Moon size={12} strokeWidth={2.2} />
+      </span>
+      <span
+        aria-hidden="true"
+        className={`relative z-10 flex h-6 w-6 items-center justify-center rounded-full text-white shadow-sm transition-transform duration-300 ease-out ${isDark ? "translate-x-7" : "translate-x-0"}`}
+        style={{ backgroundColor: isDark ? "#ef4444" : "#2563eb" }}
+      >
+        {isDark ? <Moon size={12} strokeWidth={2.4} /> : <Sun size={12} strokeWidth={2.4} />}
+      </span>
+    </button>
+  );
+}
+</file>
+
+<file path="src/sections/ProductShowcase.jsx">
+import Container from "../components/Container";
+import ProductCard from "../components/ProductCard";
+import SectionTitle from "../components/SectionTitle";
+import { featuredProducts } from "../data/siteData";
+
+export default function ProductShowcase() {
+  return (
+    <section className="border-y border-theme bg-secondary py-20 md:py-28">
+      <Container>
+        <SectionTitle
+          label="Featured products"
+          title="OUR COLOUR RANGE"
+          description="Vibrant colour solutions engineered for visual impact."
+        />
+        <div className="mt-14 grid gap-4 md:grid-cols-2">
+          {featuredProducts.map((product, index) => (
+            <ProductCard key={product.title} product={product} index={index} />
+          ))}
+        </div>
+      </Container>
+    </section>
+  );
+}
+</file>
+
+<file path=".gitignore">
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+.env
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+</file>
+
+<file path="tailwind.config.js">
+module.exports = {
+  content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
+  darkMode: "class",
+  theme: {
+    extend: {
+      fontFamily: {
+        devanagari: ["'Noto Sans Devanagari'", "sans-serif"],
+      },
+      animation: {
+        gradient: "gradient 4s linear infinite",
+      },
+      keyframes: {
+        gradient: {
+          "0%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+          "100%": { backgroundPosition: "0% 50%" },
+        },
+      },
+    },
+  },
+  plugins: [],
+};
+</file>
+
+<file path="vite.config.js">
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react(), tailwindcss()],
+})
+</file>
+
+<file path="src/components/EnquiryForm.jsx">
+import emailjs from "@emailjs/browser";
+import { Check, LoaderCircle } from "lucide-react";
+import { useState } from "react";
+import Button from "./Button";
+
+const initialValues = {
+  fullName: "",
+  companyName: "",
+  email: "",
+  phone: "",
+  productInterest: "",
+  requirement: "",
+  message: "",
+  website: "",
+};
+const interests = [
+  "Sindoor Colour",
+  "Fluorescent Pigment",
+  "Colour Powder",
+  "Custom Colour",
+  "Other",
+];
+const fieldClass =
+  "mt-2 min-h-12 w-full border border-theme bg-card px-4 text-sm outline-none transition-colors placeholder:text-secondary focus:border-theme";
+const emailPattern = /^\S+@\S+\.\S+$/;
+const phonePattern = /^[+()\-\s\d]{7,20}$/;
+
+const emailJsConfig = {
+  serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+  templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+  publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+};
+
+function isConfigured(value) {
+  return value && !value.startsWith("your_");
+}
+
+export default function EnquiryForm() {
+  const [values, setValues] = useState(initialValues);
+  const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+
+  const updateValue = (event) => {
+    const { name, value } = event.target;
+    setValues((current) => ({ ...current, [name]: value }));
+    setErrors((current) => ({ ...current, [name]: undefined }));
+    setSubmitError("");
+  };
+
+  const validate = (formValues) => {
+    const nextErrors = {};
+    if (!formValues.fullName)
+      nextErrors.fullName = "Please enter your full name.";
+    if (!formValues.email)
+      nextErrors.email = "Please enter your email address.";
+    else if (!emailPattern.test(formValues.email))
+      nextErrors.email = "Please enter a valid email address.";
+    if (formValues.phone && !phonePattern.test(formValues.phone))
+      nextErrors.phone = "Please enter a valid phone number.";
+    if (!formValues.productInterest)
+      nextErrors.productInterest = "Please select a product interest.";
+    if (!formValues.message)
+      nextErrors.message = "Please tell us about your enquiry.";
+    return nextErrors;
+  };
+
+  const submit = async (event) => {
+    event.preventDefault();
+    if (loading) return;
+    const trimmedValues = Object.fromEntries(
+      Object.entries(values).map(([key, value]) => [key, value.trim()]),
+    );
+    const nextErrors = validate(trimmedValues);
+    setErrors(nextErrors);
+    setSubmitError("");
+    if (Object.keys(nextErrors).length || trimmedValues.website) return;
+    if (!Object.values(emailJsConfig).every(isConfigured)) {
+      console.error(
+        "EmailJS is not configured. Add VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID, and VITE_EMAILJS_PUBLIC_KEY to .env.",
+      );
+      setSubmitError(
+        "Enquiries are temporarily unavailable. Please contact us directly while the email service is being configured.",
+      );
+      return;
+    }
+    setLoading(true);
+    try {
+      await emailjs.send(
+        emailJsConfig.serviceId,
+        emailJsConfig.templateId,
+        {
+          name: trimmedValues.fullName,
+          company: trimmedValues.companyName || "Not provided",
+          email: trimmedValues.email,
+          phone: trimmedValues.phone || "Not provided",
+          product: trimmedValues.productInterest,
+          message: trimmedValues.message,
+        },
+        { publicKey: emailJsConfig.publicKey },
+      );
+      setValues(initialValues);
+      setSubmitted(true);
+    } catch (error) {
+      console.error("EmailJS enquiry submission failed:", error);
+      setSubmitError(
+        "Something went wrong while sending your enquiry. Please try again or contact us directly.",
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (submitted) {
+    return (
+      <div
+        role="status"
+        aria-live="polite"
+        className="flex min-h-[470px] flex-col justify-center border border-theme bg-card p-7 text-primary md:p-10"
+      >
+        <span className="flex h-11 w-11 items-center justify-center rounded-full bg-pigment-yellow text-on-accent">
+          <Check size={22} />
+        </span>
+        <h2 className="mt-10 max-w-md text-4xl font-semibold leading-[.96] tracking-[-.065em]">
+          Thank you for your enquiry. Our team will get back to you shortly.
+        </h2>
+        <p className="mt-5 max-w-md text-sm leading-relaxed text-secondary">
+          Your submission has been received successfully.
+        </p>
+        <button
+          type="button"
+          onClick={() => setSubmitted(false)}
+          className="mt-10 w-fit text-xs font-bold uppercase tracking-[.14em] text-pigment-yellow hover:text-primary"
+        >
+          Send another enquiry →
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <form
+      noValidate
+      onSubmit={submit}
+      className="border border-theme bg-card p-6 md:p-10"
+    >
+      <div className="grid gap-x-5 md:grid-cols-2">
+        <label className="mb-6 block text-[10px] font-bold uppercase tracking-[.15em]">
+          Full Name *
+          <input
+            name="fullName"
+            value={values.fullName}
+            onChange={updateValue}
+            autoComplete="name"
+            aria-invalid={Boolean(errors.fullName)}
+            aria-describedby={errors.fullName ? "fullName-error" : undefined}
+            className={`${fieldClass} ${errors.fullName ? "border-pigment-red" : ""}`}
+            placeholder="Your full name"
+          />
+          {errors.fullName && (
+            <span
+              id="fullName-error"
+              className="mt-2 block text-xs normal-case tracking-normal text-pigment-red"
+            >
+              {errors.fullName}
+            </span>
+          )}
+        </label>
+
+        <label className="mb-6 block text-[10px] font-bold uppercase tracking-[.15em]">
+          Company Name
+          <input
+            name="companyName"
+            value={values.companyName}
+            onChange={updateValue}
+            autoComplete="organization"
+            className={fieldClass}
+            placeholder="Company name"
+          />
+        </label>
+
+        <label className="mb-6 block text-[10px] font-bold uppercase tracking-[.15em]">
+          Email *
+          <input
+            type="email"
+            name="email"
+            value={values.email}
+            onChange={updateValue}
+            autoComplete="email"
+            aria-invalid={Boolean(errors.email)}
+            aria-describedby={errors.email ? "email-error" : undefined}
+            className={`${fieldClass} ${errors.email ? "border-pigment-red" : ""}`}
+            placeholder="you@company.com"
+          />
+          {errors.email && (
+            <span
+              id="email-error"
+              className="mt-2 block text-xs normal-case tracking-normal text-pigment-red"
+            >
+              {errors.email}
+            </span>
+          )}
+        </label>
+
+        <label className="mb-6 block text-[10px] font-bold uppercase tracking-[.15em]">
+          Phone
+          <input
+            type="tel"
+            name="phone"
+            value={values.phone}
+            onChange={updateValue}
+            autoComplete="tel"
+            inputMode="tel"
+            aria-invalid={Boolean(errors.phone)}
+            aria-describedby={errors.phone ? "phone-error" : undefined}
+            className={`${fieldClass} ${errors.phone ? "border-pigment-red" : ""}`}
+            placeholder="Phone number"
+          />
+          {errors.phone && (
+            <span
+              id="phone-error"
+              className="mt-2 block text-xs normal-case tracking-normal text-pigment-red"
+            >
+              {errors.phone}
+            </span>
+          )}
+        </label>
+
+        <div className="mb-6 block text-[10px] font-bold uppercase tracking-[.15em]">
+          <label htmlFor="productInterest">Product interest</label>
+          <select
+            id="productInterest"
+            name="productInterest"
+            value={values.productInterest}
+            onChange={updateValue}
+            aria-invalid={Boolean(errors.productInterest)}
+            aria-describedby={
+              errors.productInterest ? "productInterest-error" : undefined
+            }
+            className={`${fieldClass} ${errors.productInterest ? "border-pigment-red" : ""}`}
+          >
+            <option value="">Choose a product interest</option>
+            {interests.map((interest) => (
+              <option key={interest} value={interest}>
+                {interest}
+              </option>
+            ))}
+          </select>
+          {errors.productInterest && (
+            <span
+              id="productInterest-error"
+              className="mt-2 block text-xs normal-case tracking-normal text-pigment-red"
+            >
+              {errors.productInterest}
+            </span>
+          )}
+        </div>
+
+        <label className="mb-6 block text-[10px] font-bold uppercase tracking-[.15em]">
+          Requirement
+          <input
+            name="requirement"
+            value={values.requirement}
+            onChange={updateValue}
+            className={fieldClass}
+            placeholder="Short summary or specification"
+          />
+        </label>
+      </div>
+
+      <label className="mb-6 block text-[10px] font-bold uppercase tracking-[.15em]">
+        Message *
+        <textarea
+          name="message"
+          value={values.message}
+          onChange={updateValue}
+          className={`${fieldClass} min-h-[160px] resize-none ${errors.message ? "border-pigment-red" : ""}`}
+          placeholder="How can we help?"
+        />
+        {errors.message && (
+          <span
+            id="message-error"
+            className="mt-2 block text-xs normal-case tracking-normal text-pigment-red"
+          >
+            {errors.message}
+          </span>
+        )}
+      </label>
+
+      {submitError && (
+        <p
+          role="alert"
+          className="mt-6 border-l-2 border-pigment-red px-4 py-3 text-sm leading-relaxed text-pigment-red"
+        >
+          {submitError}
+        </p>
+      )}
+      <div className="mt-8">
+        <Button type="submit" className="w-full">Send enquiry</Button>
+      </div>
+    </form>
+  );
+}
+</file>
+
+<file path="src/components/PageIntro.jsx">
+import { motion } from "framer-motion";
+import { maskReveal, revealUp } from "../utils/motion";
+
+export default function PageIntro({
+  eyebrow,
+  title,
+  description,
+  titleClassName = "",
+  descriptionClassName = "",
+  className = "",
+  gradientBackdrop = false,
+}) {
+  return (
+    <motion.section
+      initial="hidden"
+      animate="visible"
+      exit={{ opacity: 0 }}
+      className={`relative isolate mx-auto max-w-[1440px] overflow-hidden px-6 py-24 md:px-10 md:py-32 lg:px-14 ${className}`}
+    >
+      {gradientBackdrop && (
+        <>
+          <motion.div
+            aria-hidden="true"
+            animate={{
+              x: [0, 34, -12, 0],
+              y: [0, -16, 10, 0],
+              scale: [1, 1.12, 0.96, 1],
+            }}
+            transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+            className="pointer-events-none absolute -left-24 top-4 h-72 w-72 rounded-full bg-pigment-magenta/20 blur-[78px] md:h-96 md:w-96"
+          />
+          <motion.div
+            aria-hidden="true"
+            animate={{ x: [0, -28, 14, 0], y: [0, 14, -10, 0] }}
+            transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
+            className="pointer-events-none absolute left-[26%] top-14 h-52 w-80 rounded-full bg-pigment-orange/20 blur-[72px] md:h-72 md:w-[32rem]"
+          />
+          <motion.div
+            aria-hidden="true"
+            animate={{ x: [0, 18, -18, 0], y: [0, -12, 8, 0] }}
+            transition={{ duration: 13, repeat: Infinity, ease: "easeInOut" }}
+            className="pointer-events-none absolute right-0 top-0 h-56 w-56 rounded-full bg-pigment-yellow/25 blur-[72px] md:h-80 md:w-80"
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 bg-[linear-gradient(105deg,rgba(239,22,120,.06),transparent_44%,rgba(255,194,28,.1))]"
+          />
+        </>
+      )}
+      <div className="relative z-10">
+        <motion.p
+          variants={revealUp}
+          className="mb-6 text-[10px] font-bold uppercase tracking-[0.22em] text-eyebrow"
+        >
+          {eyebrow}
+        </motion.p>
+        <div className="overflow-hidden">
+          <motion.h1
+            variants={maskReveal}
+            className={`max-w-5xl text-5xl font-semibold leading-[.9] tracking-[-0.075em] md:text-7xl lg:text-8xl ${titleClassName}`}
+          >
+            {title}
+          </motion.h1>
+        </div>
+        {description && (
+          <motion.p
+            variants={revealUp}
+            transition={{ delay: 0.16 }}
+            className={`mt-8 max-w-2xl text-base leading-relaxed text-secondary md:text-lg ${descriptionClassName}`}
+          >
+            {description}
+          </motion.p>
+        )}
+      </div>
+    </motion.section>
+  );
+}
+</file>
+
+<file path="src/components/ProductCatalogueCard.jsx">
+import { motion, useReducedMotion } from "framer-motion";
+
+const fallbackPigments = [
+  "#d91818",
+  "#ef1678",
+  "#ff761c",
+  "#ffc21c",
+  "#d91179",
+];
+
+/** Original product-visual treatment: a studio-lit packet, pigment pile, swatch and particulate texture. */
+export function PigmentVisual({ product, className = "", mode = "swatch" }) {
+  const reduceMotion = useReducedMotion();
+  const pigment =
+    product.pigment ||
+    fallbackPigments[
+      (Number.parseInt(product.code, 10) || 1) % fallbackPigments.length
+    ];
+  const isPacket = mode === "packet";
+  return (
+    <div
+      role="img"
+      aria-label={`${product.name} pigment product visual`}
+      className={`relative isolate overflow-hidden bg-card ${className}`}
+    >
+      <motion.div
+        animate={
+          reduceMotion
+            ? undefined
+            : { scale: [1, 1.06, 1], rotate: [0, 2, -1, 0] }
+        }
+        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute inset-[-15%]"
+        style={{
+          background: `radial-gradient(ellipse at 58% 69%, ${pigment} 0%, ${pigment} 20%, #351018 36%, #090909 68%)`,
+        }}
+      />
+      <div
+        className="absolute inset-0 opacity-70 mix-blend-screen"
+        style={{
+          backgroundImage: `radial-gradient(circle at 20% 29%, ${pigment} 0 1px, transparent 1.6px), radial-gradient(circle at 78% 72%, rgba(255,255,255,.85) 0 1px, transparent 1.6px), radial-gradient(circle at 64% 16%, ${pigment} 0 1.2px, transparent 1.8px)`,
+          backgroundSize: "13px 13px, 19px 19px, 23px 23px",
+        }}
+      />
+      <motion.div
+        animate={
+          reduceMotion
+            ? undefined
+            : { x: [0, 10, -4, 0], y: [0, -7, 3, 0], scale: [1, 1.04, 1] }
+        }
+        transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute -bottom-[23%] left-[10%] h-[76%] w-[82%] rounded-[50%_50%_44%_56%/60%_48%_52%_40%] blur-[1px]"
+        style={{
+          background: `radial-gradient(ellipse at 46% 28%, #fff 0%, ${pigment} 3%, ${pigment} 33%, #410a21 75%)`,
+          boxShadow: `0 0 85px ${pigment}`,
+        }}
+      />
+      {isPacket && (
+        <div className="absolute bottom-[8%] left-[11%] h-[64%] w-[29%] -rotate-[10deg] border border-theme bg-[color:var(--bg-primary,rgba(0,0,0,0.75))] shadow-2xl">
+          <div className="mx-auto mt-[16%] h-px w-[70%] bg-[color:var(--text-primary,rgba(255,255,255,0.75))]" />
+          <div
+            className="mx-auto mt-3 h-[28%] w-[70%]"
+            style={{ backgroundColor: pigment }}
+          />
+          <div className="mx-auto mt-3 h-px w-[70%] bg-[color:var(--text-primary,rgba(255,255,255,0.35))]" />
+          <span className="absolute bottom-3 left-3 text-[7px] font-bold tracking-[.18em] text-[color:var(--text-primary,rgba(255,255,255,0.7))]">
+            NSU / PIGMENT
+          </span>
+        </div>
+      )}
+      <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,.22),transparent_23%,transparent_70%,rgba(0,0,0,.6))]" />
+    </div>
+  );
+}
+
+export default function ProductCatalogueCard({ product, onSelect }) {
+  return (
+    <motion.article
+      layout
+      initial={{ opacity: 0, scale: 0.96 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.96 }}
+      transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
+      className="group flex flex-col border border-theme bg-card p-5 transition-[border-color,box-shadow] duration-300 hover:shadow-[0_12px_30px_rgba(0,0,0,.08)] md:p-6"
+    >
+      <button
+        type="button"
+        onClick={() => onSelect(product)}
+        aria-label={`View details for ${product.name}`}
+        className="relative aspect-[16/10] w-full overflow-hidden text-left focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-pigment-magenta"
+      >
+        <motion.div
+          whileHover={{ scale: 1.07 }}
+          transition={{ duration: 0.65, ease: "easeOut" }}
+          className="h-full"
+        >
+          <PigmentVisual product={product} className="h-full" />
+        </motion.div>
+        <span className="absolute bottom-4 left-4 border-l-2 border-theme pl-2 text-[10px] font-bold uppercase tracking-[.16em] text-primary">
+          {product.colour}
+        </span>
+      </button>
+      <div className="flex flex-1 flex-col pt-7">
+        <p className="text-[10px] font-bold uppercase tracking-[.17em] text-secondary">
+          {product.category}
+        </p>
+        <h2 className="mt-3 text-2xl font-semibold leading-none tracking-[-.065em]">
+          {product.name}
+        </h2>
+        <dl className="mt-7 space-y-3 border-y border-theme py-4 text-xs">
+          <div className="flex justify-between gap-6">
+            <dt className="uppercase tracking-[.12em] text-secondary">
+              Colour
+            </dt>
+            <dd className="text-right font-medium">{product.colour}</dd>
+          </div>
+          <div className="flex justify-between gap-6">
+            <dt className="uppercase tracking-[.12em] text-secondary">
+              Application
+            </dt>
+            <dd className="max-w-[65%] text-right font-medium">
+              {product.application}
+            </dd>
+          </div>
+        </dl>
+        <p className="mt-5 text-sm leading-relaxed text-secondary">
+          {product.description}
+        </p>
+      </div>
+    </motion.article>
+  );
+}
+</file>
+
+<file path="src/components/ProductDetailModal.jsx">
+import { motion } from "framer-motion";
+import { ArrowUpRight, X } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import Button from "./Button";
+import { PigmentVisual } from "./ProductCatalogueCard";
+
+const item = {
+  hidden: { opacity: 0, y: 16 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.42 } },
+};
+
+export default function ProductDetailModal({ product, onClose }) {
+  const closeRef = useRef(null);
+  const [copied, setCopied] = useState(false);
+  useEffect(() => {
+    closeRef.current?.focus();
+    const onKeyDown = (event) => {
+      if (event.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", onKeyDown);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = "";
+    };
+  }, [onClose]);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      onMouseDown={onClose}
+      className="fixed inset-0 z-[70] flex items-end modal-backdrop backdrop-blur-sm bg-black/40 md:items-center md:justify-center md:p-8"
+    >
+      <motion.section
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="product-detail-title"
+        onMouseDown={(event) => event.stopPropagation()}
+        initial={{ y: 48, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        exit={{ y: 48, opacity: 0 }}
+        transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+        className="relative max-h-[92dvh] w-full max-w-6xl overflow-y-auto bg-card md:max-h-[86dvh]"
+      >
+        <button
+          ref={closeRef}
+          type="button"
+          onClick={onClose}
+          aria-label="Close product details"
+          className="absolute right-4 top-4 z-50 inline-flex h-11 w-11 items-center justify-center border border-theme bg-card backdrop-blur transition-colors hover:text-pigment-magenta"
+        >
+          <X size={21} />
+        </button>
+
+        <div className="grid md:grid-cols-2">
+          <motion.div
+            initial={{ clipPath: "inset(0 100% 0 0)" }}
+            animate={{ clipPath: "inset(0 0% 0 0)" }}
+            transition={{ duration: 0.7, ease: [0.77, 0, 0.18, 1] }}
+            className="min-h-[310px] md:min-h-[640px]"
+          >
+            <PigmentVisual product={product} mode="packet" className="h-full" />
+          </motion.div>
+
+          <motion.div
+            variants={{
+              hidden: {},
+              visible: {
+                transition: { staggerChildren: 0.1, delayChildren: 0.18 },
+              },
+            }}
+            initial="hidden"
+            animate="visible"
+            className="p-6 md:p-10 lg:p-12"
+          >
+            <motion.p
+              variants={item}
+              className="text-[10px] font-bold uppercase tracking-[.18em] text-pigment-magenta"
+            >
+              {product.category}
+            </motion.p>
+            <motion.h1
+              variants={item}
+              id="product-detail-title"
+              className="mt-5 text-4xl font-semibold leading-[.92] tracking-[-.07em] md:text-6xl"
+            >
+              {product.name}
+            </motion.h1>
+
+            <motion.div
+              variants={item}
+              className="mt-8 flex items-center gap-3"
+            >
+              <button
+                type="button"
+                onClick={() => {
+                  navigator.clipboard.writeText(product.pigment);
+                  setCopied(true);
+                  setTimeout(() => setCopied(false), 2000);
+                }}
+                className="flex items-center gap-3 transition-opacity hover:opacity-75"
+                title="Copy HEX code"
+                aria-live="polite"
+              >
+                <span
+                  className="h-5 w-5 rounded-full border border-theme"
+                  style={{ backgroundColor: product.pigment }}
+                />
+                <span className="text-sm font-medium">
+                  {copied ? "Copied!" : product.colour}
+                </span>
+              </button>
+            </motion.div>
+
+            <motion.p
+              variants={item}
+              className="mt-7 text-base leading-relaxed text-secondary"
+            >
+              {product.description}
+            </motion.p>
+
+            <motion.div
+              variants={item}
+              className="mt-7 flex items-center gap-4"
+            >
+              <span className="text-sm font-medium text-secondary">
+                Applications
+              </span>
+              <span className="text-sm">{product.application}</span>
+            </motion.div>
+
+            <motion.div variants={item} className="mt-8">
+              <Button href="#" className="inline-flex items-center gap-3">
+                Contact us <ArrowUpRight size={14} />
+              </Button>
+            </motion.div>
+          </motion.div>
+        </div>
+      </motion.section>
+    </motion.div>
+  );
+}
+</file>
+
+<file path="src/components/SectionTitle.jsx">
+import Badge from "./Badge";
+export default function SectionTitle({
+  label,
+  title,
+  description,
+  className = "",
+}) {
+  return (
+    <div
+      className={`grid gap-7 border-t border-theme pt-5 md:grid-cols-12 md:gap-8 ${className}`}
+    >
+      <div className="flex items-start justify-between md:col-span-3">
+        {label && <Badge>{label}</Badge>}
+      </div>
+      <div className="md:col-span-8 md:col-start-5">
+        <h2 className="max-w-4xl text-4xl font-extrabold leading-[.92] tracking-[-0.075em] md:text-6xl">
+          {title}
+        </h2>
+        {description && (
+          <p className="mt-6 max-w-xl text-base leading-relaxed text-secondary md:text-lg">
+            {description}
+          </p>
+        )}
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/data/company.js">
+export const companyDetails = {
+  contactName: 'Shivam Sharma',
+  phone: '+91 72800 12300',
+  phoneHref: 'tel:+917280012300',
+  email: 'enquiry@nsucolours.com',
+  socialLinks: [
+    { name: 'WhatsApp', href: 'https://wa.me/917280012300' },
+    { name: 'Instagram', href: 'https://www.instagram.com/', icon: 'instagram' },
+    { name: 'Facebook', href: 'https://www.facebook.com/', icon: 'facebook' },
+    { name: 'X / Twitter', href: 'https://x.com/', icon: 'twitter' },
+  ],
+  address: 'Nai Sadak Chowk, Patna City, District: Patna, Bihar, India - 800008',
+  manufacturingUnit: 'Hajipur Industrial Area, Hajipur, District: Vaishali, Bihar, India - 844102',
+}
+</file>
+
+<file path="src/pages/Applications.jsx">
+import ApplicationFeature from "../components/ApplicationFeature";
+import Container from "../components/Container";
+import PageIntro from "../components/PageIntro";
+import { applications } from "../data/applications";
+import CountUp from "../components/CountUp";
+
+export default function Applications() {
+  return (
+    <>
+      <PageIntro
+        eyebrow="NSU / Application-led colour"
+        title="COLOUR FOR EVERY APPLICATION."
+        description="Colour solutions shaped around the visual and practical requirements of your application."
+      />
+      <Container className="pb-16 md:pb-24">
+        <div className="mb-10 flex items-center justify-between border-y border-theme py-5 text-[10px] font-bold uppercase tracking-[.18em] text-primary md:mb-14 md:py-6">
+          <span className="text-secondary">Application index</span>
+          <span>
+            <CountUp value={applications?.length || 0} suffix=" areas" />
+          </span>
+        </div>
+        {!applications || applications.length === 0 ? (
+          <div className="text-center">No applications currently available.</div>
+        ) : (
+          <ul className="grid grid-cols-1 gap-8 lg:gap-12">
+            {applications.map((application, index) => (
+              <li
+                key={application.number}
+                className="animate-fade-in-up"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <ApplicationFeature
+                  application={application}
+                  index={index}
+                />
+              </li>
+            ))}
+          </ul>
+        )}
+      </Container>
+    </>
+  );
+}
+</file>
+
+<file path="src/pages/Home.jsx">
+import { ArrowDownRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import Container from "../components/Container";
+import SectionTitle from "../components/SectionTitle";
+import Hero from "../sections/Hero";
+import Features from "../sections/Features";
+import ProductShowcase from "../sections/ProductShowcase";
+import Testimonials from "../sections/Testimonials";
+import FAQSection from "../components/FAQSection";
+
+export default function Home() {
+  return (
+    <>
+      <Hero />
+      <Features />
+      <ProductShowcase />
+      <section className="bg-primary py-16 text-primary md:py-24">
+        <Container>
+          <SectionTitle
+            label="The NSU standard"
+            title="Built for intensity. Engineered for consistency."
+            description="From vivid sindoor to fluorescent and industrial pigments, every NSU solution is created to perform with confidence."
+            className="border-theme text-primary [&_p]:text-secondary [&_span]:text-secondary"
+          />
+          <Link
+            to="/products"
+            className="mt-12 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[.14em] text-pigment-yellow hover:text-pigment-pink"
+          >
+            Discover the range <ArrowDownRight size={17} />
+          </Link>
+        </Container>
+      </section>
+      <Testimonials />
+      <FAQSection />
+    </>
+  );
+}
+</file>
+
+<file path="src/pages/Products.jsx">
+import { AnimatePresence } from "framer-motion";
+import { Search } from "lucide-react";
+import { useMemo, useState } from "react";
+import Container from "../components/Container";
+import ProductCatalogueCard from "../components/ProductCatalogueCard";
+import ProductDetailModal from "../components/ProductDetailModal";
+import PageIntro from "../components/PageIntro";
+import { productFilters, products } from "../data/products";
+
+export default function Products() {
+  const [activeFilter, setActiveFilter] = useState("all");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const visibleProducts = useMemo(() => {
+    let filtered =
+      activeFilter === "all"
+        ? products
+        : products.filter((product) => product.filter === activeFilter);
+    if (searchQuery) {
+      const lowerQuery = searchQuery.toLowerCase();
+      filtered = filtered.filter(
+        (product) =>
+          product.name.toLowerCase().includes(lowerQuery) ||
+          (product.code && product.code.toLowerCase().includes(lowerQuery)) ||
+          product.colour.toLowerCase().includes(lowerQuery)
+      );
+    }
+    return filtered;
+  }, [activeFilter, searchQuery]);
+  return (
+    <>
+      <PageIntro
+        eyebrow="NSU colour systems"
+        title="OUR PRODUCTS"
+        description="Explore our range of vibrant colour and pigment solutions."
+      />
+      <Container className="pb-20 md:pb-28">
+        <div className="mb-6 max-w-sm relative">
+          <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-secondary" />
+          <input
+            type="search"
+            placeholder="Search products..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full rounded-full border border-theme bg-card py-2.5 pl-11 pr-4 text-sm text-primary focus:border-pigment-magenta focus:outline-none focus:ring-1 focus:ring-pigment-magenta"
+          />
+        </div>
+        <div
+          aria-label="Filter products"
+          className="-mx-6 mb-10 flex flex-nowrap items-center gap-x-5 overflow-x-auto border-y border-theme px-6 py-4 [scrollbar-width:none] md:mx-0 md:flex-wrap md:gap-y-3 md:px-0"
+        >
+          <span className="mr-2 shrink-0 text-[10px] font-bold uppercase tracking-[.16em] text-secondary">
+            Filter range
+          </span>
+          {productFilters.map((filter) => (
+            <button
+              type="button"
+              key={filter.id}
+              aria-pressed={activeFilter === filter.id}
+              onClick={() => setActiveFilter(filter.id)}
+              className={`relative min-h-9 shrink-0 cursor-pointer text-[11px] font-bold uppercase tracking-[.13em] transition-all hover:underline hover:underline-offset-4 hover:decoration-2 ${
+                activeFilter === filter.id
+                  ? "text-pigment-magenta"
+                  : "text-secondary hover:text-primary"
+              }`}
+            >
+              {filter.label}
+            </button>
+          ))}
+        </div>
+        <p className="mb-8 text-sm text-secondary">
+          <span className="font-semibold text-primary">
+            {visibleProducts.length}
+          </span>{" "}
+          product entries
+        </p>
+        
+        {visibleProducts.length === 0 ? (
+          <div className="flex flex-col items-center justify-center py-24 text-center">
+            <p className="mb-6 text-lg text-secondary">No products found matching your search.</p>
+            <button
+              onClick={() => {
+                setActiveFilter("all");
+                setSearchQuery("");
+              }}
+              className="rounded-full border border-theme bg-card px-6 py-2.5 text-sm font-medium transition-colors hover:border-pigment-magenta hover:text-pigment-magenta"
+            >
+              Clear Filters
+            </button>
+          </div>
+        ) : (
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            <AnimatePresence mode="popLayout">
+              {visibleProducts.map((product) => (
+                <ProductCatalogueCard
+                  key={product.id}
+                  product={product}
+                  onSelect={setSelectedProduct}
+                />
+              ))}
+            </AnimatePresence>
+          </div>
+        )}
+      </Container>
+      <AnimatePresence>
+        {selectedProduct && (
+          <ProductDetailModal
+            product={selectedProduct}
+            onClose={() => setSelectedProduct(null)}
+          />
+        )}
+      </AnimatePresence>
+    </>
+  );
+}
+</file>
+
+<file path="src/App.jsx">
+import { AnimatePresence } from "framer-motion";
+import { lazy, Suspense } from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
+import SiteLayout from "./components/SiteLayout";
+import Seo from "./components/Seo";
+
+const Home = lazy(() => import("./pages/Home"));
+const Products = lazy(() => import("./pages/Products"));
+const Applications = lazy(() => import("./pages/Applications"));
+const About = lazy(() => import("./pages/About"));
+const Contact = lazy(() => import("./pages/Contact"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+
+export default function App() {
+  const location = useLocation();
+
+  return (
+    <SiteLayout>
+      <Seo pathname={location.pathname} />
+      <Suspense
+        fallback={
+          <div
+            className="min-h-[40vh] bg-card"
+            aria-busy="true"
+            aria-label="Loading page"
+          />
+        }
+      >
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<Home />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/applications" element={<Applications />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </AnimatePresence>
+      </Suspense>
+    </SiteLayout>
+  );
+}
+</file>
+
+<file path="src/main.jsx">
+// Ensure initial theme class is set synchronously to avoid flash
+try {
+  const _saved = localStorage.getItem("theme") || "dark";
+  document.documentElement.classList.add(_saved === "dark" ? "dark" : "light");
+} catch (e) {}
+
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import { MotionConfig } from "framer-motion";
+import "./index.css";
+import App from "./App.jsx";
+
+createRoot(document.getElementById("root")).render(
+  <StrictMode>
+    <MotionConfig reducedMotion="user">
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </MotionConfig>
+  </StrictMode>,
+);
+</file>
+
+<file path="package.json">
+{
+  "name": "nsu",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "@fontsource/space-grotesk": "^5.3.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "framer-motion": "^13.0.0",
+    "lucide-react": "^1.30.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-router-dom": "^7.18.2",
+    "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.4",
+    "eslint": "^10.8.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.3",
+    "globals": "^17.7.0",
+    "vite": "^8.2.0"
+  }
+}
+</file>
+
+<file path="src/components/ProductCard.jsx">
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import Badge from "./Badge";
+import { PigmentVisual } from "./ProductCatalogueCard";
+
+const pigments = ["#d91818", "#ef1678", "#ff761c", "#ffc21c"];
+
+export default function ProductCard({ product, index = 0 }) {
+  const visualProduct = {
+    ...product,
+    name: product.title,
+    pigment: pigments[index % pigments.length],
+  };
+  return (
+    <motion.article
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      whileHover={{ y: -8 }}
+      viewport={{ once: true, amount: 0.18 }}
+      transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+      className="group flex flex-col rounded-lg border border-theme bg-card transition-colors duration-300 hover:border-theme"
+    >
+      <div className="relative rounded-lg aspect-[4/3] overflow-hidden bg-[color:var(--bg-secondary)]">
+        <div className="h-full transition-transform duration-700 ease-out group-hover:scale-105">
+          {product.image ? (
+            <img
+              src={product.image}
+              alt={`${product.title} pigment powder`}
+              className="block h-full w-full object-cover object-center"
+            />
+          ) : (
+            <PigmentVisual
+              product={visualProduct}
+              mode="packet"
+              className="h-full"
+            />
+          )}
+        </div>
+        <span
+          className={`absolute bottom-4 left-5 text-[10px] font-bold uppercase tracking-[.18em] ${product.image ? "text-secondary" : "text-primary"}`}
+        >
+          NSU / {product.code}
+        </span>
+      </div>
+      <div className="flex flex-1 flex-col p-6 md:p-7">
+        <h3 className="mt-8 text-2xl font-semibold tracking-[-.055em]">
+          {product.title}
+        </h3>
+        <p className="mt-3 max-w-sm text-sm leading-relaxed text-secondary">
+          {product.description}
+        </p>
+        <Link
+          to="/products"
+          className="mt-7 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[.14em] hover:text-pigment-magenta"
+        >
+          <span>Explore Product</span>
+          <ArrowRight
+            size={16}
+            className="transition-transform duration-300 group-hover:translate-x-1"
+          />
+        </Link>
+      </div>
+    </motion.article>
+  );
+}
+</file>
+
+<file path="src/data/siteData.js">
+export const featuredProducts = [
+  { code: '01', title: 'SINDOOR COLOUR', description: 'Rich, expressive shades designed for a confident and consistent traditional finish.', image: '/sindoor.png' },
+  { code: '02',  title: 'FLUORESCENT PIGMENTS', description: 'Intense fluorescent colour systems that deliver unmistakable visual energy.', image: '/fluorescent-pigments-powder.png' },
+  { code: '03',  title: 'BRIGHT COLOUR POWDERS', description: 'Brilliant powder colours for dynamic surfaces, products and applications.' , image: '/bright-color.png' },
+  { code: '04', title: 'CUSTOM COLOUR SOLUTIONS', description: 'Application-led colour development tailored to your exact performance needs.' , image: '/custom-color.png' },
+]
+
+export const productCategories = featuredProducts
+</file>
+
+<file path="src/pages/Contact.jsx">
+import Container from "../components/Container";
+import EnquiryForm from "../components/EnquiryForm";
+import PageIntro from "../components/PageIntro";
+import { companyDetails } from "../data/company";
+
+/*
+ * ─── Recommended form state for <EnquiryForm /> ───
+ *
+ * When adding submission handling to the EnquiryForm component,
+ * consider adding these React state variables:
+ *
+ *   const [isSubmitting, setIsSubmitting] = useState(false);
+ *     → true while the form request is in-flight; use to show a
+ *       loading spinner and disable the submit button.
+ *
+ *   const [isSuccess, setIsSuccess] = useState(false);
+ *     → true after a successful submission; swap the form for a
+ *       success/thank-you message.
+ *
+ *   const [error, setError] = useState(null);
+ *     → holds an error message string (or null). Display inline
+ *       above the submit button so the user can correct and retry.
+ *
+ * Typical flow:
+ *   1. User clicks submit → setIsSubmitting(true), setError(null)
+ *   2. API call succeeds  → setIsSubmitting(false), setIsSuccess(true)
+ *   3. API call fails     → setIsSubmitting(false), setError(err.message)
+ */
+
+export default function Contact() {
+  return (
+    <>
+      <PageIntro
+        eyebrow="B2B enquiries"
+        title="LET'S TALK COLOUR."
+        description="Tell us what you're looking for and our team will get back to you."
+      />
+      <Container className="pb-20 md:pb-28">
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-8">
+            <EnquiryForm />
+          </div>
+          <aside className="lg:col-span-4">
+            <div className="border-t border-theme pt-8">
+              <h2 className="max-w-4xl text-4xl font-semibold leading-[.92] tracking-[-0.075em] md:text-6xl">
+                Start with your requirement.
+              </h2>
+            </div>
+            <address className="mt-10 not-italic">
+              <div className="border-t border-theme">
+                {/* Contact person */}
+                <div className="border-b border-theme py-5">
+                  <p className="text-[10px] font-bold uppercase tracking-[.15em] text-secondary">
+                    Contact person
+                  </p>
+                  <p className="mt-2 text-sm font-medium">
+                    {companyDetails.contactName}
+                  </p>
+                </div>
+
+                {/* Phone */}
+                <div className="border-b border-theme py-5">
+                  <p className="text-[10px] font-bold uppercase tracking-[.15em] text-secondary">
+                    Phone
+                  </p>
+                  <a
+                    className="mt-2 inline-block text-sm font-medium decoration-pigment-magenta decoration-2 underline-offset-4 hover:text-pigment-magenta"
+                    href={companyDetails.phoneHref}
+                    aria-label={"Call us at " + companyDetails.phone}
+                  >
+                    {companyDetails.phone}
+                  </a>
+                </div>
+
+                {/* Email (conditionally rendered) */}
+                {companyDetails.email && (
+                  <div className="border-b border-theme py-5">
+                    <p className="text-[10px] font-bold uppercase tracking-[.15em] text-secondary">
+                      Email
+                    </p>
+                    <a
+                      className="mt-2 inline-block text-sm font-medium decoration-pigment-magenta decoration-2 underline-offset-4 hover:text-pigment-magenta"
+                      href={"mailto:" + companyDetails.email}
+                      aria-label={"Email us at " + companyDetails.email}
+                    >
+                      {companyDetails.email}
+                    </a>
+                  </div>
+                )}
+
+                {/* Office address */}
+                <div className="border-b border-theme py-5">
+                  <p className="text-[10px] font-bold uppercase tracking-[.15em] text-secondary">
+                    Office address
+                  </p>
+                  <p className="mt-2 whitespace-pre-wrap text-sm leading-relaxed">
+                    {companyDetails.address}
+                  </p>
+                </div>
+
+                {/* Manufacturing unit */}
+                <div className="border-b border-theme py-5">
+                  <p className="text-[10px] font-bold uppercase tracking-[.15em] text-secondary">
+                    Manufacturing unit
+                  </p>
+                  <p className="mt-2 whitespace-pre-wrap text-sm leading-relaxed">
+                    {companyDetails.manufacturingUnit}
+                  </p>
+                </div>
+              </div>
+            </address>
+          </aside>
+        </div>
+      </Container>
+    </>
+  );
+}
+</file>
+
+<file path="index.html">
+<!doctype html>
+<html lang="en" class="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="NSU provides vibrant colour and pigment solutions for distinctive products and application-led colour requirements." />
+  <meta name="theme-color" content="#000000" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <title>NSU — Colour Solutions &amp; Pigments</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>
+</file>
+
+<file path="README.md">
+# NSU
+
+## Project Overview
+
+NSU is a React-based marketing and product showcase website for a colour and pigment solutions business. The application presents the company's story, product categories, application-focused colour solutions, and a contact workflow for customer enquiries.
+
+The site is built as a single-page application with multi-page routing using React Router. It uses a strong brand aesthetic—dark backgrounds, vibrant gradients, motion-driven visuals, and product-focused storytelling—to present NSU's colour products and industrial application range. A full dark/light theme system allows users to switch between visual modes, with their preference persisted in localStorage.
+
+## Features
+
+- Animated landing page with immersive hero section and background particle effects
+- **Dark / Light theme toggle** with localStorage persistence and flash-free initial load
+- Product showcase with category-driven highlights and product cards
+- Product catalogue page with filter buttons and a detailed product modal
+- Application-focused section describing six use-case categories for colour solutions
+- **FAQ section** with animated accordion panels for common enquiries
+- Company story and brand narrative page
+- Contact page with validated enquiry form and direct EmailJS submission flow
+- **Lazy-loaded routes** with `React.lazy` and `Suspense` for code-splitting
+- Responsive navigation for desktop and mobile layouts with glassmorphic mobile menu
+- Social media links (WhatsApp, Instagram, Facebook, X / Twitter) in the footer
+- Scroll-triggered motion and reduced-motion accessibility support
+- Dynamic page metadata updates through a reusable SEO component
+
+## Tech Stack
+
+| Category      | Technology                                     |
+| ------------- | ---------------------------------------------- |
+| Frontend      | React 19.2.8                                   |
+| Build tool    | Vite 8.2.0                                     |
+| Language      | JavaScript (JSX)                               |
+| Styling       | Tailwind CSS 4.3.3 with custom theme variables |
+| Routing       | react-router-dom 7.18.2                        |
+| Motion        | framer-motion 13.0.0                           |
+| Icons         | lucide-react 1.30.0                            |
+| Fonts         | @fontsource/space-grotesk                      |
+| Form delivery | @emailjs/browser 4.4.1                         |
+| Linting       | ESLint 10.8.0                                  |
+
+The project does not currently use TypeScript, Redux, Zustand, or a dedicated backend framework.
+
+## Project Structure
+
+```text
+nsu/
+├── .env.example
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package-lock.json
+├── package.json
+├── tailwind.config.js
+├── public/
+│   ├── NSU-logo.png
+│   ├── bright-color.png
+│   ├── custom-color.png
+│   ├── favicon.svg
+│   ├── fluorescent-pigments-powder.png
+│   ├── icons.svg
+│   ├── nsu-logo.mp4
+│   └── sindoor.png
+├── src/
+│   ├── App.css
+│   ├── App.jsx
+│   ├── index.css
+│   ├── main.jsx
+│   ├── assets/
+│   │   ├── hero.png
+│   │   ├── react.svg
+│   │   └── vite.svg
+│   ├── components/
+│   │   ├── ApplicationFeature.jsx
+│   │   ├── Badge.jsx
+│   │   ├── Button.jsx
+│   │   ├── ColourParticles.jsx
+│   │   ├── Container.jsx
+│   │   ├── CountUp.jsx
+│   │   ├── EnquiryForm.jsx
+│   │   ├── FAQSection.jsx
+│   │   ├── ImageReveal.jsx
+│   │   ├── NSULogo.jsx
+│   │   ├── PageIntro.jsx
+│   │   ├── ProductCard.jsx
+│   │   ├── ProductCatalogueCard.jsx
+│   │   ├── ProductDetailModal.jsx
+│   │   ├── SectionTitle.jsx
+│   │   ├── Seo.jsx
+│   │   ├── SiteLayout.jsx
+│   │   └── ThemeToggle.jsx
+│   ├── data/
+│   │   ├── applications.js
+│   │   ├── company.js
+│   │   ├── products.js
+│   │   └── siteData.js
+│   ├── hooks/
+│   │   └── useTheme.jsx
+│   ├── pages/
+│   │   ├── About.jsx
+│   │   ├── Applications.jsx
+│   │   ├── Contact.jsx
+│   │   ├── Home.jsx
+│   │   ├── NotFound.jsx
+│   │   └── Products.jsx
+│   ├── sections/
+│   │   ├── Hero.jsx
+│   │   └── ProductShowcase.jsx
+│   └── utils/
+│       └── motion.js
+├── vite.config.js
+├── README.md
+└── node_modules/   (generated after install)
+```
+
+### Important folders and files
+
+- `public/`: static brand visuals and image assets that are served directly by Vite.
+- `src/components/`: reusable UI building blocks such as navigation, buttons, product cards, theme toggle, FAQ accordion, and forms.
+- `src/hooks/`: custom React hooks, including the `useTheme` hook for dark/light mode management.
+- `src/pages/`: top-level route pages for Home, Products, Applications, About, Contact, and the 404 page.
+- `src/sections/`: page-level sections used by the home page, such as the hero and product showcase.
+- `src/data/`: static product, company, social links, and application content used to populate the site.
+- `src/utils/`: small shared animation configuration constants.
+- `src/index.css`: the primary styling source, including Tailwind setup, dark/light theme tokens via CSS custom properties, and semantic utility overrides.
+- `tailwind.config.js`: Tailwind configuration with `darkMode: "class"` and custom gradient animation keyframes.
+- `vite.config.js`: Vite config with React and Tailwind plugins.
+- `.env.example`: example environment variable file for EmailJS configuration.
+
+## Installation & Setup
+
+This project does not declare a strict Node.js version in the repo. It is a modern React 19 + Vite 8 application, so a current LTS Node environment is recommended.
+
+1. Clone the repository.
+2. Navigate into the project directory.
+3. Install dependencies:
+
+```bash
+npm install
+```
+
+4. If you want the contact form to send emails, create a local `.env` file from `.env.example` and fill in the EmailJS values.
+5. Start the development server:
+
+```bash
+npm run dev
+```
+
+The app will typically run on the Vite default URL:
+
+```text
+http://localhost:5173
+```
+
+## Available Scripts
+
+The scripts defined in `package.json` are:
+
+| Script             | Command           | Purpose                                               |
+| ------------------ | ----------------- | ----------------------------------------------------- |
+| Development server | `npm run dev`     | Starts the Vite dev server for local development      |
+| Production build   | `npm run build`   | Creates the production build in the `dist/` directory |
+| Linting            | `npm run lint`    | Runs ESLint across the project                        |
+| Preview            | `npm run preview` | Serves the production build locally                   |
+
+## Environment Variables
+
+The project includes a `.env.example` file with the following variables:
+
+```env
+VITE_EMAILJS_SERVICE_ID=your_emailjs_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_emailjs_template_id
+VITE_EMAILJS_PUBLIC_KEY=your_emailjs_public_key
+```
+
+These values are used in `src/components/EnquiryForm.jsx` to initialize EmailJS for the enquiry form. The relevant configuration is:
+
+```js
+const emailJsConfig = {
+  serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+  templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+  publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+};
+```
+
+If these variables are not set, the form does not submit and instead shows a user-friendly message indicating that enquiries are temporarily unavailable.
+
+There is no evidence in the repository of additional environment variables for API keys, database credentials, or hosting configuration.
+
+## Application Architecture
+
+The app is structured around a small set of clear layers:
+
+- `src/main.jsx` sets up the React root, wraps the app in `BrowserRouter`, and applies `MotionConfig` to provide motion defaults. It also performs a **synchronous theme class injection** before the React tree renders, preventing a flash of unstyled content when the user's stored preference differs from the default.
+- `src/App.jsx` defines the route structure using **`React.lazy` and `Suspense`** for code-split page loading, and wraps pages with the site-wide layout.
+- `src/components/SiteLayout.jsx` provides the shared header (with theme toggle), glassmorphic mobile menu, main content area, and footer with social links.
+- `src/hooks/useTheme.jsx` manages dark/light theme state, syncing `dark`/`light` CSS classes on `<html>` and persisting to localStorage.
+- `src/data/*.js` holds the static site content used for products, company information, social links, and application descriptions.
+- `src/pages/*.jsx` contains page-level components for each route.
+- `src/sections/*.jsx` contains reusable landing-page sections, especially for the home page.
+- `src/components/EnquiryForm.jsx` handles validation and EmailJS submission logic, including a requirement field and loading/error states.
+- `src/components/FAQSection.jsx` renders an animated accordion of frequently asked questions with `AnimatePresence`.
+- `src/components/ColourParticles.jsx` renders a canvas-based animated particle background.
+
+The project does not implement a global state management library such as Redux, Context API for app-wide stores, or a custom hook-based state layer. State is handled locally with React hooks (`useState`, `useMemo`, `useEffect`, `useCallback`, etc.) within the relevant components.
+
+## Dark / Light Theme System
+
+The project includes a full dark/light theme implementation:
+
+- **`src/hooks/useTheme.jsx`**: A custom hook that reads the saved theme from `localStorage` (defaulting to `"dark"`), toggles between modes, and applies `dark`/`light` CSS classes to `<html>`.
+- **`src/components/ThemeToggle.jsx`**: A sun/moon toggle button rendered in the site header. Uses `lucide-react` icons and animates the knob position based on the current theme.
+- **`src/main.jsx`**: Synchronously reads `localStorage` and sets the theme class before React renders, eliminating flash-of-wrong-theme on page load.
+- **`src/index.css`**: Defines all theme tokens as CSS custom properties under `:root` (dark defaults) and `html.light` (light overrides). Semantic utility classes (`.bg-primary`, `.text-primary`, `.border-theme`, etc.) map to these variables. Tailwind utility color overrides (`.bg-black`, `.text-white`, etc.) are remapped to theme variables for consistency across both modes.
+
+### Theme tokens
+
+| Token                | Dark value   | Light value  |
+| -------------------- | ------------ | ------------ |
+| `--bg-primary`       | `#0f172a`    | `#ffffff`    |
+| `--bg-secondary`     | `#1e293b`    | `#f8fafc`    |
+| `--bg-card`          | `#1e293b`    | `#ffffff`    |
+| `--text-primary`     | `#f8fafc`    | `#0f172a`    |
+| `--text-secondary`   | `#cbd5e1`    | `#1f2937`    |
+| `--border-color`     | `#334155`    | `#e6edf3`    |
+| `--accent-color`     | `#ef476f`    | `#2563eb`    |
+
+The light theme also uses radial gradient backgrounds on `body`, `.bg-primary`, `.bg-secondary`, and `.bg-card` for a warm, vibrant feel. The header receives a distinct glassmorphic gradient treatment in light mode.
+
+## Important Components
+
+- `SiteLayout.jsx`: global layout and navigation shell with mobile menu, sticky header, theme toggle, social links in footer, and copyright bar.
+- `ThemeToggle.jsx`: dark/light mode toggle button with sun/moon icons and animated knob.
+- `Hero.jsx`: animated homepage hero section with brand messaging and CTA button.
+- `ProductShowcase.jsx`: featured product section displayed on the home page.
+- `ProductCatalogueCard.jsx`: reusable product card used in the product listing page.
+- `ProductDetailModal.jsx`: modal dialog showing detailed product information and color context.
+- `EnquiryForm.jsx`: validated contact form with product interest dropdown, requirement field, and EmailJS submission with loading and error states.
+- `FAQSection.jsx`: animated accordion FAQ section with five pre-defined questions about NSU's products and services.
+- `ColourParticles.jsx`: animated particle canvas used as background visual treatment.
+- `PageIntro.jsx`: shared section header pattern used across internal pages.
+- `SectionTitle.jsx`: standard heading and description component for page sections.
+- `CountUp.jsx`: animated number counter used in the applications page.
+- `Seo.jsx`: updates the document title and meta description with route-specific values.
+- `NSULogo.jsx`: brand logo/video-based branding element used in the header and footer.
+
+## Custom Hooks
+
+| Hook       | File                      | Purpose                                                                      |
+| ---------- | ------------------------- | ---------------------------------------------------------------------------- |
+| `useTheme` | `src/hooks/useTheme.jsx`  | Manages dark/light theme state, syncs CSS classes on `<html>`, persists to localStorage |
+
+## Pages / Routes
+
+The app routes are defined in `src/App.jsx`. All page components are **lazy-loaded** using `React.lazy` for code-splitting:
+
+| Route           | Component      | Purpose                                                              |
+| --------------- | -------------- | -------------------------------------------------------------------- |
+| `/`             | `Home`         | Displays the landing page with hero content and featured products    |
+| `/products`     | `Products`     | Displays the product catalogue with filters and product detail modal |
+| `/applications` | `Applications` | Highlights the application areas where NSU colour systems are used   |
+| `/about`        | `About`        | Presents the business story and brand history                        |
+| `/contact`      | `Contact`      | Shows contact information and the enquiry form                       |
+| `*`             | `NotFound`     | Fallback page for unknown routes                                     |
+
+A `Suspense` boundary wraps the route outlet, displaying a minimal loading placeholder while the target page chunk is fetched.
+
+## API / Backend Integration
+
+This project does not contain a dedicated backend or custom API service layer. The only external integration found is EmailJS, used for the contact form.
+
+### EmailJS integration
+
+- File: `src/components/EnquiryForm.jsx`
+- Purpose: sends customer enquiries from the contact form
+- Trigger: form submission event
+- Method: `emailjs.send(...)`
+- Variables used:
+  - `VITE_EMAILJS_SERVICE_ID`
+  - `VITE_EMAILJS_TEMPLATE_ID`
+  - `VITE_EMAILJS_PUBLIC_KEY`
+
+No other API endpoints or backend integrations were identified in the codebase.
+
+## Styling
+
+The project uses Tailwind CSS v4 with a comprehensive theme layer in `src/index.css`.
+
+### Styling setup
+
+- Tailwind is enabled through `@tailwindcss/vite` in `vite.config.js`
+- A `tailwind.config.js` file provides `darkMode: "class"` configuration and custom gradient animation keyframes
+- The global theme is defined with CSS custom properties in `src/index.css`, with `:root` for dark defaults and `html.light` for light-mode overrides
+- Custom brand colors include shades such as:
+  - `pigment-red`
+  - `pigment-magenta`
+  - `pigment-orange`
+  - `pigment-yellow`
+  - `pigment-pink`
+- Semantic utility classes (`.bg-primary`, `.bg-secondary`, `.bg-card`, `.text-primary`, `.text-secondary`, `.border-theme`, `.bg-accent`, `.text-accent`, `.text-on-accent`) map to CSS custom properties for theme-aware rendering
+- Standard Tailwind color utilities (`.bg-black`, `.text-white`, `.border-white`, etc.) are overridden to map to theme variables, ensuring consistency across dark and light modes
+- RGB variable fallbacks (e.g. `--text-primary-rgb`) enable opacity-based colour variants
+- Global base styles define smooth scrolling, root sizing, focus outlines, and smooth colour transitions on all elements
+- Light theme features radial gradient backgrounds on `body`, card surfaces, and a glassmorphic header treatment
+
+`src/App.css` exists in the project but is not imported by `src/main.jsx`. The primary styling pipeline is driven by `src/index.css`.
+
+## Responsive Design
+
+Responsive behavior is implemented through Tailwind utility classes and layout adjustments across breakpoints.
+
+Examples visible in the project:
+
+- Mobile navigation menu with a hamburger toggle and glassmorphic backdrop blur
+- Grid layouts that change from single-column to multi-column at larger breakpoints
+- Container widths constrained by `max-w-[1440px]`
+- Adaptive typography with large headline scales for desktop and smaller sizes for mobile
+- Layout spacing adjustments for tablets and lower widths
+
+The application is designed to work across desktop, tablet, and mobile viewports without a separate mobile app layer.
+
+## Build & Production
+
+To create a production build, run:
+
+```bash
+npm run build
+```
+
+This generates a `dist/` directory with the optimized production files.
+
+To preview the built app locally, run:
+
+```bash
+npm run preview
+```
+
+`vite.config.js` is the main build configuration and includes the React and Tailwind plugins.
+
+## Deployment
+
+There is no deployment configuration or hosting manifest in the repository, so no project-specific deployment platform is declared.
+
+For a standard Vite React deployment, the typical flow is:
+
+1. Run `npm run build`
+2. Upload the contents of the `dist/` folder to a static host such as Netlify, Vercel, GitHub Pages, or another compatible platform
+3. If using the contact form, configure the same EmailJS environment variables in the hosting provider
+
+## Troubleshooting
+
+### `vite is not recognized`
+
+Run:
+
+```bash
+npm install
+```
+
+If the command still fails, ensure you are using a valid Node.js and npm installation.
+
+### Missing `node_modules`
+
+Install dependencies again:
+
+```bash
+npm install
+```
+
+### Contact form not sending emails
+
+Create a `.env` file from `.env.example` and add the EmailJS values:
+
+```bash
+cp .env.example .env
+```
+
+Then populate the required variables with your EmailJS project credentials.
+
+### Build errors
+
+Remove any stale build output and rebuild:
+
+```bash
+rm -rf dist
+npm run build
+```
+
+On Windows PowerShell, use:
+
+```powershell
+Remove-Item -Recurse -Force dist
+npm run build
+```
+
+### Blank page or route issues
+
+Check the browser console and confirm that the app is served through the Vite dev server. The project uses client-side routing and requires the app to run in a browser environment.
+
+### Theme flash on page load
+
+If you see a brief flash of the wrong theme on reload, ensure that the synchronous theme initialization block at the top of `src/main.jsx` is present and runs before the React tree mounts.
+
+## Development Guidelines
+
+The codebase follows a straightforward structure that is easy to extend:
+
+- Reusable UI belongs in `src/components/`
+- Custom hooks belong in `src/hooks/`
+- Page-level composition belongs in `src/pages/`
+- Page sections live under `src/sections/`
+- Static site content belongs in `src/data/`
+- Motion-related shared configuration lives in `src/utils/motion.js`
+- Styling is centralized in `src/index.css`, with Tailwind utility classes used throughout components
+- Theme tokens are defined as CSS custom properties under `:root` (dark) and `html.light` (light) — all new components should use semantic utility classes (`.bg-primary`, `.text-primary`, `.border-theme`, etc.) rather than hard-coded colour values
+
+The project favors declarative, data-driven content and component reuse rather than a large state management layer. New pages or sections can be added by following the same pattern used by the existing pages and data files. All new route pages should be lazy-loaded via `React.lazy` in `App.jsx`.
+
+## Future Improvements
+
+The following are realistic future improvements based on the current project and should be considered suggestions rather than existing features:
+
+- Add a dedicated backend or API for contact form storage and processing
+- Add a CMS or content management layer for product and company content
+- Add automated tests for route rendering and form validation
+- Add internationalization or multilingual support
+- Expand product data with real imagery, specifications, and downloadable technical documentation
+- Add analytics and conversion tracking for marketing pages
+- Add system-preference theme detection (`prefers-color-scheme`) as an additional option alongside the manual toggle
+
+## License
+
+No license has been specified for this project.
+
+## Author / Credits
+
+No explicit author or credits section was found in the repository metadata or source files.
+</file>
+
+<file path="src/pages/About.jsx">
+import { motion } from "framer-motion";
+import ColourParticles from "../components/ColourParticles";
+import Container from "../components/Container";
+import PageIntro from "../components/PageIntro";
+import SectionTitle from "../components/SectionTitle";
+
+/* ─── Static content data ─── */
+
+const storyParagraphs = [
+  "Our journey began in 1983, when five brothers came together with a shared vision, determination, and a simple belief to build something that would stand the test of time.",
+  "With humble beginnings, NSU started its journey with Sindoor, a product deeply connected with Indian traditions, culture, and emotions. What began as a small business was never just about selling a product; it was about creating something people could trust.",
+  "The early years were filled with challenges. Building a business from the ground up required patience, dedication, and countless hours of hard work. Step by step, with the support and trust of our customers, NSU continued to grow.",
+  "Over the years, our commitment to quality and our passion for colours helped us expand beyond Sindoor. Today, NSU deals in Sindoor along with additional colours, bringing a wider spectrum of vibrant shades to our customers.",
+  "But our journey is not defined only by the number of products or colours we offer. It is defined by the relationships, trust, and experience built over more than four decades.",
+];
+
+const whatWeDoSection = {
+  label: "What we do",
+  title: (
+    <>
+      Colour that brings
+      <br />
+      products to life.
+    </>
+  ),
+  description:
+    "Built for makers, brands and businesses that need colour they can rely on.",
+  body: "NSU creates vibrant Sindoor, bright colour powders, fluorescent pigments and custom colour solutions for businesses that want their products to look distinctive and perform consistently. We solve the challenge of finding colour that is both expressive and dependable—helping every application carry the same visual confidence, batch after batch.",
+  quote:
+    "\u201CEvery shade is an opportunity to make an ordinary product feel unmistakably its own.\u201D",
+};
+
+const ourVisionSection = {
+  label: "Our vision",
+  title: (
+    <>
+      Made with care.
+      <br />
+      Chosen with confidence.
+    </>
+  ),
+  description:
+    "A more colourful future starts with quality people can trust.",
+  body: "We see colour as more than a finish. It carries tradition, identity and emotion; it helps a product be recognised and a moment be remembered. By pairing decades of experience with a forward-looking approach to colour, NSU aims to remain the dependable partner behind brighter ideas.",
+};
+
+const coreBeliefSection = {
+  label: "The core belief",
+  hindiQuote:
+    "\u201Cरंग सिर्फ दिखाई नहीं देते, वे भरोसे और पहचान की छाप छोड़ते हैं।\u201D",
+  hindiTranslation:
+    "(Colours do more than appear\u2014they leave an imprint of trust and identity.)",
+  englishQuote:
+    "\u201CThe right colour does not simply catch the eye; it earns a place in people\u2019s memory.\u201D",
+};
+
+/* ─── Animation variants ─── */
+
+const reveal = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
+/* ─── Fluid background orbs ─── */
+
+function AboutPageBackground() {
+  return (
+    <div
+      aria-hidden="true"
+      className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
+    >
+      <motion.div
+        animate={{ x: [-80, 80, -80], y: [0, 120, 0], scale: [1, 1.2, 1] }}
+        transition={{ duration: 24, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute -left-52 top-[8%] h-[80vw] w-[80vw] rounded-full bg-pigment-magenta/[.16] blur-[80px] md:h-[42rem] md:w-[42rem] md:blur-[130px]"
+      />
+      <motion.div
+        animate={{
+          x: [70, -90, 70],
+          y: [0, -110, 0],
+          scale: [1.1, 0.92, 1.1],
+        }}
+        transition={{ duration: 28, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute -right-56 top-[30%] h-[85vw] w-[85vw] rounded-full bg-pigment-yellow/[.18] blur-[80px] md:h-[46rem] md:w-[46rem] md:blur-[140px]"
+      />
+    </div>
+  );
+}
+
+/* ─── Main component ─── */
+
+export default function About() {
+  return (
+    <div className="relative isolate overflow-hidden">
+      <AboutPageBackground />
+      <ColourParticles particleCount={140} interactive={false} speed={0.32} />
+
+      <PageIntro
+        eyebrow="About NSU"
+        title={
+          <>
+            BUILT AROUND COLOUR.
+            <br />
+            DRIVEN BY POSSIBILITY.
+          </>
+        }
+        description="NSU is focused on delivering vibrant colour and pigment solutions for businesses looking to bring consistency, visual impact and distinctive colour to their products."
+        titleClassName="hero-gradient-text drop-shadow-[0_2px_18px_rgba(15,23,42,.18)]"
+        descriptionClassName="!mt-5"
+        className="relative z-10 pb-8 md:pb-10"
+      />
+
+      <Container className="relative z-10 pb-10 md:pb-28">
+        {/* ── Our story ── */}
+        <section className="pt-[clamp(6rem,20vh,12rem)] md:pt-[clamp(8rem,28vh,14rem)]">
+          <SectionTitle
+            label="Our story"
+            title={
+              <>
+                From one vision to a
+                <br />
+                spectrum of colours.
+              </>
+            }
+            description="About Us — The Story of NSU"
+          />
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.15 }}
+            variants={{
+              hidden: {},
+              visible: { transition: { staggerChildren: 0.08 } },
+            }}
+            className="mt-14 md:ml-[33.33%]"
+          >
+            <div className="max-w-3xl space-y-5">
+              {storyParagraphs.map((paragraph) => (
+                <motion.p
+                  key={paragraph}
+                  variants={reveal}
+                  className="text-base leading-relaxed text-secondary md:text-lg"
+                >
+                  {paragraph}
+                </motion.p>
+              ))}
+            </div>
+
+            <motion.div
+              variants={reveal}
+              className="mt-10 border-l-2 border-pigment-magenta pl-6"
+            >
+              <p className="text-[10px] font-bold uppercase tracking-[.17em] text-pigment-magenta">
+                Our promise
+              </p>
+              <p className="mt-4 text-base leading-relaxed text-secondary md:text-lg">
+                As we move forward, we remain committed to the values that
+                started NSU — quality, consistency, trust, and innovation. We
+                believe that every colour has the power to add life, expression,
+                and meaning, and our goal is to make those colours better,
+                brighter, and more accessible with every passing year.
+              </p>
+            </motion.div>
+
+            <div className="mt-6 text-xl font-semibold tracking-[-.045em]">
+              Four decades later, the vision remains the same: to deliver colour
+              that endures.
+            </div>
+          </motion.div>
+        </section>
+
+        {/* ── What we do ── */}
+        <section className="mt-24 border-t border-theme pt-16 md:mt-32 md:pt-24">
+          <SectionTitle
+            label={whatWeDoSection.label}
+            title={whatWeDoSection.title}
+            description={whatWeDoSection.description}
+          />
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={reveal}
+            className="mt-14 md:ml-[33.33%]"
+          >
+            <p className="max-w-3xl text-base leading-relaxed text-secondary md:text-lg">
+              {whatWeDoSection.body}
+            </p>
+            <blockquote className="mt-12 max-w-3xl border-l-2 border-pigment-yellow pl-6 text-2xl font-medium leading-snug tracking-[-.04em] md:text-3xl">
+              {whatWeDoSection.quote}
+            </blockquote>
+          </motion.div>
+        </section>
+
+        {/* ── Our vision ── */}
+        <section className="mt-24 border-t border-theme pt-16 md:mt-32 md:pt-24">
+          <SectionTitle
+            label={ourVisionSection.label}
+            title={ourVisionSection.title}
+            description={ourVisionSection.description}
+          />
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={reveal}
+            className="mt-14 md:ml-[33.33%]"
+          >
+            <p className="max-w-3xl text-base leading-relaxed text-secondary md:text-lg">
+              {ourVisionSection.body}
+            </p>
+          </motion.div>
+        </section>
+
+        {/* ── Core belief ── */}
+        <motion.section
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={reveal}
+          className="mt-24 bg-foreground px-6 py-14 text-background md:mt-32 md:px-[12%] md:py-20"
+        >
+          <p className="text-[10px] font-bold uppercase tracking-[.17em] text-pigment-yellow">
+            {coreBeliefSection.label}
+          </p>
+          <blockquote className="mt-6 max-w-4xl font-devanagari text-3xl font-semibold leading-tight tracking-[-.05em] md:text-5xl">
+            {coreBeliefSection.hindiQuote}
+          </blockquote>
+          <p className="mt-5 max-w-2xl text-sm leading-relaxed text-background/70 md:text-base">
+            {coreBeliefSection.hindiTranslation}
+          </p>
+          <p className="mt-10 max-w-3xl text-lg leading-relaxed text-background/80 md:text-xl">
+            {coreBeliefSection.englishQuote}
+          </p>
+        </motion.section>
+      </Container>
+    </div>
+  );
+}
+</file>
+
+<file path="src/sections/Hero.jsx">
+import { motion } from "framer-motion";
+import { ArrowDown } from "lucide-react";
+import Button from "../components/Button";
+import ColourParticles from "../components/ColourParticles";
+
+const lines = ["COLOUR", "WITHOUT", "LIMITS"];
+
+export default function Hero() {
+  return (
+    <section
+      className="relative isolate flex min-h-[680px] overflow-x-clip overflow-y-visible sm:min-h-[720px] md:min-h-[860px]"
+      style={{ backgroundColor: "var(--hero-bg)", color: "var(--hero-text)" }}
+    >
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.15, ease: "easeOut" }}
+        className="absolute inset-0"
+        style={{ background: "var(--hero-gradient)" }}
+      />
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.25, duration: 1.4 }}
+        className="pointer-events-none absolute inset-0"
+      >
+        <motion.div
+          animate={{
+            x: [0, 30, -14, 0],
+            y: [0, -22, 18, 0],
+            scale: [1, 1.1, 0.95, 1],
+          }}
+          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -right-[34%] top-[12%] h-[22rem] w-[22rem] rounded-full blur-[100px] sm:-right-[17%] sm:h-[27rem] sm:w-[27rem] md:h-[36rem] md:w-[36rem]"
+          style={{ backgroundColor: "var(--hero-orb-pink)" }}
+        />
+        <motion.div
+          animate={{ x: [0, -30, 18, 0], y: [0, 22, -15, 0] }}
+          transition={{ duration: 21, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute right-[-16%] top-[42%] h-[14rem] w-[18rem] rounded-[48%] blur-[88px] sm:right-[4%] sm:h-[18rem] sm:w-[22rem] md:h-[27rem] md:w-[33rem]"
+          style={{ backgroundColor: "var(--hero-orb-orange)" }}
+        />
+        <motion.div
+          animate={{ x: [0, 18, -20, 0], y: [0, -18, 12, 0] }}
+          transition={{ duration: 19, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -bottom-[16%] right-[26%] h-[13rem] w-[20rem] rounded-full blur-[88px] sm:h-[17rem] sm:w-[24rem] md:h-[25rem] md:w-[36rem]"
+          style={{ backgroundColor: "var(--hero-orb-red)" }}
+        />
+        <motion.div
+          animate={{ x: [0, -15, 17, 0], y: [0, 14, -17, 0] }}
+          transition={{ duration: 17, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute right-[34%] top-[16%] hidden h-36 w-36 rounded-full blur-[64px] sm:block"
+          style={{ backgroundColor: "var(--hero-orb-gold)" }}
+        />
+      </motion.div>
+      <ColourParticles />
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{ background: "var(--hero-vignette)" }}
+      />
+      <div className="relative z-20 mx-auto flex w-full max-w-[1440px] flex-col px-6 pb-8 pt-32 sm:pt-40 md:px-10 md:pb-10 md:pt-48 lg:px-14">
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.7, duration: 0.55 }}
+          className="mb-8 text-[10px] font-bold uppercase tracking-[0.2em]"
+          style={{ color: "var(--hero-tagline)" }}
+        >
+          NSU Colour Solutions
+        </motion.p>
+        <h1 className="max-w-4xl text-[clamp(3.65rem,10.2vw,10rem)] font-semibold leading-[0.8] tracking-[-0.09em] sm:leading-[0.78]">
+          {lines.map((line, index) => (
+            <span key={line} className="block overflow-hidden">
+              <motion.span
+                initial={{ y: "110%" }}
+                animate={{ y: 0 }}
+                transition={{
+                  delay: 0.85 + index * 0.15,
+                  duration: 0.8,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+                className="hero-gradient-text block"
+              >
+                {line}
+              </motion.span>
+            </span>
+          ))}
+        </h1>
+        <motion.div
+          initial={{ opacity: 0, y: 22 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.45, duration: 0.65 }}
+          className="mt-10 flex flex-col items-start gap-7 md:mt-12 md:flex-row md:items-end md:justify-between"
+        >
+          <p
+            className="max-w-md text-base leading-relaxed md:text-lg"
+            style={{ color: "var(--hero-body)" }}
+          >
+            Vibrant colour and pigment solutions designed to make every
+            application stand out.
+          </p>
+          <div className="flex w-full sm:w-auto">
+            <Button
+              to="/products"
+              className="hero-cta-btn w-full rounded-xl sm:w-auto"
+            >
+              Explore Products
+            </Button>
+          </div>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.75, duration: 0.6 }}
+          className="mt-12 flex items-center gap-2 text-[10px] font-bold uppercase tracking-[.18em]"
+          style={{ color: "var(--hero-scroll)" }}
+        >
+          <span>Scroll to explore</span>
+          <motion.span
+            animate={{ y: [0, 5, 0] }}
+            transition={{ duration: 1.6, repeat: Infinity }}
+          >
+            <ArrowDown size={14} />
+          </motion.span>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+</file>
+
+<file path="src/index.css">
+@import "@fontsource/space-grotesk/latin-400.css";
+@import "@fontsource/space-grotesk/latin-500.css";
+@import "@fontsource/space-grotesk/latin-600.css";
+@import "@fontsource/space-grotesk/latin-700.css";
+@import "tailwindcss";
+
+@theme {
+  --color-pigment-magenta: #ef476f;
+  --color-pigment-pink: #ef1678;
+  --color-pigment-orange: #ff761c;
+  --color-pigment-yellow: #ffc21c;
+  --color-pigment-red: #d91818;
+  --color-signal: #ffc21c;
+  --color-ink: #f8fafc;
+  --color-foreground: #0f172a;
+  --color-background: #f8fafc;
+  --font-family-devanagari: 'Noto Sans Devanagari', sans-serif;
+}
+
+:root {
+  /* Dark theme as default */
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-card: #1e293b;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --border-color: #334155;
+  --accent-color: #ef476f;
+
+  /* Backwards compatible aliases used across the codebase */
+  --accent: var(--accent-color);
+  --border: var(--border-color);
+  --text-h: var(--text-primary);
+  --social-bg: rgba(255, 255, 255, 0.03);
+  --shadow: 0 6px 20px rgba(2, 6, 23, 0.6);
+  --accent-bg: rgba(239, 34, 120, 0.06);
+  --accent-border: rgba(239, 34, 120, 0.18);
+
+  /* Colour used for text displayed on bright accent backgrounds (e.g. pigment yellow) */
+  --on-accent: #0f172a;
+
+  /* RGB fallbacks for opacity helpers */
+  --text-primary-rgb: 248, 250, 252;
+  --text-secondary-rgb: 148, 163, 184;
+  --bg-primary-rgb: 15, 23, 42;
+  --bg-card-rgb: 30, 41, 59;
+  --border-rgb: 51, 65, 85;
+
+  /* ── Hero section theme variables ── */
+  --hero-bg: #0b1120;
+  --hero-text: #f8fafc;
+  --hero-tagline: #ffc21c;
+  --hero-body: rgba(226, 232, 240, 0.75);
+  --hero-scroll: rgba(203, 213, 225, 0.9);
+
+  /* Gradient background layers */
+  --hero-gradient: radial-gradient(circle at 72% 38%,
+      rgba(239, 22, 120, 0.24) 0%,
+      transparent 32%),
+    radial-gradient(circle at 88% 72%,
+      rgba(255, 194, 28, 0.18) 0%,
+      transparent 30%),
+    linear-gradient(115deg, #050816 0%, #0f172a 45%, #111827 100%);
+
+  /* Glowing orbs */
+  --hero-orb-pink: rgba(239, 22, 120, 0.3);
+  --hero-orb-orange: rgba(255, 118, 28, 0.3);
+  --hero-orb-red: rgba(217, 24, 24, 0.28);
+  --hero-orb-gold: rgba(255, 194, 28, 0.3);
+
+  /* Vignette overlay */
+  --hero-vignette: linear-gradient(90deg,
+      rgba(2, 6, 23, 0.92) 0%,
+      rgba(15, 23, 42, 0.72) 45%,
+      rgba(15, 23, 42, 0.22) 78%),
+    radial-gradient(circle at 72% 48%,
+      transparent 0%,
+      rgba(2, 6, 23, 0.2) 52%,
+      rgba(2, 6, 23, 0.82) 100%);
+}
+
+html.light {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-card: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #1f2937;
+  --border-color: #e6edf3;
+  --accent-color: #2563eb;
+
+  --accent: var(--accent-color);
+  --border: var(--border-color);
+  --text-h: var(--text-primary);
+  --social-bg: rgba(15, 23, 42, 0.03);
+  --shadow: 0 6px 20px rgba(2, 6, 23, 0.06);
+  --accent-bg: rgba(37, 99, 235, 0.06);
+  --accent-border: rgba(37, 99, 235, 0.18);
+
+  --on-accent: #0f172a;
+
+  /* RGB fallbacks for opacity helpers (light theme)
+     Note: keep same variable names so helper classes work in both themes */
+  --text-primary-rgb: 15, 23, 42;
+  --text-secondary-rgb: 31, 41, 55;
+  --bg-primary-rgb: 255, 255, 255;
+  --bg-card-rgb: 255, 255, 255;
+  --border-rgb: 230, 237, 243;
+
+  /* ── Hero section – light theme overrides ── */
+  --hero-bg: #fffaf5;
+  --hero-text: #0f172a;
+  --hero-tagline: #ef476f;
+  --hero-body: rgba(15, 23, 42, 0.65);
+  --hero-scroll: rgba(15, 23, 42, 0.7);
+
+  --hero-gradient: radial-gradient(circle at 72% 38%,
+      rgba(239, 22, 120, 0.12) 0%,
+      transparent 32%),
+    radial-gradient(circle at 88% 72%,
+      rgba(255, 194, 28, 0.14) 0%,
+      transparent 30%),
+    linear-gradient(115deg, #ffffff 0%, #fff7ed 45%, #fff1f7 100%);
+
+  --hero-orb-pink: rgba(239, 22, 120, 0.14);
+  --hero-orb-orange: rgba(255, 118, 28, 0.14);
+  --hero-orb-red: rgba(217, 24, 24, 0.12);
+  --hero-orb-gold: rgba(255, 194, 28, 0.16);
+
+  --hero-vignette: linear-gradient(90deg,
+      rgba(255, 255, 255, 0.82) 0%,
+      rgba(255, 247, 237, 0.52) 45%,
+      rgba(255, 241, 247, 0.12) 78%),
+    radial-gradient(circle at 72% 48%,
+      transparent 0%,
+      rgba(255, 255, 255, 0.08) 52%,
+      rgba(255, 255, 255, 0.48) 100%);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply m-0 overflow-x-clip antialiased;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  a {
+    @apply no-underline text-inherit;
+  }
+
+  button,
+  input,
+  textarea {
+    font: inherit;
+  }
+
+
+  #root {
+    @apply min-h-screen overflow-x-clip;
+  }
+
+  ::selection {
+    background: var(--accent-color);
+    color: var(--bg-primary);
+  }
+
+  :focus-visible {
+    box-shadow: 0 0 0 4px rgba(239, 34, 120, 0.12);
+  }
+
+  /* Header — always dark regardless of active theme */
+  .site-header {
+    background: color-mix(in srgb, #0f172a 90%, transparent);
+    border-bottom: 1px solid rgba(51, 65, 85, 0.55);
+    color: #f8fafc;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  /* Override inherited light-theme colors inside the header */
+  .site-header,
+  .site-header *,
+  .site-header a,
+  .site-header button {
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --border-color: #334155;
+    --bg-card: #1e293b;
+    --border: #334155;
+    --accent-color: #ef476f;
+  }
+
+  .site-footer {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+  }
+
+  .mobile-nav {
+    background: #1e293b;
+    color: #f8fafc;
+  }
+
+  .skip-link {
+    background: var(--bg-card);
+    color: var(--text-primary);
+  }
+
+  html.light body {
+    background:
+      radial-gradient(circle at 12% 8%, rgba(239, 22, 120, 0.1), transparent 28%),
+      radial-gradient(circle at 84% 18%, rgba(255, 194, 28, 0.16), transparent 30%),
+      linear-gradient(120deg, #ffffff 0%, #fff7ed 48%, #fff1f7 100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Smooth color transitions for components */
+* {
+  transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+}
+
+/* Map common Tailwind utility color classes to CSS variables so components adapt */
+.bg-black {
+  background-color: var(--bg-card) !important;
+}
+
+.text-white {
+  color: var(--text-primary) !important;
+}
+
+.border-white {
+  border-color: var(--border) !important;
+}
+
+.text-black {
+  color: var(--text-primary) !important;
+}
+
+.bg-white {
+  background-color: var(--bg-primary) !important;
+}
+
+.border-black {
+  border-color: var(--border) !important;
+}
+
+/* Common opacity variants used in the codebase (escape slashes) */
+.text-black\/40 {
+  color: rgba(var(--text-primary-rgb), 0.4) !important;
+}
+
+.text-black\/45 {
+  color: rgba(var(--text-primary-rgb), 0.45) !important;
+}
+
+.text-black\/70 {
+  color: rgba(var(--text-primary-rgb), 0.7) !important;
+}
+
+.text-white\/55 {
+  color: var(--text-secondary) !important;
+}
+
+.text-white\/65 {
+  color: rgba(var(--text-primary-rgb), 0.78) !important;
+}
+
+.border-black\/15 {
+  border-color: rgba(var(--border-rgb), 0.15) !important;
+}
+
+.text-black\/40 {
+  color: rgba(var(--text-primary-rgb), 0.4) !important;
+}
+
+/* Semantic theme helpers */
+.bg-primary {
+  background-color: var(--bg-primary) !important;
+}
+
+html.light .bg-primary {
+  background:
+    radial-gradient(circle at 18% 0%, rgba(239, 22, 120, 0.1), transparent 30%),
+    radial-gradient(circle at 82% 12%, rgba(255, 194, 28, 0.14), transparent 32%),
+    linear-gradient(120deg, #ffffff 0%, #fff8ef 48%, #fff3f8 100%) !important;
+}
+
+.bg-secondary {
+  background-color: var(--bg-secondary) !important;
+}
+
+html.light .bg-secondary {
+  background:
+    radial-gradient(circle at 14% 6%, rgba(239, 22, 120, 0.08), transparent 28%),
+    radial-gradient(circle at 88% 20%, rgba(255, 194, 28, 0.12), transparent 30%),
+    linear-gradient(120deg, #fffaf5 0%, #fff5eb 48%, #fff0f6 100%) !important;
+}
+
+.bg-card {
+  background-color: var(--bg-card) !important;
+}
+
+html.light .bg-card {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(255, 247, 237, 0.9) 52%, rgba(255, 242, 248, 0.92)) !important;
+}
+
+.text-primary {
+  color: var(--text-primary) !important;
+}
+
+.text-secondary {
+  color: var(--text-secondary) !important;
+}
+
+.border-theme {
+  border-color: var(--border) !important;
+}
+
+.bg-accent {
+  background-color: var(--accent-color) !important;
+}
+
+.text-accent {
+  color: var(--accent-color) !important;
+}
+
+/* Text color for use on bright accent backgrounds (ensures readable contrast) */
+.text-on-accent {
+  color: var(--on-accent) !important;
+}
+
+@keyframes heroGradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.hero-gradient-text {
+  color: #ffd166;
+  background-image: linear-gradient(90deg, #ef476f 0%, #f77f00 52%, #ffd166 100%);
+  background-size: 200% auto;
+  animation: heroGradientShift 4s linear infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@supports not (-webkit-background-clip: text) {
+  .hero-gradient-text {
+    background-image: none;
+    animation: none;
+    -webkit-text-fill-color: initial;
+    color: #ffd166;
+  }
+}
+
+.hero-cta-btn {
+  background-image: linear-gradient(100deg, #ef476f 0%, #ffd166 100%);
+  color: #111827 !important;
+  border-color: transparent !important;
+  box-shadow: 0 12px 28px rgba(239, 71, 111, 0.25);
+}
+
+.hero-cta-btn:hover {
+  background-image: linear-gradient(100deg, #f77f00 0%, #ef476f 100%);
+  border-color: transparent !important;
+  box-shadow: 0 16px 36px rgba(247, 127, 0, 0.3);
+}
+
+/* FAQ rows use a visible theme-aware lift in both themes. */
+.faq-question:hover,
+.faq-question:focus-visible {
+  background: color-mix(in srgb, var(--bg-card) 78%, var(--accent-color) 22%);
+}
+.text-eyebrow {
+  color: var(--color-signal) !important;
+}
+
+html.light .text-eyebrow {
+  color: var(--color-pigment-magenta) !important;
+}
+</file>
+
+<file path="src/components/NSULogo.jsx">
+/** The supplied NSU logo, shared by the navigation and footer. */
+export default function NSULogo({ className = '', showTagline = false }) {
+  return (
+    <div className={`inline-flex flex-col ${className}`}>
+      <img
+        src="/NSU-logo.png"
+        alt="Narayan Sindoor Udyog"
+        className="h-auto w-[100px] object-contain"
+      />
+      {showTagline && <span className="mt-1 translate-x-5 text-[7px] font-bold tracking-[0.16em]">COLOURS THAT MAKE AN IMPACT.</span>}
+    </div>
+  )
+}
+</file>
+
+<file path="src/components/SiteLayout.jsx">
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, MessageCircle, Phone, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import NSULogo from "./NSULogo";
+import ThemeToggle from "./ThemeToggle";
+import ColourParticles from "./ColourParticles";
+import { companyDetails } from "../data/company";
+
+const links = [
+  ["Home", "/"],
+  ["Products", "/products"],
+  ["Applications", "/applications"],
+  ["About", "/about"],
+  ["Contact", "/contact"],
+];
+const itemVariants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.42, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+const SocialIcon = ({ name }) => {
+  if (name === "instagram")
+    return (
+      <svg
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+        className="h-[15px] w-[15px] fill-none stroke-current stroke-[1.8]"
+      >
+        <rect x="3" y="3" width="18" height="18" rx="5" />
+        <circle cx="12" cy="12" r="4" />
+        <circle
+          cx="17.5"
+          cy="6.5"
+          r=".8"
+          className="fill-current stroke-none"
+        />
+      </svg>
+    );
+  if (name === "facebook")
+    return (
+      <svg
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+        className="h-[15px] w-[15px] fill-current"
+      >
+        <path d="M13.8 21v-8h2.7l.4-3.1h-3.1V7.92c0-.9.25-1.51 1.54-1.51H17V3.63c-.3-.04-1.33-.13-2.53-.13-2.5 0-4.2 1.52-4.2 4.33V9.9H7.45V13h2.82v8h3.53Z" />
+      </svg>
+    );
+  if (name === "twitter")
+    return (
+      <svg
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+        className="h-[15px] w-[15px] fill-current"
+      >
+        <path d="M18.9 2.75h3.68l-8.04 9.19L24 21.25h-7.4l-5.8-7.57-6.63 7.57H.48l8.6-9.83L0 2.75h7.58l5.24 6.93 6.08-6.93Zm-1.3 16.96h2.04L6.47 4.2H4.28L17.6 19.71Z" />
+      </svg>
+    );
+  return <MessageCircle size={15} aria-hidden="true" />;
+};
+
+const socialColorClasses = {
+  WhatsApp: "text-[#25d366]",
+  Instagram: "text-[#ef1678]",
+  Facebook: "text-[#1877f2]",
+  "X / Twitter": "text-[#f8fafc]",
+};
+
+export default function SiteLayout({ children }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const updateScrolled = () => setIsScrolled(window.scrollY > 12);
+    updateScrolled();
+    window.addEventListener("scroll", updateScrolled, { passive: true });
+    return () => window.removeEventListener("scroll", updateScrolled);
+  }, []);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, [location.pathname]);
+
+  useEffect(() => {
+    const onKeyDown = (event) => {
+      if (event.key === "Escape") setIsOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    document.body.style.overflow = isOpen ? "hidden" : "";
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
+  return (
+    <div className="flex min-h-screen flex-col">
+      <a
+        href="#main-content"
+        className="sr-only z-[100] skip-link px-4 py-3 text-sm font-bold focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
+      >
+        Skip to content
+      </a>
+      <header className="site-header fixed inset-x-0 top-0 z-50 transition-all duration-500">
+        <div className="mx-auto flex h-20 max-w-[1440px] items-center justify-between px-6 md:px-10 lg:px-14">
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.08 }}
+            className="relative z-60 shrink-0"
+          >
+            <Link
+              to="/"
+              aria-label="NSU home"
+              className="flex h-16 w-24 items-center justify-center overflow-hidden"
+            >
+              <NSULogo className="[&_video]:h-32 [&_video]:w-32" />
+            </Link>
+          </motion.div>
+          <nav
+            aria-label="Primary navigation"
+            className="hidden h-full items-center gap-7 lg:flex"
+          >
+            {links.map(([label, path]) => (
+              <NavLink
+                end={path === "/"}
+                key={path}
+                to={path}
+                className={({ isActive }) =>
+                  `relative flex h-full items-center text-[11px] font-bold uppercase tracking-[0.14em] transition-colors ${isActive ? "text-[var(--accent-color)]" : "text-secondary hover:text-primary after:absolute after:left-0 after:top-[calc(50%+11px)] after:h-0.5 after:w-full after:origin-left after:scale-x-0 after:bg-[var(--accent-color)] after:transition-transform after:duration-300 hover:after:scale-x-100 focus-visible:text-primary focus-visible:after:scale-x-100"}`
+                }
+              >
+                {({ isActive }) => (
+                  <>
+                    {label}
+
+                  </>
+                )}
+              </NavLink>
+            ))}
+          </nav>
+          <div className="flex items-center gap-3">
+            <ThemeToggle />
+            <button
+              type="button"
+              className="relative z-60 inline-flex min-h-11 items-center justify-center gap-2 border px-3 lg:hidden"
+              style={{ borderColor: "var(--border)" }}
+              aria-label={
+                isOpen ? "Close navigation menu" : "Open navigation menu"
+              }
+              aria-expanded={isOpen}
+              aria-controls="mobile-navigation"
+              onClick={() => setIsOpen((open) => !open)}
+            >
+              <span className="text-[10px] font-bold uppercase tracking-[.16em]">{isOpen ? "Close" : "Menu"}</span>
+              {isOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
+        </div>
+      </header>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.nav
+            id="mobile-navigation"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-x-0 top-20 z-40 border-b lg:hidden"
+            style={{
+              borderColor: "#334155",
+              background: "color-mix(in srgb, #0f172a 68%, transparent)",
+              backdropFilter: "blur(20px) saturate(135%)",
+              WebkitBackdropFilter: "blur(20px) saturate(135%)",
+            }}
+          >
+            <div
+              className="flex flex-col divide-y"
+              style={{ borderColor: "var(--border)" }}
+            >
+              {links.map(([label, path]) => (
+                <NavLink
+                  end={path === "/"}
+                  key={path}
+                  to={path}
+                  onClick={() => setIsOpen(false)}
+                  className={({ isActive }) =>
+                    `flex items-center justify-between px-6 py-4 text-lg font-semibold transition-colors ${isActive ? "text-[var(--accent-color)]" : "text-[#f8fafc] hover:text-[#f8fafc]"}`
+                  }
+                >
+                  <span>{label}</span>
+                </NavLink>
+              ))}
+            </div>
+          </motion.nav>
+        )}
+      </AnimatePresence>
+      <main
+        id="main-content"
+        className={`flex-1 ${location.pathname === "/" ? "" : "pt-20"}`}
+      >
+        {children}
+      </main>
+      <footer className="relative isolate overflow-hidden bg-[#0b1120] px-6 pb-6 pt-14 text-[#f8fafc] md:px-10 md:pt-20 lg:px-14">
+        {/* Background Gradients */}
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_74%_24%,rgba(239,22,120,.24)_0%,transparent_32%),radial-gradient(circle_at_90%_70%,rgba(255,194,28,.16)_0%,transparent_28%),linear-gradient(115deg,#050816_0%,#0f172a_48%,#111827_100%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(2,6,23,.92)_0%,rgba(15,23,42,.62)_48%,rgba(15,23,42,.28)_100%)]" />
+        
+        {/* Particles and Background Accents */}
+        <ColourParticles particleCount={55} interactive={true} speed={0.65} />
+        <div className="pointer-events-none absolute right-[12%] top-12 hidden h-36 w-36 rounded-full bg-[#ef1678]/20 blur-[65px] md:block" />
+        <div className="pointer-events-none absolute left-[35%] top-20 hidden h-1.5 w-1.5 rounded-full bg-[#ffc21c] md:block" />
+        <motion.div
+          animate={{ y: [0, -16, 0], opacity: [0.25, 0.9, 0.25] }}
+          transition={{ duration: 3.4, repeat: Infinity, ease: "easeInOut" }}
+          className="pointer-events-none absolute right-[31%] top-24 hidden h-1.5 w-1.5 rounded-full bg-[#ff75b7] md:block"
+        />
+
+        {/* Top Animated Border */}
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[rgba(248,250,252,.15)]" />
+        <motion.div
+          animate={{ x: ["-300px", "100vw"] }}
+          transition={{
+            duration: 4.5,
+            repeat: Infinity,
+            ease: "linear",
+            repeatDelay: 0.5,
+          }}
+          className="pointer-events-none absolute left-0 top-0 h-[2px] w-[300px] bg-[linear-gradient(90deg,transparent,#ef1678,#ffc21c,transparent)] blur-[1px]"
+        />
+        <motion.div
+          animate={{ x: ["-300px", "100vw"] }}
+          transition={{
+            duration: 4.5,
+            repeat: Infinity,
+            ease: "linear",
+            repeatDelay: 0.5,
+          }}
+          className="pointer-events-none absolute left-0 top-0 h-px w-[300px] bg-[linear-gradient(90deg,transparent,#ef1678,#ffc21c,transparent)]"
+        />
+        <div className="relative z-10 mx-auto max-w-[1440px]">
+          <div className="grid grid-cols-2 gap-x-6 gap-y-10 border-b border-[rgba(248,250,252,.15)] pb-14 md:grid-cols-12 md:gap-8">
+            <div className="col-span-2 md:col-span-12 lg:col-span-3 flex items-center justify-center lg:justify-start md:pl-12 lg:pl-12 lg:pr-6">
+              <NSULogo className="text-[#f8fafc] [&_img]:h-auto [&_img]:w-[190px]" showTagline />
+            </div>
+            <div className="md:col-span-3 lg:col-span-2">
+              <p className="text-[10px] font-bold uppercase tracking-[.17em] text-[#f8fafc]">
+                Navigate
+              </p>
+              <nav
+                aria-label="Footer navigation"
+                className="mt-5 flex flex-col items-start gap-3"
+              >
+                {links.map(([label, path]) => (
+                  <Link
+                    key={path}
+                    to={path}
+                    className="text-sm font-medium text-[#f8fafc] transition-all duration-300 hover:translate-x-1 hover:text-[#ffc21c]"
+                  >
+                    {label}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+            <div className="md:col-span-4 lg:col-span-2">
+              <p className="text-[10px] font-bold uppercase tracking-[.17em] text-[#f8fafc]">
+                Head Office
+              </p>
+              <div className="mt-5 flex flex-col gap-1.5 text-sm font-medium text-[#f8fafc]">
+                <p>Nai Sadak Chowk,</p>
+                <p>Patna City</p>
+                <p>District : Patna</p>
+                <p>Bihar, India</p>
+                <p>PIN-800008</p>
+              </div>
+            </div>
+            <div className="md:col-span-5 lg:col-span-2">
+              <p className="text-[10px] font-bold uppercase tracking-[.17em] text-[#f8fafc]">
+                Manufacturing Unit
+              </p>
+              <div className="mt-5 flex flex-col gap-1.5 text-sm font-medium text-[#f8fafc]">
+                <p>Hajipur Industrial Area,</p>
+                <p> Hajipur</p>
+                <p>District: Vaishali</p>
+                <p>Bihar, India</p>
+                <p>PIN-844102</p>
+              </div>
+            </div>
+            <div className="md:col-span-12 lg:col-span-3 md:mt-6 lg:mt-0">
+              <p className="text-[10px] font-bold uppercase tracking-[.17em] text-[#f8fafc]">
+                Talk to NSU
+              </p>
+              <div className="mt-5 flex flex-col gap-1.5">
+                <a
+                  href={companyDetails.phoneHref}
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-[#f8fafc] transition-colors hover:text-[#ffc21c]"
+                >
+                  <span className="inline-flex h-8 w-8 items-center justify-center text-[#ffc21c]">
+                    <Phone size={15} aria-hidden="true" />
+                  </span>
+                  <span>{companyDetails.phone}</span>
+                </a>
+                {companyDetails.socialLinks
+                  .filter(({ name }) => name === "WhatsApp")
+                  .map(({ name, href, icon }) => (
+                    <a
+                      key={name}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`group inline-flex items-center gap-2 text-sm font-semibold transition-colors hover:opacity-80 ${socialColorClasses[name]}`}
+                      aria-label={`Visit our ${name}`}
+                    >
+                      <span className="inline-flex h-8 w-8 items-center justify-center">
+                        <SocialIcon name={icon} />
+                      </span>
+                      <span>{name}</span>
+                    </a>
+                  ))}
+              </div>
+              <p className="mt-7 text-[10px] font-bold uppercase tracking-[.17em] text-[#f8fafc]">
+                Follow us
+              </p>
+              <div className="mt-3 flex items-center gap-4">
+                {companyDetails.socialLinks
+                  .filter(({ name }) => name !== "WhatsApp")
+                  .map(({ name, href, icon }) => (
+                    <a
+                      key={name}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`inline-flex h-9 w-9 items-center justify-center border border-current transition-opacity hover:opacity-75 ${socialColorClasses[name] || "text-[#f8fafc]"}`}
+                      aria-label={`Visit our ${name}`}
+                    >
+                      <SocialIcon name={icon} />
+                    </a>
+                  ))}
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col items-center justify-between gap-5 py-8 text-center text-xs font-medium text-[#f8fafc] sm:flex-row sm:text-left">
+            <p>&copy; {new Date().getFullYear()} NARAYAN SINDOOR UDYOG. All rights reserved.</p>
+            <div className="flex gap-6">
+              {[
+                ["Privacy Policy", "#"],
+                ["Terms of Service", "#"],
+              ].map(([label, url]) => (
+                <a
+                  key={label}
+                  href={url}
+                  className="text-[#f8fafc] transition-colors hover:text-[#ffc21c]"
+                >
+                  {label}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
+</file>
+
+</files>
