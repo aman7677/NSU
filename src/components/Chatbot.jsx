@@ -149,7 +149,41 @@ export default function Chatbot() {
   const messagesEndRef = useRef(null);
   const scrollContainerRef = useRef(null);
   const inputRef = useRef(null);
+  const tooltipTimerRef = useRef(null);
+  const prevIsOpenRef = useRef(false);
   const navigate = useNavigate();
+
+  /* Show tooltip on initial mount */
+  useEffect(() => {
+    const timer = setTimeout(() => setFabHover(true), 1500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  /* Show tooltip for 3 seconds every time the chatbot is closed */
+  useEffect(() => {
+    if (prevIsOpenRef.current && !isOpen) {
+      setFabHover(true);
+    }
+    prevIsOpenRef.current = isOpen;
+  }, [isOpen]);
+
+  /* Auto-dismiss tooltip after 3 seconds (fixes mobile where no mouseLeave fires) */
+  useEffect(() => {
+    if (tooltipTimerRef.current) {
+      clearTimeout(tooltipTimerRef.current);
+      tooltipTimerRef.current = null;
+    }
+    if (fabHover) {
+      tooltipTimerRef.current = setTimeout(() => {
+        setFabHover(false);
+      }, 3000);
+    }
+    return () => {
+      if (tooltipTimerRef.current) {
+        clearTimeout(tooltipTimerRef.current);
+      }
+    };
+  }, [fabHover]);
 
   /* Auto-scroll to bottom */
   useEffect(() => {
@@ -497,7 +531,10 @@ export default function Chatbot() {
         </AnimatePresence>
 
         <motion.button
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={() => {
+            setIsOpen(!isOpen);
+            setFabHover(false);
+          }}
           whileHover={{ scale: 1.08 }}
           whileTap={{ scale: 0.92 }}
           className="relative flex h-14 w-14 cursor-pointer items-center justify-center rounded-full shadow-xl"
