@@ -9,9 +9,60 @@ const item = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.42 } },
 };
 
+function getProductApplicationDetails(product) {
+  const colorName = (product?.colour || product?.name || "").toLowerCase();
+
+  if (colorName.includes("yellow")) {
+    return {
+      applications:
+        "General colour applications, industrial coatings, packaging, plastics, and high-visibility print systems.",
+      deliveries: ["Powder", "Bulk supply", "Custom batches"],
+    };
+  }
+
+  if (colorName.includes("red") || colorName.includes("orange")) {
+    return {
+      applications:
+        "Traditional products, textile colours, paper coatings, inks, and bold decorative surfaces.",
+      deliveries: ["Powder", "Standard shades", "Custom match"],
+    };
+  }
+
+  if (colorName.includes("green")) {
+    return {
+      applications:
+        "Packaging, polymer systems, decorative applications, and colour-focused product finishes.",
+      deliveries: ["Powder", "Bulk supply", "Application-led matching"],
+    };
+  }
+
+  if (colorName.includes("pink") || colorName.includes("magenta")) {
+    return {
+      applications:
+        "Visual branding, plastics, coatings, textile colouring, and vibrant product surfaces.",
+      deliveries: ["Powder", "High-chroma finish", "Custom shade support"],
+    };
+  }
+
+  if (colorName.includes("blue") || colorName.includes("violet")) {
+    return {
+      applications:
+        "Premium finishes, decorative coatings, specialty plastics, and statement colour systems.",
+      deliveries: ["Powder", "Custom batches", "Bulk volume supply"],
+    };
+  }
+
+  return {
+    applications:
+      "Application-led colour solutions designed around the product requirement and production process.",
+    deliveries: ["Powder", "Bulk supply", "Custom development"],
+  };
+}
+
 export default function ProductDetailModal({ product, onClose }) {
   const closeRef = useRef(null);
   const [copied, setCopied] = useState(false);
+  const details = getProductApplicationDetails(product);
   useEffect(() => {
     closeRef.current?.focus();
     const onKeyDown = (event) => {
@@ -121,14 +172,24 @@ export default function ProductDetailModal({ product, onClose }) {
               {product.description}
             </motion.p>
 
-            <motion.div
-              variants={item}
-              className="mt-7 flex items-center gap-4"
-            >
-              <span className="text-sm font-medium text-secondary">
+            <motion.div variants={item} className="mt-7 space-y-3">
+              <p className="text-[10px] font-bold uppercase tracking-[.18em] text-secondary">
                 Applications
-              </span>
-              <span className="text-sm">{product.application}</span>
+              </p>
+              <p className="text-base leading-relaxed text-secondary">
+                {details.applications}
+              </p>
+            </motion.div>
+
+            <motion.div variants={item} className="mt-8 overflow-hidden border border-theme bg-card/50">
+              <div className="bg-[#f0b85d] px-4 py-3 text-[10px] font-bold uppercase tracking-[.18em] text-[#0f172a]">
+                Delivery Form
+              </div>
+              <ul className="list-disc space-y-2 px-6 py-4 text-sm leading-relaxed text-secondary marker:text-[#f0b85d]">
+                {details.deliveries.map((delivery) => (
+                  <li key={delivery}>{delivery}</li>
+                ))}
+              </ul>
             </motion.div>
 
             <motion.div variants={item} className="mt-8">

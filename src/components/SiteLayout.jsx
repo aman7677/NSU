@@ -29,7 +29,7 @@ const SocialIcon = ({ name }) => {
       <svg
         viewBox="0 0 24 24"
         aria-hidden="true"
-        className="h-[15px] w-[15px] fill-none stroke-current stroke-[1.8]"
+        className="h-6 w-6 fill-none stroke-current stroke-[1.8]"
       >
         <rect x="3" y="3" width="18" height="18" rx="5" />
         <circle cx="12" cy="12" r="4" />
@@ -46,7 +46,7 @@ const SocialIcon = ({ name }) => {
       <svg
         viewBox="0 0 24 24"
         aria-hidden="true"
-        className="h-[15px] w-[15px] fill-current"
+        className="h-6 w-6 fill-current"
       >
         <path d="M13.8 21v-8h2.7l.4-3.1h-3.1V7.92c0-.9.25-1.51 1.54-1.51H17V3.63c-.3-.04-1.33-.13-2.53-.13-2.5 0-4.2 1.52-4.2 4.33V9.9H7.45V13h2.82v8h3.53Z" />
       </svg>
@@ -56,7 +56,7 @@ const SocialIcon = ({ name }) => {
       <svg
         viewBox="0 0 24 24"
         aria-hidden="true"
-        className="h-[15px] w-[15px] fill-current"
+        className="h-6 w-6 fill-current"
       >
         <path d="M18.9 2.75h3.68l-8.04 9.19L24 21.25h-7.4l-5.8-7.57-6.63 7.57H.48l8.6-9.83L0 2.75h7.58l5.24 6.93 6.08-6.93Zm-1.3 16.96h2.04L6.47 4.2H4.28L17.6 19.71Z" />
       </svg>
@@ -261,9 +261,12 @@ export default function SiteLayout({ children }) {
                   <Link
                     key={path}
                     to={path}
-                    className="text-sm font-medium text-[#f8fafc] transition-all duration-300 hover:translate-x-1 hover:text-[#ffc21c]"
+                    className="group relative inline-flex items-center text-sm font-medium text-[#f8fafc] transition-all duration-300 ease-out hover:text-[#ffc21c]"
                   >
-                    {label}
+                    <span className="relative z-10 transition-transform duration-300 ease-out group-hover:scale-105 group-hover:-translate-y-0.5">
+                      {label}
+                    </span>
+                    <span className="pointer-events-none absolute inset-0 -z-10 rounded-full bg-white/5 opacity-0 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:scale-110" />
                   </Link>
                 ))}
               </nav>
@@ -336,7 +339,7 @@ export default function SiteLayout({ children }) {
                       href={href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`inline-flex h-9 w-9 items-center justify-center border border-current transition-opacity hover:opacity-75 ${socialColorClasses[name] || "text-[#f8fafc]"}`}
+                      className={`inline-flex h-10 w-10 items-center justify-center rounded-full transition-opacity hover:opacity-75 ${socialColorClasses[name] || "text-[#f8fafc]"}`}
                       aria-label={`Visit our ${name}`}
                     >
                       <SocialIcon name={icon} />

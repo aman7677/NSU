@@ -56,7 +56,7 @@ export default function Features() {
           <p className="mb-5 text-[10px] font-bold uppercase tracking-[.18em] text-pigment-magenta">
             Why NSU
           </p>
-          <h2 className="max-w-3xl text-4xl font-extrabold leading-[.92] tracking-[-0.065em] md:text-6xl">
+          <h2 className="max-w-3xl text-4xl font-medium leading-[.92] tracking-[-0.065em] md:text-6xl">
             Built different. Proven better.
           </h2>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-secondary md:text-lg">
