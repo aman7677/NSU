@@ -404,6 +404,7 @@ html.light .bg-card {
 .faq-question:focus-visible {
   background: color-mix(in srgb, var(--bg-card) 78%, var(--accent-color) 22%);
 }
+
 .text-eyebrow {
   color: var(--color-signal) !important;
 }
@@ -411,4 +412,3 @@ html.light .bg-card {
 html.light .text-eyebrow {
   color: var(--color-pigment-magenta) !important;
 }
-
