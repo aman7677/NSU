@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import Button from "../components/Button";
+import ColourParticles from "../components/ColourParticles";
 
 const lines = ["COLOUR", "WITHOUT", "LIMITS"];
 
@@ -10,6 +11,12 @@ export default function Hero() {
       className="relative isolate flex min-h-[680px] overflow-x-clip overflow-y-visible sm:min-h-[720px] md:min-h-[860px]"
       style={{ color: "var(--hero-text)" }}
     >
+      <ColourParticles 
+        particleCount={350} 
+        interactive={true} 
+        speed={1.2} 
+        colors={['#ff168d', '#12d9ff', '#9b4dff', '#67ff5d', '#f8ff1c', '#ff2b26', '#ff7a18']}
+      />
       <div
         className="pointer-events-none absolute inset-0"
         style={{ background: "var(--hero-vignette)" }}
