@@ -49,14 +49,14 @@ export default function Contact() {
             <address className="mt-10 not-italic">
               <div className="border-t border-theme">
                 {/* Contact person */}
-                <div className="border-b border-theme py-5">
+                {/* <div className="border-b border-theme py-5">
                   <p className="text-[10px] font-bold uppercase tracking-[.15em] text-secondary">
                     Contact person
                   </p>
                   <p className="mt-2 text-sm font-medium">
                     {companyDetails.contactName}
                   </p>
-                </div>
+                </div> */}
 
                 {/* Phone */}
                 <div className="border-b border-theme py-5">

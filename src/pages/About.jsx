@@ -7,11 +7,11 @@ import SectionTitle from "../components/SectionTitle";
 /* ─── Static content data ─── */
 
 const storyParagraphs = [
-  "Our journey began in 1983, when five brothers came together with a shared vision, determination, and a simple belief to build something that would stand the test of time.",
+  "Our journey began in 1983, when three brothers came together with a shared vision, determination, and a simple belief to build something that would stand the test of time.",
   "With humble beginnings, NSU started its journey with Sindoor, a product deeply connected with Indian traditions, culture, and emotions. What began as a small business was never just about selling a product; it was about creating something people could trust.",
   "The early years were filled with challenges. Building a business from the ground up required patience, dedication, and countless hours of hard work. Step by step, with the support and trust of our customers, NSU continued to grow.",
-  "Over the years, our commitment to quality and our passion for colours helped us expand beyond Sindoor. Today, NSU deals in Sindoor along with additional colours, bringing a wider spectrum of vibrant shades to our customers.",
-  "But our journey is not defined only by the number of products or colours we offer. It is defined by the relationships, trust, and experience built over more than four decades.",
+  "Over the years, our commitment to quality and our passion for colours helped us expand beyond Sindoor. Today, NSU deals in Sindoor along with additional fluorescent pigments, bringing a wider spectrum of vibrant shades to our customers.",
+  "But our journey is not defined only by the number of products or fluorescent pigments we offer. It is defined by the relationships, trust, and experience built over more than four decades.",
 ];
 
 const whatWeDoSection = {

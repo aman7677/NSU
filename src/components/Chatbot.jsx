@@ -384,6 +384,8 @@ const KNOWLEDGE = [
   },
 ];
 
+/* Quick suggestions removed. */
+/*
 const QUICK_CHIPS = [
   { label: '🎨 Products', query: 'What products do you offer?' },
   { label: '📞 Contact', query: 'How can I contact you?' },
@@ -394,6 +396,7 @@ const QUICK_CHIPS = [
   { label: '🧪 Samples', query: 'Can I get product samples?' },
   { label: '📦 Bulk Orders', query: 'Do you accept bulk orders?' },
 ];
+*/
 
 const GREETING = {
   sender: 'bot',
@@ -558,24 +561,6 @@ export default function Chatbot() {
     }, delay);
   };
 
-  /* Quick chip handler */
-  const handleChip = (query) => {
-    setInput(query);
-    setTimeout(() => {
-      const userMsg = { sender: 'user', text: query, time: new Date() };
-      setMessages((prev) => [...prev, userMsg]);
-      setInput('');
-      setIsTyping(true);
-
-      const reply = getBotReply(query);
-      const delay = Math.min(Math.max(reply.text.length * 8, 500), 1800);
-      setTimeout(() => {
-        setIsTyping(false);
-        setMessages((prev) => [...prev, { sender: 'bot', text: reply.text, nav: reply.nav, time: new Date() }]);
-      }, delay);
-    }, 100);
-  };
-
   /* Navigation from bot reply */
   const handleNavClick = (to) => {
     navigate(to);
@@ -583,8 +568,7 @@ export default function Chatbot() {
   };
 
   /* Determine if we should show quick chips (only after the greeting or default reply) */
-  const lastBotMsg = [...messages].reverse().find((m) => m.sender === 'bot');
-  const showChips = messages.length <= 1 || (lastBotMsg && lastBotMsg === messages[messages.length - 1] && !isTyping);
+  const showChips = false;
 
   return (
     <div className="fixed bottom-6 right-6 z-[100] flex flex-col items-end">

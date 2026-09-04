@@ -207,7 +207,7 @@ export default function SiteLayout({ children }) {
       >
         {children}
       </main>
-      <footer className="relative isolate overflow-hidden bg-[#0b1120] px-6 pb-6 pt-14 text-[#f8fafc] md:px-10 md:pt-20 lg:px-14">
+      <footer className="site-footer relative isolate overflow-hidden bg-[#0b1120] px-6 pb-6 pt-14 text-[#f8fafc] uppercase md:px-10 md:pt-20 lg:px-14">
         {/* Background Gradients */}
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_74%_24%,rgba(239,22,120,.24)_0%,transparent_32%),radial-gradient(circle_at_90%_70%,rgba(255,194,28,.16)_0%,transparent_28%),linear-gradient(115deg,#050816_0%,#0f172a_48%,#111827_100%)]" />
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(2,6,23,.92)_0%,rgba(15,23,42,.62)_48%,rgba(15,23,42,.28)_100%)]" />
@@ -276,10 +276,10 @@ export default function SiteLayout({ children }) {
                 Head Office
               </p>
               <div className="mt-5 flex flex-col gap-1.5 text-sm font-medium text-[#f8fafc]">
-                <p>Nai Sadak Chowk,</p>
-                <p>Patna City</p>
-                <p>District : Patna</p>
-                <p>Bihar, India</p>
+                <p>NAI SADAK CHOWK,</p>
+                <p>PATNA CITY</p>
+                <p>DISTRICT : PATNA</p>
+                <p>BIHAR, INDIA</p>
                 <p>PIN-800008</p>
               </div>
             </div>
@@ -288,10 +288,10 @@ export default function SiteLayout({ children }) {
                 Manufacturing Unit
               </p>
               <div className="mt-5 flex flex-col gap-1.5 text-sm font-medium text-[#f8fafc]">
-                <p>Hajipur Industrial Area,</p>
-                <p> Hajipur</p>
+                <p>HAJIPUR INDUSTRIAL AREA,</p>
+                <p> HAJIPUR</p>
                 <p>District: Vaishali</p>
-                <p>Bihar, India</p>
+                <p>Bihar, India  </p>
                 <p>PIN-844102</p>
               </div>
             </div>
@@ -301,7 +301,6 @@ export default function SiteLayout({ children }) {
               </p>
               <div className="mt-5 flex flex-col gap-1.5">
                 <a
-                  href={companyDetails.phoneHref}
                   className="inline-flex items-center gap-2 text-sm font-semibold text-[#f8fafc] transition-colors hover:text-[#ffc21c]"
                 >
                   <span className="inline-flex h-8 w-8 items-center justify-center text-[#ffc21c]">
