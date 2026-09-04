@@ -550,8 +550,7 @@ html.light .bg-card {
 }
 
 .header-nav-link:hover::after,
-.header-nav-link:focus-visible::after,
-.header-nav-link.is-active::after {
+.header-nav-link:focus-visible::after {
   transform: scaleX(1);
   animation: headerLinkFlow 1.15s linear infinite;
 }
