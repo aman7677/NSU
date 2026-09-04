@@ -81,10 +81,11 @@ export default function ColourParticles({ particleCount, colors = defaultColors,
             const dx = particle.x - pointer.x
             const dy = particle.y - pointer.y
             const distance = Math.hypot(dx, dy)
-            if (distance < 120 && distance > 0.1) {
-              const force = (1 - distance / 120) * 0.65
-              particle.x += (dx / distance) * force
-              particle.y += (dy / distance) * force
+            if (distance < 250 && distance > 0.1) {
+              // Pull particles towards the mouse (follow effect)
+              const force = (1 - distance / 250) * 1.2
+              particle.x -= (dx / distance) * force
+              particle.y -= (dy / distance) * force
             }
           }
         }
