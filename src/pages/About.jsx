@@ -223,7 +223,7 @@ export default function About() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
           variants={reveal}
-          className="mt-24 bg-foreground px-6 py-14 text-background md:mt-32 md:px-[12%] md:py-20"
+          className="mt-24 rounded-3xl border border-white/10 bg-black/20 px-6 py-14 text-white backdrop-blur-xl shadow-2xl md:mt-32 md:px-[12%] md:py-20"
         >
           <p className="text-[10px] font-bold uppercase tracking-[.17em] text-pigment-yellow">
             {coreBeliefSection.label}
@@ -231,10 +231,10 @@ export default function About() {
           <blockquote className="mt-6 max-w-4xl font-devanagari text-3xl font-semibold leading-tight tracking-[-.05em] md:text-5xl">
             {coreBeliefSection.hindiQuote}
           </blockquote>
-          <p className="mt-5 max-w-2xl text-sm leading-relaxed text-background/70 md:text-base">
+          <p className="mt-5 max-w-2xl text-sm leading-relaxed text-white/70 md:text-base">
             {coreBeliefSection.hindiTranslation}
           </p>
-          <p className="mt-10 max-w-3xl text-lg leading-relaxed text-background/80 md:text-xl">
+          <p className="mt-10 max-w-3xl text-lg leading-relaxed text-white/80 md:text-xl">
             {coreBeliefSection.englishQuote}
           </p>
         </motion.section>
