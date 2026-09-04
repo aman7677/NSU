@@ -16,6 +16,8 @@ const links = [
   ["About", "/about"],
   ["Contact", "/contact"],
 ];
+const footerLinkColors = ["#ef1678", "#ff761c", "#ffc21c", "#20d9ff", "#a78bfa"];
+const headerLinkColors = ["#ef1678", "#ff761c", "#ffc21c", "#20d9ff", "#a78bfa"];
 const itemVariants = {
   hidden: { opacity: 0, y: 24 },
   visible: {
@@ -121,13 +123,14 @@ export default function SiteLayout({ children }) {
             aria-label="Primary navigation"
             className="hidden h-full items-center gap-7 lg:flex"
           >
-            {links.map(([label, path]) => (
+            {links.map(([label, path], index) => (
               <NavLink
                 end={path === "/"}
                 key={path}
+                style={{ "--header-link-color": headerLinkColors[index] }}
                 to={path}
                 className={({ isActive }) =>
-                  `relative flex h-full items-center text-[11px] font-bold uppercase tracking-[0.14em] transition-colors ${isActive ? "text-[var(--accent-color)]" : "text-secondary hover:text-primary after:absolute after:left-0 after:top-[calc(50%+11px)] after:h-0.5 after:w-full after:origin-left after:scale-x-0 after:bg-[var(--accent-color)] after:transition-transform after:duration-300 hover:after:scale-x-100 focus-visible:text-primary focus-visible:after:scale-x-100"}`
+                  `header-nav-link relative flex h-full items-center text-[11px] font-bold uppercase tracking-[0.14em] transition-colors ${isActive ? "is-active text-[var(--header-link-color)]" : "text-secondary"}`
                 }
               >
                 {({ isActive }) => (
@@ -251,16 +254,17 @@ export default function SiteLayout({ children }) {
                 aria-label="Footer navigation"
                 className="mt-5 flex flex-col items-start gap-3"
               >
-                {links.map(([label, path]) => (
+                {links.map(([label, path], index) => (
                   <Link
                     key={path}
                     to={path}
-                    className="group relative inline-flex items-center text-sm font-medium text-[#f8fafc] transition-all duration-300 ease-out hover:text-[#ffc21c]"
+                    style={{ "--footer-link-color": footerLinkColors[index] }}
+                    className="footer-nav-link group relative inline-flex items-center text-sm font-medium text-[#f8fafc] transition-all duration-300 ease-out"
                   >
                     <span className="relative z-10 transition-transform duration-300 ease-out group-hover:scale-105 group-hover:-translate-y-0.5">
                       {label}
                     </span>
-                    <span className="pointer-events-none absolute inset-0 -z-10 rounded-full bg-white/5 opacity-0 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:scale-110" />
+                    <span className="footer-nav-link__glow pointer-events-none absolute inset-x-0 bottom-[-7px] h-px origin-left scale-x-0 opacity-0 transition-all duration-300 ease-out group-hover:scale-x-100 group-hover:opacity-100" />
                   </Link>
                 ))}
               </nav>

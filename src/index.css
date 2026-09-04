@@ -490,6 +490,90 @@ html.light .bg-card {
   color: var(--color-signal) !important;
 }
 
+/* Footer navigation carries a different flowing pigment on every link. */
+.footer-nav-link {
+  color: #f8fafc;
+  text-shadow: 0 0 0 transparent;
+}
+
+.footer-nav-link:hover,
+.footer-nav-link:focus-visible {
+  color: var(--footer-link-color);
+  text-shadow: 0 0 18px color-mix(in srgb, var(--footer-link-color) 48%, transparent);
+}
+
+.footer-nav-link__glow {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--footer-link-color) 22%,
+    #f8fafc 50%,
+    var(--footer-link-color) 78%,
+    transparent
+  );
+  box-shadow: 0 0 12px var(--footer-link-color);
+  transition-property: transform, opacity;
+}
+
+.footer-nav-link:hover .footer-nav-link__glow,
+.footer-nav-link:focus-visible .footer-nav-link__glow {
+  animation: footerLinkFlow 1.15s linear infinite;
+}
+
+/* Header navigation uses the same per-link flowing pigment treatment. */
+.header-nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: calc(50% + 11px);
+  height: 2px;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--header-link-color) 22%,
+    #f8fafc 50%,
+    var(--header-link-color) 78%,
+    transparent
+  );
+  box-shadow: 0 0 10px var(--header-link-color);
+  transition: transform 0.3s ease;
+}
+
+.header-nav-link:hover,
+.header-nav-link:focus-visible,
+.header-nav-link.is-active {
+  color: var(--header-link-color) !important;
+  text-shadow: 0 0 14px color-mix(in srgb, var(--header-link-color) 42%, transparent);
+}
+
+.header-nav-link:hover::after,
+.header-nav-link:focus-visible::after,
+.header-nav-link.is-active::after {
+  transform: scaleX(1);
+  animation: headerLinkFlow 1.15s linear infinite;
+}
+
+@keyframes footerLinkFlow {
+  0% {
+    background-position: -120px 0;
+  }
+  100% {
+    background-position: 120px 0;
+  }
+}
+
+@keyframes headerLinkFlow {
+  0% {
+    background-position: -120px 0;
+  }
+  100% {
+    background-position: 120px 0;
+  }
+}
+
 html.light .text-eyebrow {
   color: var(--color-pigment-magenta) !important;
 }
