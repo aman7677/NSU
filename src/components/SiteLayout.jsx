@@ -6,6 +6,7 @@ import NSULogo from "./NSULogo";
 import ThemeToggle from "./ThemeToggle";
 import ColourParticles from "./ColourParticles";
 import Chatbot from "./Chatbot";
+import NeonScrollBackground from "./NeonScrollBackground";
 import { companyDetails } from "../data/company";
 
 const links = [
@@ -73,15 +74,7 @@ const socialColorClasses = {
 
 export default function SiteLayout({ children }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
-
-  useEffect(() => {
-    const updateScrolled = () => setIsScrolled(window.scrollY > 12);
-    updateScrolled();
-    window.addEventListener("scroll", updateScrolled, { passive: true });
-    return () => window.removeEventListener("scroll", updateScrolled);
-  }, []);
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
@@ -100,7 +93,8 @@ export default function SiteLayout({ children }) {
   }, [isOpen]);
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="relative isolate flex min-h-screen flex-col">
+      <NeonScrollBackground />
       <a
         href="#main-content"
         className="sr-only z-[100] skip-link px-4 py-3 text-sm font-bold focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
@@ -203,11 +197,11 @@ export default function SiteLayout({ children }) {
       </AnimatePresence>
       <main
         id="main-content"
-        className={`flex-1 ${location.pathname === "/" ? "" : "pt-20"}`}
+        className={`relative z-10 flex-1 ${location.pathname === "/" ? "" : "pt-20"}`}
       >
         {children}
       </main>
-      <footer className="site-footer relative isolate overflow-hidden bg-[#0b1120] px-6 pb-6 pt-14 text-[#f8fafc] uppercase md:px-10 md:pt-20 lg:px-14">
+      <footer className="site-footer relative z-10 isolate overflow-hidden bg-[#0b1120] px-6 pb-6 pt-14 text-[#f8fafc] uppercase md:px-10 md:pt-20 lg:px-14">
         {/* Background Gradients */}
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_74%_24%,rgba(239,22,120,.24)_0%,transparent_32%),radial-gradient(circle_at_90%_70%,rgba(255,194,28,.16)_0%,transparent_28%),linear-gradient(115deg,#050816_0%,#0f172a_48%,#111827_100%)]" />
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(2,6,23,.92)_0%,rgba(15,23,42,.62)_48%,rgba(15,23,42,.28)_100%)]" />

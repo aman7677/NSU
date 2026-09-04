@@ -145,11 +145,7 @@ html.light {
 
   body {
     @apply m-0 overflow-x-clip antialiased;
-    background:
-      radial-gradient(circle at 8% 10%, rgba(239, 22, 120, 0.2), transparent 28%),
-      radial-gradient(circle at 92% 26%, rgba(255, 194, 28, 0.18), transparent 25%),
-      radial-gradient(circle at 52% 92%, rgba(255, 118, 28, 0.13), transparent 32%),
-      linear-gradient(135deg, #070817 0%, var(--bg-primary) 48%, #160d27 100%);
+    background: #030305;
     color: var(--text-primary);
     transition: background-color 0.3s, color 0.3s;
   }
@@ -222,11 +218,92 @@ html.light {
   }
 
   html.light body {
-    background:
-      radial-gradient(circle at 12% 8%, rgba(239, 22, 120, 0.18), transparent 28%),
-      radial-gradient(circle at 84% 18%, rgba(255, 194, 28, 0.22), transparent 30%),
-      radial-gradient(circle at 52% 92%, rgba(255, 118, 28, 0.12), transparent 30%),
-      linear-gradient(120deg, #ffffff 0%, #fff5e8 48%, #ffedf7 100%);
+    background: #fffaf5;
+  }
+}
+
+/* One fixed paint layer owns the page-level pigment effect. Framer Motion only
+   updates transforms, opacity and a single composited colour value on scroll. */
+.neon-scroll-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  isolation: isolate;
+  contain: paint;
+  background: #030305;
+}
+
+.neon-scroll-background__base,
+.neon-scroll-background__aurora,
+.neon-scroll-background__vignette {
+  position: absolute;
+  inset: 0;
+}
+
+.neon-scroll-background__base {
+  transform: translateZ(0);
+}
+
+.neon-scroll-background__aurora {
+  background:
+    radial-gradient(ellipse 68% 50% at 12% 8%, rgba(255, 22, 141, 0.18), transparent 70%),
+    radial-gradient(ellipse 54% 46% at 90% 26%, rgba(255, 114, 24, 0.15), transparent 72%),
+    radial-gradient(ellipse 58% 52% at 48% 98%, rgba(18, 217, 255, 0.12), transparent 74%);
+  will-change: opacity;
+}
+
+.neon-scroll-background__blobs {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.neon-scroll-background__blob-position {
+  position: absolute;
+  left: 0;
+  top: 0;
+  will-change: transform, opacity;
+}
+
+.neon-scroll-background__blob {
+  height: clamp(24rem, 51vw, 62rem);
+  width: clamp(24rem, 51vw, 62rem);
+  border-radius: 48% 52% 58% 42% / 46% 42% 58% 54%;
+  background: radial-gradient(circle at 35% 32%, var(--neon-blob-color), color-mix(in srgb, var(--neon-blob-color) 48%, transparent) 42%, transparent 72%);
+  filter: blur(72px);
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.neon-scroll-background__vignette {
+  background:
+    radial-gradient(circle at center, transparent 16%, rgba(0, 0, 0, 0.18) 72%, rgba(0, 0, 0, 0.54) 100%),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.2), transparent 42%, rgba(0, 0, 0, 0.16));
+}
+
+html.light .neon-scroll-background {
+  background: #fffaf5;
+}
+
+html.light .neon-scroll-background__base {
+  background-color: #fffaf5 !important;
+}
+
+html.light .neon-scroll-background__blob-position {
+  opacity: 0.18 !important;
+}
+
+html.light .neon-scroll-background__vignette {
+  background: rgba(255, 250, 245, 0.36);
+}
+
+@media (max-width: 640px) {
+  .neon-scroll-background__blob {
+    height: 25rem;
+    width: 25rem;
+    filter: blur(58px);
   }
 }
 
@@ -305,26 +382,15 @@ html.light {
 
 /* Semantic theme helpers */
 .bg-primary {
-  background:
-    radial-gradient(circle at 8% 8%, rgba(239, 22, 120, 0.16), transparent 25%),
-    radial-gradient(circle at 92% 28%, rgba(255, 194, 28, 0.13), transparent 27%),
-    radial-gradient(circle at 48% 100%, rgba(255, 118, 28, 0.1), transparent 30%),
-    linear-gradient(135deg, #08091a 0%, var(--bg-primary) 50%, #150d27 100%) !important;
+  background: color-mix(in srgb, #05060b 82%, transparent) !important;
 }
 
 html.light .bg-primary {
-  background:
-    radial-gradient(circle at 18% 0%, rgba(239, 22, 120, 0.16), transparent 30%),
-    radial-gradient(circle at 82% 12%, rgba(255, 194, 28, 0.2), transparent 32%),
-    radial-gradient(circle at 48% 100%, rgba(255, 118, 28, 0.1), transparent 30%),
-    linear-gradient(120deg, #ffffff 0%, #fff7eb 48%, #ffeff8 100%) !important;
+  background: color-mix(in srgb, #fffdf9 86%, transparent) !important;
 }
 
 .bg-secondary {
-  background:
-    radial-gradient(circle at 88% 12%, rgba(239, 22, 120, 0.18), transparent 28%),
-    radial-gradient(circle at 12% 78%, rgba(255, 194, 28, 0.12), transparent 30%),
-    linear-gradient(135deg, #100d26 0%, var(--bg-secondary) 52%, #1b1027 100%) !important;
+  background: color-mix(in srgb, #0a0812 84%, transparent) !important;
 }
 
 html.light .bg-secondary {
