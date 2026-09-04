@@ -6,6 +6,7 @@ import NSULogo from "./NSULogo";
 import ThemeToggle from "./ThemeToggle";
 import ColourParticles from "./ColourParticles";
 import Chatbot from "./Chatbot";
+import FollowCursor from "./FollowCursor";
 import NeonScrollBackground from "./NeonScrollBackground";
 import { companyDetails } from "../data/company";
 
@@ -365,6 +366,14 @@ export default function SiteLayout({ children }) {
         </div>
       </footer>
       <Chatbot />
+      <FollowCursor
+        size={10}
+        colorMode="rainbow"
+        glow={true}
+        trail={true}
+        hideOnHover={true}
+        zIndex={9999}
+      />
     </div>
   );
 }
