@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, MessageCircle, Phone, X } from "lucide-react";
+import { Mail, Menu, MessageCircle, Phone, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import NSULogo from "./NSULogo";
@@ -209,7 +209,7 @@ export default function SiteLayout({ children }) {
         {/* Background Gradients */}
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_74%_24%,rgba(239,22,120,.24)_0%,transparent_32%),radial-gradient(circle_at_90%_70%,rgba(255,194,28,.16)_0%,transparent_28%),linear-gradient(115deg,#050816_0%,#0f172a_48%,#111827_100%)]" />
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(2,6,23,.92)_0%,rgba(15,23,42,.62)_48%,rgba(15,23,42,.28)_100%)]" />
-        
+
         {/* Particles and Background Accents */}
         <ColourParticles particleCount={55} interactive={true} speed={0.65} />
         <div className="pointer-events-none absolute right-[12%] top-12 hidden h-36 w-36 rounded-full bg-[#ef1678]/20 blur-[65px] md:block" />
@@ -306,6 +306,15 @@ export default function SiteLayout({ children }) {
                     <Phone size={15} aria-hidden="true" />
                   </span>
                   <span>{companyDetails.phone}</span>
+                </a>
+                <a
+                  href={`mailto:${companyDetails.email}`}
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-[#f8fafc] transition-colors hover:text-[#ffc21c]"
+                >
+                  <span className="inline-flex h-8 w-8 items-center justify-center text-[#ffc21c]">
+                    <Mail size={15} aria-hidden="true" />
+                  </span>
+                  <span className="lowercase">{companyDetails.email}</span>
                 </a>
                 {companyDetails.socialLinks
                   .filter(({ name }) => name === "WhatsApp")
