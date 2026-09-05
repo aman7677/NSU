@@ -96,6 +96,7 @@ export default function EnquiryForm() {
           email: trimmedValues.email,
           phone: trimmedValues.phone || "Not provided",
           product: trimmedValues.productInterest,
+          requirement: trimmedValues.requirement || "Not provided",
           message: trimmedValues.message,
         },
         { publicKey: emailJsConfig.publicKey },
