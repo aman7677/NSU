@@ -122,6 +122,16 @@ export default function ProductCatalogueCard({ product, onSelect }) {
               {product.application}
             </dd>
           </div>
+          {product.tags && product.tags.length > 0 && (
+            <div className="flex justify-between gap-6">
+              <dt className="shrink-0 uppercase tracking-[.12em] text-secondary">
+                Suitable for
+              </dt>
+              <dd className="max-w-[65%] text-right font-medium">
+                {product.tags.slice(0, 3).join(', ')}
+              </dd>
+            </div>
+          )}
         </dl>
         <p className="mt-5 text-sm leading-relaxed text-secondary">
           {product.description}

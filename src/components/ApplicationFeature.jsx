@@ -39,12 +39,21 @@ export default function ApplicationFeature({ application, index }) {
         <p className="mt-6 max-w-4xl text-base leading-relaxed text-secondary md:mt-7 md:text-lg">
           {application.description}
         </p>
-        <p
-          className="mt-8 max-w-4xl border-l-2 pl-4 text-sm font-medium leading-relaxed text-secondary md:mt-10 md:pl-5"
-          style={{ borderColor: application.accent }}
-        >
-          Suitable grades available depending on application requirements.
-        </p>
+        {application.keywords && application.keywords.length > 0 ? (
+          <p
+            className="mt-8 max-w-4xl border-l-2 pl-4 text-sm font-medium leading-relaxed text-secondary md:mt-10 md:pl-5"
+            style={{ borderColor: application.accent }}
+          >
+            {application.keywords.join(' · ')}
+          </p>
+        ) : (
+          <p
+            className="mt-8 max-w-4xl border-l-2 pl-4 text-sm font-medium leading-relaxed text-secondary md:mt-10 md:pl-5"
+            style={{ borderColor: application.accent }}
+          >
+            Suitable grades available depending on application requirements.
+          </p>
+        )}
       </motion.div>
     </motion.article>
   );

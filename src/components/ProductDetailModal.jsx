@@ -11,51 +11,68 @@ const item = {
 
 function getProductApplicationDetails(product) {
   const colorName = (product?.colour || product?.name || "").toLowerCase();
+  const category = (product?.category || "").toLowerCase();
+
+  if (category.includes("fluorescent")) {
+    return {
+      applications:
+        "Fluorescent pigment powder for high-visibility applications including aerosol spray paints, solvent based paints, paper coating, PVC coating, gravure coating, industrial markers, highlighter ink, safety signage, crack detection, leak detection, security pigments, and paint balls.",
+      deliveries: ["Fluorescent Pigment Powder", "Bulk supply", "Custom batches"],
+    };
+  }
+
+  if (category.includes("sindoor")) {
+    return {
+      applications:
+        "Traditional sindhoor preparations, rangoli colour products, holi colour powders, idol coating, and festive colour applications.",
+      deliveries: ["Powder", "Standard shades", "Custom match"],
+    };
+  }
 
   if (colorName.includes("yellow")) {
     return {
       applications:
-        "General colour applications, industrial coatings, packaging, plastics, and high-visibility print systems.",
-      deliveries: ["Powder", "Bulk supply", "Custom batches"],
+        "Water based paints, solvent based paints, aerosol spray paints, poster colours, paper coating, clay coating, seed coating, water colours, wax crayons, rangoli, holi colour products, candles, clay dough, soap, and general decorative colour applications.",
+      deliveries: ["Pigment Powder", "Bulk supply", "Custom batches"],
     };
   }
 
   if (colorName.includes("red") || colorName.includes("orange")) {
     return {
       applications:
-        "Traditional products, textile colours, paper coatings, inks, and bold decorative surfaces.",
-      deliveries: ["Powder", "Standard shades", "Custom match"],
+        "Water based paints, solvent based paints, aerosol spray paints, poster colours, paper coating, PVC coating, rangoli, holi colour products, wax crayons, candles, soap, and bold decorative surface applications.",
+      deliveries: ["Pigment Powder", "Standard shades", "Custom match"],
     };
   }
 
   if (colorName.includes("green")) {
     return {
       applications:
-        "Packaging, polymer systems, decorative applications, and colour-focused product finishes.",
-      deliveries: ["Powder", "Bulk supply", "Application-led matching"],
+        "Water based paints, solvent based paints, aerosol spray paints, poster colours, paper coating, seed coating, rangoli, holi colour products, wax crayons, clay dough, candles, and decorative colour applications.",
+      deliveries: ["Pigment Powder", "Bulk supply", "Application-led matching"],
     };
   }
 
   if (colorName.includes("pink") || colorName.includes("magenta")) {
     return {
       applications:
-        "Visual branding, plastics, coatings, textile colouring, and vibrant product surfaces.",
-      deliveries: ["Powder", "High-chroma finish", "Custom shade support"],
+        "Water based paints, solvent based paints, aerosol spray paints, poster colours, paper coating, PVC coating, wax crayons, rangoli, holi colour products, textile colouring, candles, soap, and vibrant product surfaces.",
+      deliveries: ["Pigment Powder", "High-chroma finish", "Custom shade support"],
     };
   }
 
   if (colorName.includes("blue") || colorName.includes("violet")) {
     return {
       applications:
-        "Premium finishes, decorative coatings, specialty plastics, and statement colour systems.",
-      deliveries: ["Powder", "Custom batches", "Bulk volume supply"],
+        "Water based paints, solvent based paints, aerosol spray paints, poster colours, paper coating, gravure coating, water colours, wax crayons, rangoli, holi colour products, candles, and premium decorative applications.",
+      deliveries: ["Pigment Powder", "Custom batches", "Bulk volume supply"],
     };
   }
 
   return {
     applications:
-      "Application-led colour solutions designed around the product requirement and production process.",
-    deliveries: ["Powder", "Bulk supply", "Custom development"],
+      "Pigment powder for application-led colour solutions including water based paints, solvent based paints, aerosol spray paints, poster colours, paper coating, and custom colour development.",
+    deliveries: ["Pigment Powder", "Bulk supply", "Custom development"],
   };
 }
 

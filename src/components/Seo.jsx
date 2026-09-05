@@ -2,8 +2,8 @@ import { useEffect } from 'react'
 
 const pages = {
   '/': { title: 'NSU — Colour Solutions & Pigments', description: 'NSU provides vibrant colour and pigment solutions for distinctive products and application-led colour requirements.' },
-  '/products': { title: 'NSU — Sindoor Colour & Fluorescent Pigments', description: 'Explore NSU sindoor colours, fluorescent pigments, bright colour powders and custom colour solutions.' },
-  '/applications': { title: 'NSU — Colour Pigment Applications', description: 'Explore colour pigment discussions for traditional colour products, textiles, polymers, printing, industrial uses and custom development.' },
+  '/products': { title: 'NSU — Sindoor Colour, Fluorescent Pigments & Colour Powders', description: 'Explore NSU sindhoor colours, fluorescent pigment powders, bright colour powders for water based paints, solvent based paints, aerosol spray paints, poster colours, paper coating, and custom colour solutions.' },
+  '/applications': { title: 'NSU — Pigment Applications for Paints, Textiles, Plastics & Industry', description: 'Discover NSU colour pigment applications for sindhoor, rangoli, textile printing, master batch, flexo ink, gravure ink, PVC coating, paper coating, industrial markers, crack detection, and custom pigment preparation.' },
   '/about': { title: 'About NSU — Colour Solutions', description: 'Learn about NSU’s application-led approach to vibrant colour and pigment solutions.' },
   '/contact': { title: 'Contact NSU — Product Enquiries', description: 'Contact NSU to discuss colour pigments, product requirements and application-led colour solutions.' },
 }

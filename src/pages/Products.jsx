@@ -22,7 +22,10 @@ export default function Products() {
         (product) =>
           product.name.toLowerCase().includes(lowerQuery) ||
           (product.code && product.code.toLowerCase().includes(lowerQuery)) ||
-          product.colour.toLowerCase().includes(lowerQuery)
+          product.colour.toLowerCase().includes(lowerQuery) ||
+          product.application.toLowerCase().includes(lowerQuery) ||
+          product.description.toLowerCase().includes(lowerQuery) ||
+          (product.tags && product.tags.some(tag => tag.toLowerCase().includes(lowerQuery)))
       );
     }
     return filtered;
