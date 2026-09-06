@@ -81,7 +81,7 @@ export default function Testimonials() {
           {stats.map((stat) => (
             <div
               key={stat.label}
-              className="rounded-xl border border-theme bg-card px-5 py-6 text-center transition-colors duration-300 md:px-6 md:py-8"
+              className="glass-card rounded-xl px-5 py-6 text-center transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-1 md:px-6 md:py-8"
             >
               <p className="text-3xl font-extrabold tracking-[-0.04em] text-pigment-magenta md:text-4xl">
                 <CountUp value={stat.value} suffix={stat.suffix} />
@@ -103,7 +103,7 @@ export default function Testimonials() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.25 }}
-              className="group relative flex flex-col overflow-hidden rounded-2xl border border-theme bg-card p-8 transition-colors duration-300 md:p-10"
+              className="glass-card group relative flex flex-col overflow-hidden rounded-2xl p-8 transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-1 md:p-10"
             >
               {/* Decorative quote icon */}
               <Quote

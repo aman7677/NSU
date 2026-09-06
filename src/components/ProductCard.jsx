@@ -19,7 +19,7 @@ export default function ProductCard({ product, index = 0 }) {
       whileHover={{ y: -8 }}
       viewport={{ once: true, amount: 0.18 }}
       transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-      className="group flex flex-col rounded-lg border border-theme bg-card transition-colors duration-300 hover:border-theme"
+      className="glass-card group flex flex-col rounded-lg transition-[border-color,box-shadow] duration-300"
     >
       <div className="relative rounded-lg aspect-[4/3] overflow-hidden bg-[color:var(--bg-secondary)]">
         <div className="h-full transition-transform duration-700 ease-out group-hover:scale-105">

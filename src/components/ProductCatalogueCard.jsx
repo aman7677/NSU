@@ -87,7 +87,7 @@ export default function ProductCatalogueCard({ product, onSelect }) {
         type="button"
         onClick={() => onSelect(product)}
         aria-label={`View details for ${product.name}`}
-        className="relative aspect-[16/10] w-full overflow-hidden rounded-[0.55rem] text-left focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-pigment-magenta"
+        className="group/image relative aspect-[16/10] w-full overflow-hidden rounded-[0.55rem] text-left focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-pigment-magenta"
       >
         <motion.div
           whileHover={{ scale: 1.07 }}
@@ -98,6 +98,9 @@ export default function ProductCatalogueCard({ product, onSelect }) {
         </motion.div>
         <span className="absolute bottom-4 left-4 border-l-2 border-theme pl-2 text-[10px] font-bold uppercase tracking-[.16em] text-primary">
           {product.colour}
+        </span>
+        <span className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/35 text-xs font-bold uppercase tracking-[.18em] text-white opacity-0 transition-opacity duration-300 group-hover/image:opacity-100">
+          Click to view
         </span>
       </button>
       <div className="flex flex-1 flex-col pt-7">

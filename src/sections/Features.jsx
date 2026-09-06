@@ -78,7 +78,7 @@ export default function Features() {
               <motion.article
                 key={feature.title}
                 variants={cardVariants}
-                className="group relative overflow-hidden rounded-2xl border border-theme bg-card p-8 transition-colors duration-300 md:p-10"
+                className="glass-card group relative overflow-hidden rounded-2xl p-8 transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-1 md:p-10"
               >
                 {/* Accent glow on hover */}
                 <div
