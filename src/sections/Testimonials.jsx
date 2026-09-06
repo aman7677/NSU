@@ -61,7 +61,7 @@ export default function Testimonials() {
           <p className="mb-5 text-[10px] font-bold uppercase tracking-[.18em] text-pigment-yellow">
             Trusted by partners
           </p>
-          <h2 className="max-w-3xl text-4xl font-extrabold leading-[.92] tracking-[-0.065em] md:text-6xl">
+          <h2 className="max-w-3xl text-4xl font-bold leading-[.92] tracking-[-0.065em] md:text-6xl">
             Words from those who know colour
           </h2>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-secondary md:text-lg">

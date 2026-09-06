@@ -228,7 +228,7 @@ export default function About() {
           <p className="text-[10px] font-bold uppercase tracking-[.17em] text-pigment-yellow">
             {coreBeliefSection.label}
           </p>
-          <blockquote className="mt-6 max-w-4xl font-devanagari text-3xl font-semibold leading-tight tracking-[-.05em] md:text-5xl">
+          <blockquote className="neon-quote-text mt-6 max-w-4xl font-devanagari text-3xl font-semibold leading-tight tracking-[-.05em] md:text-5xl">
             {coreBeliefSection.hindiQuote}
           </blockquote>
           <p className="mt-5 max-w-2xl text-sm leading-relaxed text-white/70 md:text-base">
