@@ -465,6 +465,40 @@ html.light .bg-card {
   box-shadow: 0 22px 48px rgba(2, 6, 23, 0.28), 0 0 0 1px color-mix(in srgb, var(--accent-color) 20%, transparent), inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
 
+.glass-search {
+  background: color-mix(in srgb, var(--bg-card) 24%, transparent);
+}
+
+.theme-scrollbar {
+  scrollbar-color: color-mix(in srgb, var(--accent-color) 72%, #0f172a 28%) color-mix(in srgb, var(--bg-primary) 72%, transparent);
+  scrollbar-width: thin;
+}
+
+.theme-scrollbar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.theme-scrollbar::-webkit-scrollbar-track {
+  background: color-mix(in srgb, var(--bg-primary) 72%, transparent);
+  border-radius: 999px;
+}
+
+.theme-scrollbar::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--accent-color) 72%, #0f172a 28%);
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background-clip: padding-box;
+}
+
+.theme-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
+  background-clip: padding-box;
+}
+
+html.light .glass-search {
+  background: color-mix(in srgb, #ffffff 26%, transparent);
+}
+
 .neon-quote-text {
   color: #f8fbff;
   background: linear-gradient(105deg, #ffffff 0%, #bff8ff 42%, #ffb8e0 78%, #fff1b8 100%);

@@ -39,13 +39,13 @@ export default function Products() {
       />
       <Container className="pb-20 md:pb-28">
         <div className="mb-6 max-w-sm relative">
-          <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-secondary" />
+          <Search className="pointer-events-none absolute left-4 top-1/2 z-10 h-4 w-4 -translate-y-1/2 text-secondary" aria-hidden="true" />
           <input
             type="search"
             placeholder="Search products..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full rounded-full border border-theme bg-card py-2.5 pl-11 pr-4 text-sm text-primary focus:border-pigment-magenta focus:outline-none focus:ring-1 focus:ring-pigment-magenta"
+            className="glass-card glass-search w-full rounded-full py-2.5 pl-11 pr-4 text-sm text-primary outline-none transition-[border-color,box-shadow] focus:border-pigment-magenta focus:ring-1 focus:ring-pigment-magenta"
           />
         </div>
         <div

@@ -99,7 +99,7 @@ export default function ProductDetailModal({ product, onClose }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       onMouseDown={onClose}
-      className="fixed inset-0 z-[70] flex items-end modal-backdrop backdrop-blur-sm bg-black/40 md:items-center md:justify-center md:p-8"
+      className="fixed inset-0 z-[70] flex items-end modal-backdrop bg-black/40 backdrop-blur-sm md:items-start md:justify-center md:p-8 md:pt-28"
     >
       <motion.section
         role="dialog"
@@ -110,7 +110,7 @@ export default function ProductDetailModal({ product, onClose }) {
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: 48, opacity: 0 }}
         transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-        className="relative max-h-[92dvh] w-full max-w-6xl overflow-y-auto bg-card md:max-h-[86dvh]"
+        className="theme-scrollbar relative max-h-[88dvh] w-full max-w-5xl overflow-y-auto rounded-2xl bg-card shadow-2xl md:max-h-[calc(100dvh-9rem)]"
       >
         <button
           ref={closeRef}
@@ -127,7 +127,7 @@ export default function ProductDetailModal({ product, onClose }) {
             initial={{ clipPath: "inset(0 100% 0 0)" }}
             animate={{ clipPath: "inset(0 0% 0 0)" }}
             transition={{ duration: 0.7, ease: [0.77, 0, 0.18, 1] }}
-            className="min-h-[310px] md:min-h-[640px]"
+            className="min-h-[260px] md:min-h-[500px]"
           >
             <PigmentVisual product={product} mode="packet" className="h-full" />
           </motion.div>
@@ -141,7 +141,7 @@ export default function ProductDetailModal({ product, onClose }) {
             }}
             initial="hidden"
             animate="visible"
-            className="p-6 md:p-10 lg:p-12"
+            className="p-6 md:p-8 lg:p-10"
           >
             <motion.p
               variants={item}
@@ -152,7 +152,7 @@ export default function ProductDetailModal({ product, onClose }) {
             <motion.h1
               variants={item}
               id="product-detail-title"
-              className="mt-5 text-4xl font-semibold leading-[.92] tracking-[-.07em] md:text-6xl"
+              className="mt-5 text-4xl font-semibold leading-[.92] tracking-[-.07em] md:text-5xl"
             >
               {product.name}
             </motion.h1>
