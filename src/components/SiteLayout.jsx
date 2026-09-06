@@ -245,7 +245,7 @@ export default function SiteLayout({ children }) {
         <div className="relative z-10 mx-auto max-w-[1440px]">
           <div className="grid grid-cols-2 gap-x-6 gap-y-10 border-b border-[rgba(248,250,252,.15)] pb-14 md:grid-cols-12 md:gap-8">
             <div className="col-span-2 md:col-span-12 lg:col-span-3 flex items-center justify-center lg:justify-start md:pl-12 lg:pl-12 lg:pr-6">
-              <NSULogo className="text-[#f8fafc] [&_img]:h-auto [&_img]:w-[190px]" showTagline />
+              <NSULogo className="text-[#f8fafc] [&_img]:h-auto [&_img]:w-[190px]" />
             </div>
             <div className="md:col-span-3 lg:col-span-2">
               <p className="text-[10px] font-bold uppercase tracking-[.17em] text-[#f8fafc]">
