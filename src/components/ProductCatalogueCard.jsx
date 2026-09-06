@@ -81,13 +81,13 @@ export default function ProductCatalogueCard({ product, onSelect }) {
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.96 }}
       transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
-      className="group flex flex-col border border-theme bg-card p-5 transition-[border-color,box-shadow] duration-300 hover:shadow-[0_12px_30px_rgba(0,0,0,.08)] md:p-6"
+      className="product-catalogue-card group flex flex-col p-5 transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-1 md:p-6"
     >
       <button
         type="button"
         onClick={() => onSelect(product)}
         aria-label={`View details for ${product.name}`}
-        className="relative aspect-[16/10] w-full overflow-hidden text-left focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-pigment-magenta"
+        className="relative aspect-[16/10] w-full overflow-hidden rounded-[0.55rem] text-left focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-pigment-magenta"
       >
         <motion.div
           whileHover={{ scale: 1.07 }}
