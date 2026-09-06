@@ -21,7 +21,7 @@ const interests = [
   "Other",
 ];
 const fieldClass =
-  "mt-2 min-h-12 w-full border border-theme bg-card px-4 text-sm outline-none transition-colors placeholder:text-secondary focus:border-theme";
+  "contact-form-field mt-2 min-h-12 w-full border border-theme bg-card px-4 text-sm outline-none transition-colors placeholder:text-secondary focus:border-theme";
 const emailPattern = /^\S+@\S+\.\S+$/;
 const phonePattern = /^[+()\-\s\d]{7,20}$/;
 
@@ -118,7 +118,7 @@ export default function EnquiryForm() {
       <div
         role="status"
         aria-live="polite"
-        className="flex min-h-[470px] flex-col justify-center border border-theme bg-card p-7 text-primary md:p-10"
+        className="contact-form-shell flex min-h-[470px] flex-col justify-center border border-theme p-7 text-primary md:p-10"
       >
         <span className="flex h-11 w-11 items-center justify-center rounded-full bg-pigment-yellow text-on-accent">
           <Check size={22} />
@@ -144,7 +144,7 @@ export default function EnquiryForm() {
     <form
       noValidate
       onSubmit={submit}
-      className="border border-theme bg-card p-6 md:p-10"
+      className="contact-form-shell border border-theme p-6 md:p-10"
     >
       <div className="grid gap-x-5 md:grid-cols-2">
         <label className="mb-6 block text-[10px] font-bold uppercase tracking-[.15em]">
@@ -298,7 +298,7 @@ export default function EnquiryForm() {
         </p>
       )}
       <div className="mt-8">
-        <Button type="submit" className="w-full">Send enquiry</Button>
+        <Button type="submit" className="contact-form-button w-full">Send enquiry</Button>
       </div>
     </form>
   );

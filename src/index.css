@@ -207,6 +207,26 @@ html.light {
     color: var(--text-primary);
   }
 
+  .contact-form-shell {
+    background: color-mix(in srgb, var(--bg-card) 62%, transparent);
+    border-radius: 1rem;
+    box-shadow: 0 18px 60px rgba(2, 6, 23, 0.24);
+    backdrop-filter: blur(18px) saturate(135%);
+    -webkit-backdrop-filter: blur(18px) saturate(135%);
+  }
+
+  .contact-form-field,
+  .contact-form-button {
+    background: color-mix(in srgb, var(--bg-card) 46%, transparent) !important;
+    border-radius: 0.55rem;
+    backdrop-filter: blur(12px) saturate(125%);
+    -webkit-backdrop-filter: blur(12px) saturate(125%);
+  }
+
+  .contact-form-button:hover {
+    background: var(--accent-color) !important;
+  }
+
   .mobile-nav {
     background: #1e293b;
     color: #f8fafc;

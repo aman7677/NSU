@@ -1,7 +1,7 @@
 export const companyDetails = {
   // contactName: 'Shivam Sharma',
   phone: '+91 72800 1XXXX',
-  email: 'enquiry@nsucolours.com',
+  email: 'enquiry@nsudyog.com',
   socialLinks: [
     // { name: 'WhatsApp', href: 'https://wa.me/917280012300' },
     { name: 'Instagram', href: 'https://www.instagram.com/', icon: 'instagram' },
