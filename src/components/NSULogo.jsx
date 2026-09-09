@@ -5,6 +5,9 @@ export default function NSULogo({ className = '', showTagline = false }) {
       <img
         src="/narayan-sindur-neon-vibrant-v2.gif"
         alt="Narayan Sindoor Udyog"
+        width="1405"
+        height="678"
+        decoding="async"
         className="h-auto w-[100px] object-contain"
       />
       {showTagline && <span className="mt-1 translate-x-5 text-[7px] font-bold tracking-[0.16em]">COLOURS THAT MAKE AN IMPACT.</span>}

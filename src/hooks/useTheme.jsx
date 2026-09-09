@@ -4,7 +4,7 @@ export default function useTheme() {
   const [theme, setTheme] = useState(() => {
     try {
       return localStorage.getItem("theme") || "dark";
-    } catch (e) {
+    } catch {
       return "dark";
     }
   });
@@ -20,7 +20,9 @@ export default function useTheme() {
     }
     try {
       localStorage.setItem("theme", theme);
-    } catch (e) {}
+    } catch {
+      // Storage may be unavailable in restricted browser contexts.
+    }
   }, [theme]);
 
   const toggle = useCallback(

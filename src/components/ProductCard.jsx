@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import Badge from "./Badge";
 import { PigmentVisual } from "./ProductCatalogueCard";
 
 const pigments = ["#d91818", "#ef1678", "#ff761c", "#ffc21c"];
@@ -27,6 +26,10 @@ export default function ProductCard({ product, index = 0 }) {
             <img
               src={product.image}
               alt={`${product.title} pigment powder`}
+              width={product.imageWidth}
+              height={product.imageHeight}
+              loading="lazy"
+              decoding="async"
               className="block h-full w-full object-cover object-center"
             />
           ) : (

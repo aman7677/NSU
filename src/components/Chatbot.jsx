@@ -398,6 +398,8 @@ const QUICK_CHIPS = [
 ];
 */
 
+const QUICK_CHIPS = [];
+
 const GREETING = {
   sender: 'bot',
   text: "Hi! 👋 I'm your **NSU Colours** assistant. Ask me about our products, locations, or pricing — or tap a quick option below!",
@@ -508,7 +510,7 @@ export default function Chatbot() {
   useEffect(() => {
     if (isOpen) {
       setTimeout(() => inputRef.current?.focus(), 300);
-      setHasUnread(false);
+      setTimeout(() => setHasUnread(false), 0);
     }
   }, [isOpen]);
 
@@ -569,6 +571,7 @@ export default function Chatbot() {
 
   /* Determine if we should show quick chips (only after the greeting or default reply) */
   const showChips = false;
+  const handleChip = (query) => setInput(query);
 
   return (
     <div className="fixed bottom-6 right-6 z-[100] flex flex-col items-end">

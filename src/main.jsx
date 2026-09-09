@@ -2,7 +2,9 @@
 try {
   const _saved = localStorage.getItem("theme") || "dark";
   document.documentElement.classList.add(_saved === "dark" ? "dark" : "light");
-} catch (e) {}
+} catch {
+  // Storage may be unavailable before the app mounts.
+}
 
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";

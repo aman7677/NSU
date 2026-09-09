@@ -3,6 +3,9 @@ import Container from "../components/Container";
 import PageIntro from "../components/PageIntro";
 import { applications } from "../data/applications";
 import CountUp from "../components/CountUp";
+import ApplicationSelector from "../components/ApplicationSelector";
+import GradeFinder from "../components/GradeFinder";
+import Button from "../components/Button";
 
 export default function Applications() {
   return (
@@ -12,6 +15,8 @@ export default function Applications() {
         title="COLOUR FOR EVERY APPLICATION."
         description="Colour solutions shaped around the visual and practical requirements of your application."
       />
+      <ApplicationSelector />
+      <GradeFinder />
       <Container className="pb-16 md:pb-24">
         <div className="mb-10 flex items-center justify-between border-y border-theme py-5 text-[10px] font-bold uppercase tracking-[.18em] text-primary md:mb-14 md:py-6">
           <span className="text-secondary">Application index</span>
@@ -37,6 +42,12 @@ export default function Applications() {
             ))}
           </ul>
         )}
+        <div className="mt-16 flex flex-wrap items-center gap-3 border-t border-theme pt-8 md:mt-24">
+          <p className="mr-3 text-sm text-secondary">Have an application requirement?</p>
+          <Button to="/contact?intent=sample" icon={false}>Request a sample</Button>
+          <Button to="/contact?intent=quote" variant="secondary" icon={false}>Request a quote</Button>
+          <Button to="/contact?intent=technical" variant="secondary" icon={false}>Contact technical team</Button>
+        </div>
       </Container>
     </>
   );

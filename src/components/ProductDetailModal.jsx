@@ -16,7 +16,7 @@ function getProductApplicationDetails(product) {
   if (category.includes("fluorescent")) {
     return {
       applications:
-        "Fluorescent pigment powder for high-visibility applications including aerosol spray paints, solvent based paints, paper coating, PVC coating, gravure coating, industrial markers, highlighter ink, safety signage, crack detection, leak detection, security pigments, and paint balls.",
+        "Fluorescent pigment powder for application-led colour requirements. Review the intended use with the NSU team.",
       deliveries: ["Fluorescent Pigment Powder", "Bulk supply", "Custom batches"],
     };
   }
@@ -210,7 +210,7 @@ export default function ProductDetailModal({ product, onClose }) {
             </motion.div>
 
             <motion.div variants={item} className="mt-8">
-              <Button href="#" className="inline-flex items-center gap-3">
+              <Button to={`/contact?product=${encodeURIComponent(product.name)}&intent=sample`} className="inline-flex items-center gap-3">
                 Contact us <ArrowUpRight size={14} />
               </Button>
             </motion.div>

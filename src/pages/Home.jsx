@@ -7,6 +7,13 @@ import Features from "../sections/Features";
 import ProductShowcase from "../sections/ProductShowcase";
 import Testimonials from "../sections/Testimonials";
 import FAQSection from "../components/FAQSection";
+import CustomShadeSection from "../components/CustomShadeSection";
+import {
+  HomeApplications,
+  HomeBusinessResources,
+  HomeRequestAndFinalCta,
+  HomeTechnologyQuality,
+} from "../sections/HomeDeltaSections";
 
 export default function Home() {
   return (
@@ -14,12 +21,16 @@ export default function Home() {
       <Hero />
       <Features />
       <ProductShowcase />
+      <HomeApplications />
+      <HomeTechnologyQuality />
+      <CustomShadeSection />
+      <HomeBusinessResources />
       <section className="bg-primary py-16 text-primary md:py-24">
         <Container>
           <SectionTitle
             label="The NSU standard"
-            title="Built for intensity. Engineered for consistency."
-            description="From vivid sindoor to fluorescent and industrial pigments, every NSU solution is created to perform with confidence."
+            title="ENGINEERED FOR BRILLIANT COLOUR."
+            description="From vivid sindoor to fluorescent and industrial pigments, explore the NSU range by colour and application."
             className="border-theme text-primary [&_p]:text-secondary [&_span]:text-secondary"
           />
           <Link
@@ -30,8 +41,9 @@ export default function Home() {
           </Link>
         </Container>
       </section>
-      <Testimonials />
       <FAQSection />
+      <Testimonials />
+      <HomeRequestAndFinalCta />
     </>
   );
 }

@@ -6,16 +6,41 @@ import ProductCatalogueCard from "../components/ProductCatalogueCard";
 import ProductDetailModal from "../components/ProductDetailModal";
 import PageIntro from "../components/PageIntro";
 import { productFilters, products } from "../data/products";
+import CustomShadeSection from "../components/CustomShadeSection";
 
 export default function Products() {
   const [activeFilter, setActiveFilter] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
+  const [activeColour, setActiveColour] = useState("all");
+  const [activeApplication, setActiveApplication] = useState("all");
+  const [activeGrade, setActiveGrade] = useState("all");
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const colourOptions = useMemo(
+    () => [...new Set(products.filter((product) => product.shade).map((product) => product.shade))].sort(),
+    [],
+  );
+  const applicationOptions = useMemo(
+    () => [...new Set(products.flatMap((product) => product.applications || []))].sort(),
+    [],
+  );
+  const gradeOptions = useMemo(
+    () => [...new Set(products.filter((product) => product.grade).map((product) => product.grade))].sort((a, b) => Number(a) - Number(b)),
+    [],
+  );
   const visibleProducts = useMemo(() => {
     let filtered =
       activeFilter === "all"
         ? products
         : products.filter((product) => product.filter === activeFilter);
+    if (activeColour !== "all") {
+      filtered = filtered.filter((product) => product.shade === activeColour);
+    }
+    if (activeApplication !== "all") {
+      filtered = filtered.filter((product) => product.applications?.includes(activeApplication));
+    }
+    if (activeGrade !== "all") {
+      filtered = filtered.filter((product) => product.grade === activeGrade);
+    }
     if (searchQuery) {
       const lowerQuery = searchQuery.toLowerCase();
       filtered = filtered.filter(
@@ -29,7 +54,7 @@ export default function Products() {
       );
     }
     return filtered;
-  }, [activeFilter, searchQuery]);
+  }, [activeApplication, activeColour, activeFilter, activeGrade, searchQuery]);
   return (
     <>
       <PageIntro
@@ -71,6 +96,41 @@ export default function Products() {
             </button>
           ))}
         </div>
+        <div className="mb-10 grid gap-3 sm:grid-cols-3">
+          <label className="text-[10px] font-bold uppercase tracking-[.15em] text-secondary">
+            Colour family
+            <select
+              value={activeColour}
+              onChange={(event) => setActiveColour(event.target.value)}
+              className="mt-2 min-h-11 w-full rounded border border-theme bg-card px-3 text-sm font-medium text-primary outline-none focus:border-pigment-magenta"
+            >
+              <option value="all">All shades</option>
+              {colourOptions.map((colour) => <option key={colour} value={colour}>{colour}</option>)}
+            </select>
+          </label>
+          <label className="text-[10px] font-bold uppercase tracking-[.15em] text-secondary">
+            Application
+            <select
+              value={activeApplication}
+              onChange={(event) => setActiveApplication(event.target.value)}
+              className="mt-2 min-h-11 w-full rounded border border-theme bg-card px-3 text-sm font-medium text-primary outline-none focus:border-pigment-magenta"
+            >
+              <option value="all">All applications</option>
+              {applicationOptions.map((application) => <option key={application} value={application}>{application}</option>)}
+            </select>
+          </label>
+          <label className="text-[10px] font-bold uppercase tracking-[.15em] text-secondary">
+            Grade
+            <select
+              value={activeGrade}
+              onChange={(event) => setActiveGrade(event.target.value)}
+              className="mt-2 min-h-11 w-full rounded border border-theme bg-card px-3 text-sm font-medium text-primary outline-none focus:border-pigment-magenta"
+            >
+              <option value="all">All grades</option>
+              {gradeOptions.map((grade) => <option key={grade} value={grade}>{grade}</option>)}
+            </select>
+          </label>
+        </div>
         <p className="mb-8 text-sm text-secondary">
           <span className="font-semibold text-primary">
             {visibleProducts.length}
@@ -85,6 +145,9 @@ export default function Products() {
               onClick={() => {
                 setActiveFilter("all");
                 setSearchQuery("");
+                setActiveColour("all");
+                setActiveApplication("all");
+                setActiveGrade("all");
               }}
               className="rounded-full border border-theme bg-card px-6 py-2.5 text-sm font-medium transition-colors hover:border-pigment-magenta hover:text-pigment-magenta"
             >
@@ -113,6 +176,7 @@ export default function Products() {
           />
         )}
       </AnimatePresence>
+      <CustomShadeSection />
     </>
   );
 }

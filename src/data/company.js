@@ -1,9 +1,10 @@
 export const companyDetails = {
   // contactName: 'Shivam Sharma',
-  phone: '+91 72800 1XXXX',
+  phone: '+91 72800 12300',
+  phoneHref: 'tel:+917280012300',
   email: 'enquiry@nsudyog.com',
   socialLinks: [
-    // { name: 'WhatsApp', href: 'https://wa.me/917280012300' },
+    { name: 'WhatsApp', href: 'https://wa.me/917280012300', icon: 'whatsapp' },
     { name: 'Instagram', href: 'https://www.instagram.com/', icon: 'instagram' },
     { name: 'Facebook', href: 'https://www.facebook.com/', icon: 'facebook' },
     { name: 'X / Twitter', href: 'https://x.com/', icon: 'twitter' },

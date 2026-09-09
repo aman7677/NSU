@@ -5,9 +5,9 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import NSULogo from "./NSULogo";
 import ThemeToggle from "./ThemeToggle";
 import ColourParticles from "./ColourParticles";
-import Chatbot from "./Chatbot";
 import FollowCursor from "./FollowCursor";
 import NeonScrollBackground from "./NeonScrollBackground";
+import Chatbot from "./Chatbot";
 import { companyDetails } from "../data/company";
 
 const links = [
@@ -15,18 +15,12 @@ const links = [
   ["Products", "/products"],
   ["Applications", "/applications"],
   ["About", "/about"],
+  ["Global Business", "/global-markets"],
+  ["Technical Resources", "/technical-resources"],
   ["Contact", "/contact"],
 ];
 const footerLinkColors = ["#ef1678", "#ff761c", "#ffc21c", "#20d9ff", "#a78bfa"];
 const headerLinkColors = ["#ef1678", "#ff761c", "#ffc21c", "#20d9ff", "#a78bfa"];
-const itemVariants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.42, ease: [0.22, 1, 0.36, 1] },
-  },
-};
 const SocialIcon = ({ name }) => {
   if (name === "instagram")
     return (
@@ -134,7 +128,7 @@ export default function SiteLayout({ children }) {
                   `header-nav-link relative flex h-full items-center text-[11px] font-bold uppercase tracking-[0.14em] transition-colors ${isActive ? "is-active text-[var(--header-link-color)]" : "text-secondary"}`
                 }
               >
-                {({ isActive }) => (
+                {() => (
                   <>
                     {label}
 
@@ -300,6 +294,7 @@ export default function SiteLayout({ children }) {
               </p>
               <div className="mt-5 flex flex-col gap-1.5">
                 <a
+                  href={companyDetails.phoneHref}
                   className="inline-flex items-center gap-2 text-sm font-semibold text-[#f8fafc] transition-colors hover:text-[#ffc21c]"
                 >
                   <span className="inline-flex h-8 w-8 items-center justify-center text-[#ffc21c]">

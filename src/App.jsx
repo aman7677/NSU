@@ -6,9 +6,12 @@ import Seo from "./components/Seo";
 
 const Home = lazy(() => import("./pages/Home"));
 const Products = lazy(() => import("./pages/Products"));
+const ProductDetail = lazy(() => import("./pages/ProductDetail"));
 const Applications = lazy(() => import("./pages/Applications"));
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
+const GlobalMarkets = lazy(() => import("./pages/GlobalMarkets"));
+const TechnicalResources = lazy(() => import("./pages/TechnicalResources"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 export default function App() {
@@ -30,9 +33,12 @@ export default function App() {
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/products/:slug" element={<ProductDetail />} />
             <Route path="/applications" element={<Applications />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/global-markets" element={<GlobalMarkets />} />
+            <Route path="/technical-resources" element={<TechnicalResources />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AnimatePresence>

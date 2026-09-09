@@ -1,4 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion";
+import Button from "./Button";
 
 const fallbackPigments = [
   "#d91818",
@@ -74,6 +75,11 @@ export function PigmentVisual({ product, className = "", mode = "swatch" }) {
 }
 
 export default function ProductCatalogueCard({ product, onSelect }) {
+  const applications = product.applications || product.tags || [];
+  const detailAction = product.slug
+    ? { to: `/products/${product.slug}` }
+    : { onClick: () => onSelect(product) };
+
   return (
     <motion.article
       layout
@@ -111,6 +117,14 @@ export default function ProductCatalogueCard({ product, onSelect }) {
           {product.name}
         </h2>
         <dl className="mt-7 space-y-3 border-y border-theme py-4 text-xs">
+          {(product.grade || product.code) && (
+            <div className="flex justify-between gap-6">
+              <dt className="uppercase tracking-[.12em] text-secondary">
+                Grade
+              </dt>
+              <dd className="text-right font-medium">{product.grade || product.code}</dd>
+            </div>
+          )}
           <div className="flex justify-between gap-6">
             <dt className="uppercase tracking-[.12em] text-secondary">
               Colour
@@ -125,13 +139,13 @@ export default function ProductCatalogueCard({ product, onSelect }) {
               {product.application}
             </dd>
           </div>
-          {product.tags && product.tags.length > 0 && (
+          {applications.length > 0 && (
             <div className="flex justify-between gap-6">
               <dt className="shrink-0 uppercase tracking-[.12em] text-secondary">
-                Suitable for
+                Applications
               </dt>
               <dd className="max-w-[65%] text-right font-medium">
-                {product.tags.slice(0, 3).join(', ')}
+                {applications.slice(0, 4).join(', ')}
               </dd>
             </div>
           )}
@@ -139,6 +153,33 @@ export default function ProductCatalogueCard({ product, onSelect }) {
         <p className="mt-5 text-sm leading-relaxed text-secondary">
           {product.description}
         </p>
+        <div className="mt-7 flex flex-wrap gap-2">
+          {product.slug ? (
+            <Button to={detailAction.to} icon={false} className="px-4 py-2.5">
+              View product
+            </Button>
+          ) : (
+            <Button type="button" onClick={detailAction.onClick} icon={false} className="px-4 py-2.5">
+              View details
+            </Button>
+          )}
+          <Button
+            to={`/contact?product=${encodeURIComponent(product.name)}&intent=sample`}
+            variant="secondary"
+            icon={false}
+            className="px-4 py-2.5"
+          >
+            Request sample
+          </Button>
+          <Button
+            to={`/contact?product=${encodeURIComponent(product.name)}&intent=quote`}
+            variant="secondary"
+            icon={false}
+            className="px-4 py-2.5"
+          >
+            Request quote
+          </Button>
+        </div>
       </div>
     </motion.article>
   );

@@ -3,7 +3,7 @@ import { ArrowDown } from "lucide-react";
 import Button from "../components/Button";
 import ColourParticles from "../components/ColourParticles";
 
-const lines = ["COLOUR", "WITHOUT", "LIMITS"];
+const lines = ["FLUORESCENT PIGMENT", "SOLUTIONS FOR", "INDUSTRIAL APPLICATIONS"];
 
 export default function Hero() {
   return (

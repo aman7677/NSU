@@ -12,7 +12,7 @@ const faqItems = [
   {
     question: "Are NSU's traditional colours safe for personal and cultural use?",
     answer:
-      "Yes, our products are crafted with strict quality control to ensure they are safe and reliable, reflecting the trust we've built with our customers since 1983.",
+      "Please share the intended use with the NSU team so approved product information and any relevant documentation can be reviewed.",
   },
   {
     question: "Do you supply different grades of Sindoor based on specific needs?",
@@ -22,12 +22,12 @@ const faqItems = [
   {
     question: "Does NSU supply products in bulk for wholesale?",
     answer:
-      "Yes, our structured and globally trusted manufacturing process allows us to fulfill both standard and bulk orders to meet the demands of our partners.",
+      "Submit the product, application, and quantity requirement through the enquiry form for review by the NSU team.",
   },
   {
     question: "What makes NSU's Sindoor unique?",
     answer:
-      "Our Sindoor is deeply connected to Indian traditions, culture, and emotions. It is more than just a product; it represents decades of dedication, patience, and a commitment to quality.",
+      "NSU offers sindoor colour products alongside fluorescent pigments and other colour powder categories. Contact the team for product-specific information.",
   },
 ];
 

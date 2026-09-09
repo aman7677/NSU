@@ -1,5 +1,5 @@
 import emailjs from "@emailjs/browser";
-import { Check, LoaderCircle } from "lucide-react";
+import { Check } from "lucide-react";
 import { useState } from "react";
 import Button from "./Button";
 
