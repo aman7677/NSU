@@ -1,5 +1,4 @@
-import emailjs from "@emailjs/browser";
-import { Check } from "lucide-react";
+import { Check, Loader2 } from "lucide-react";
 import { useState } from "react";
 import Button from "./Button";
 
@@ -87,6 +86,7 @@ export default function EnquiryForm() {
     }
     setLoading(true);
     try {
+      const emailjs = (await import("@emailjs/browser")).default;
       await emailjs.send(
         emailJsConfig.serviceId,
         emailJsConfig.templateId,
@@ -298,7 +298,21 @@ export default function EnquiryForm() {
         </p>
       )}
       <div className="mt-8">
-        <Button type="submit" className="contact-form-button w-full">Send enquiry</Button>
+        <Button 
+          type="submit" 
+          disabled={loading}
+          icon={!loading}
+          className="contact-form-button w-full disabled:opacity-70 disabled:cursor-not-allowed"
+        >
+          {loading ? (
+            <span className="flex items-center gap-2">
+              <Loader2 className="animate-spin" size={16} />
+              Sending...
+            </span>
+          ) : (
+            "Send enquiry"
+          )}
+        </Button>
       </div>
     </form>
   );

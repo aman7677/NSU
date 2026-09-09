@@ -46,7 +46,7 @@ export default function Seo({ pathname }) {
         '@id': `${origin}/#organization`,
         name: 'Narayan Sindur Udyog',
         url: origin,
-        logo: `${origin}/favicon.png`,
+        logo: `${origin}/favicon.webp`,
         email: 'enquiry@nsudyog.com',
       },
     ]

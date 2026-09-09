@@ -3,7 +3,7 @@ export default function NSULogo({ className = '', showTagline = false }) {
   return (
     <div className={`inline-flex flex-col ${className}`}>
       <img
-        src="/narayan-sindur-neon-vibrant-v2.gif"
+        src="/NSU-logo.webp"
         alt="Narayan Sindoor Udyog"
         width="1405"
         height="678"

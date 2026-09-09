@@ -1,7 +1,9 @@
 import { mkdir, writeFile } from 'node:fs/promises'
+import { loadEnv } from 'vite'
 import { products } from '../src/data/products.js'
 
-const siteUrl = process.env.VITE_SITE_URL?.replace(/\/+$/, '')
+const env = loadEnv('production', process.cwd(), '')
+const siteUrl = env.VITE_SITE_URL?.replace(/\/+$/, '')
 
 if (!siteUrl) {
   console.log('Skipping sitemap generation: VITE_SITE_URL is not set.')

@@ -2,6 +2,10 @@
 @import "@fontsource/space-grotesk/latin-500.css";
 @import "@fontsource/space-grotesk/latin-600.css";
 @import "@fontsource/space-grotesk/latin-700.css";
+@import "@fontsource/noto-sans-devanagari/400.css";
+@import "@fontsource/noto-sans-devanagari/500.css";
+@import "@fontsource/noto-sans-devanagari/600.css";
+@import "@fontsource/noto-sans-devanagari/700.css";
 @import "tailwindcss";
 
 @theme {
@@ -618,25 +622,27 @@ html.light .product-catalogue-card {
     var(--footer-link-color) 78%,
     transparent
   );
+  width: 300%;
+  left: -100%;
   box-shadow: 0 0 12px var(--footer-link-color);
   transition-property: transform, opacity;
 }
 
 .footer-nav-link:hover .footer-nav-link__glow,
 .footer-nav-link:focus-visible .footer-nav-link__glow {
-  animation: footerLinkFlow 1.15s linear infinite;
+  animation: linkFlow 1.15s linear infinite;
 }
 
 /* Header navigation uses the same per-link flowing pigment treatment. */
 .header-nav-link::after {
   content: "";
   position: absolute;
-  left: 0;
+  left: -100%;
   top: calc(50% + 11px);
   height: 2px;
-  width: 100%;
+  width: 300%;
   transform: scaleX(0);
-  transform-origin: left;
+  transform-origin: center;
   background: linear-gradient(
     90deg,
     transparent,
@@ -659,24 +665,15 @@ html.light .product-catalogue-card {
 .header-nav-link:hover::after,
 .header-nav-link:focus-visible::after {
   transform: scaleX(1);
-  animation: headerLinkFlow 1.15s linear infinite;
+  animation: linkFlow 1.15s linear infinite;
 }
 
-@keyframes footerLinkFlow {
+@keyframes linkFlow {
   0% {
-    background-position: -120px 0;
+    transform: translateX(-33.33%);
   }
   100% {
-    background-position: 120px 0;
-  }
-}
-
-@keyframes headerLinkFlow {
-  0% {
-    background-position: -120px 0;
-  }
-  100% {
-    background-position: 120px 0;
+    transform: translateX(33.33%);
   }
 }
 

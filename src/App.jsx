@@ -3,8 +3,8 @@ import { lazy, Suspense } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import SiteLayout from "./components/SiteLayout";
 import Seo from "./components/Seo";
+import Home from "./pages/Home";
 
-const Home = lazy(() => import("./pages/Home"));
 const Products = lazy(() => import("./pages/Products"));
 const ProductDetail = lazy(() => import("./pages/ProductDetail"));
 const Applications = lazy(() => import("./pages/Applications"));

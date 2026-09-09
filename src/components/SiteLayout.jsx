@@ -1,14 +1,15 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Mail, Menu, MessageCircle, Phone, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, lazy, Suspense } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import NSULogo from "./NSULogo";
 import ThemeToggle from "./ThemeToggle";
 import ColourParticles from "./ColourParticles";
 import FollowCursor from "./FollowCursor";
 import NeonScrollBackground from "./NeonScrollBackground";
-import Chatbot from "./Chatbot";
 import { companyDetails } from "../data/company";
+
+const Chatbot = lazy(() => import("./Chatbot"));
 
 const links = [
   ["Home", "/"],
@@ -369,7 +370,9 @@ export default function SiteLayout({ children }) {
           </div>
         </div>
       </footer>
-      <Chatbot />
+      <Suspense fallback={null}>
+        <Chatbot />
+      </Suspense>
       <FollowCursor
         size={10}
         colorMode="rainbow"

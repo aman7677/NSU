@@ -3,29 +3,7 @@ import EnquiryForm from "../components/EnquiryForm";
 import PageIntro from "../components/PageIntro";
 import { companyDetails } from "../data/company";
 
-/*
- * ─── Recommended form state for <EnquiryForm /> ───
- *
- * When adding submission handling to the EnquiryForm component,
- * consider adding these React state variables:
- *
- *   const [isSubmitting, setIsSubmitting] = useState(false);
- *     → true while the form request is in-flight; use to show a
- *       loading spinner and disable the submit button.
- *
- *   const [isSuccess, setIsSuccess] = useState(false);
- *     → true after a successful submission; swap the form for a
- *       success/thank-you message.
- *
- *   const [error, setError] = useState(null);
- *     → holds an error message string (or null). Display inline
- *       above the submit button so the user can correct and retry.
- *
- * Typical flow:
- *   1. User clicks submit → setIsSubmitting(true), setError(null)
- *   2. API call succeeds  → setIsSubmitting(false), setIsSuccess(true)
- *   3. API call fails     → setIsSubmitting(false), setError(err.message)
- */
+
 
 export default function Contact() {
   return (
@@ -48,15 +26,7 @@ export default function Contact() {
             </div>
             <address className="mt-10 not-italic">
               <div className="border-t border-theme">
-                {/* Contact person */}
-                {/* <div className="border-b border-theme py-5">
-                  <p className="text-[10px] font-bold uppercase tracking-[.15em] text-secondary">
-                    Contact person
-                  </p>
-                  <p className="mt-2 text-sm font-medium">
-                    {companyDetails.contactName}
-                  </p>
-                </div> */}
+
 
                 {/* Phone */}
                 <div className="border-b border-theme py-5">

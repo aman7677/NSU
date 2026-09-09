@@ -25,7 +25,7 @@ export default function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7, duration: 0.55 }}
+          transition={{ delay: 0.1, duration: 0.55 }}
           className="mb-8 text-[10px] font-bold uppercase tracking-[0.2em]"
           style={{ color: "var(--hero-tagline)" }}
         >
@@ -38,7 +38,7 @@ export default function Hero() {
                 initial={{ y: "110%" }}
                 animate={{ y: 0 }}
                 transition={{
-                  delay: 0.85 + index * 0.15,
+                  delay: 0.15 + index * 0.1,
                   duration: 0.8,
                   ease: [0.16, 1, 0.3, 1],
                 }}
@@ -52,7 +52,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 22 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.45, duration: 0.65 }}
+          transition={{ delay: 0.5, duration: 0.65 }}
           className="mt-10 flex flex-col items-start gap-7 md:mt-12 md:flex-row md:items-end md:justify-between"
         >
           <p
@@ -74,7 +74,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.75, duration: 0.6 }}
+          transition={{ delay: 0.7, duration: 0.6 }}
           className="mt-12 flex items-center gap-2 text-[10px] font-bold uppercase tracking-[.18em]"
           style={{ color: "var(--hero-scroll)" }}
         >

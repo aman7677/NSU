@@ -18,13 +18,17 @@ export default function ColourParticles({ particleCount, colors = defaultColors,
 
   useEffect(() => {
     const canvas = canvasRef.current
+    if (!canvas) return
     const context = canvas.getContext('2d')
+    if (!context) return
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     const coarsePointer = window.matchMedia('(pointer: coarse)').matches
     let frameId
     let width = 0
     let height = 0
+    let cachedBounds = { left: 0, right: 0, top: 0, bottom: 0 };
     let particles = []
+    let currentCount = particleCount;
     const pointer = { x: -1000, y: -1000, active: false }
 
     const getCount = () => particleCount || (width < 640 ? 70 : width < 1024 ? 125 : 190)
@@ -50,14 +54,18 @@ export default function ColourParticles({ particleCount, colors = defaultColors,
       const bounds = canvas.getBoundingClientRect()
       width = bounds.width
       height = bounds.height
+      cachedBounds = bounds;
+      currentCount = typeof window !== 'undefined' && window.innerWidth < 768 
+        ? Math.min(particleCount, 120) 
+        : particleCount;
       const pixelRatio = Math.min(window.devicePixelRatio || 1, 2)
       canvas.width = Math.floor(width * pixelRatio)
       canvas.height = Math.floor(height * pixelRatio)
       context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0)
-      particles = Array.from({ length: getCount() }, createParticle)
+      particles = Array.from({ length: currentCount }, createParticle)
     }
     const movePointer = (event) => {
-      const bounds = canvas.getBoundingClientRect()
+      const bounds = cachedBounds;
       if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) {
         pointer.active = false
         return

@@ -5,7 +5,7 @@ export const applicationSelectorOptions = [
     id: 'plastics-masterbatch',
     label: 'Plastics & Masterbatch',
     matchTerms: ['PVC Coating'],
-    note: 'Results are based on existing PVC Coating application data. Masterbatch suitability requires technical confirmation.',
+    note: 'Technical compatibility awaiting official NSU confirmation. Results are based on existing PVC Coating application data.',
   },
   {
     id: 'printing-inks',
@@ -23,13 +23,13 @@ export const applicationSelectorOptions = [
     id: 'wax-candle',
     label: 'Wax & Candle',
     matchTerms: ['Candles'],
-    note: 'Results reflect existing candle application tags. Grade suitability should be confirmed with the technical team.',
+    note: 'Technical compatibility awaiting official NSU confirmation. Results reflect existing candle application tags.',
   },
   {
     id: 'leather',
     label: 'Leather',
     matchTerms: [],
-    note: 'Leather compatibility is not represented in the current product data. Please contact the technical team for guidance.',
+    note: 'Technical compatibility awaiting official NSU confirmation. Leather compatibility is not represented in the current product data.',
   },
   {
     id: 'specialty-industrial',
