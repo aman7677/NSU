@@ -1,11 +1,13 @@
 import { Check, Loader2 } from "lucide-react";
 import { useState } from "react";
 import Button from "./Button";
+import GlassSelect from "./GlassSelect";
 
 const initialValues = {
   fullName: "",
   companyName: "",
   email: "",
+  countryCode: "+91",
   phone: "",
   productInterest: "",
   requirement: "",
@@ -22,7 +24,7 @@ const interests = [
 const fieldClass =
   "contact-form-field mt-2 min-h-12 w-full border border-theme bg-card px-4 text-sm outline-none transition-colors placeholder:text-secondary focus:border-theme";
 const emailPattern = /^\S+@\S+\.\S+$/;
-const phonePattern = /^[+()\-\s\d]{7,20}$/;
+const phonePattern = /^\d{10}$/;
 
 const emailJsConfig = {
   serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
@@ -43,7 +45,8 @@ export default function EnquiryForm() {
 
   const updateValue = (event) => {
     const { name, value } = event.target;
-    setValues((current) => ({ ...current, [name]: value }));
+    const nextValue = name === "phone" ? value.replace(/\D/g, "").slice(0, 10) : value;
+    setValues((current) => ({ ...current, [name]: nextValue }));
     setErrors((current) => ({ ...current, [name]: undefined }));
     setSubmitError("");
   };
@@ -94,7 +97,9 @@ export default function EnquiryForm() {
           name: trimmedValues.fullName,
           company: trimmedValues.companyName || "Not provided",
           email: trimmedValues.email,
-          phone: trimmedValues.phone || "Not provided",
+          phone: trimmedValues.phone
+            ? `${trimmedValues.countryCode} ${trimmedValues.phone}`
+            : "Not provided",
           product: trimmedValues.productInterest,
           requirement: trimmedValues.requirement || "Not provided",
           message: trimmedValues.message,
@@ -206,18 +211,25 @@ export default function EnquiryForm() {
 
         <label className="mb-6 block text-[10px] font-bold uppercase tracking-[.15em]">
           Phone
-          <input
-            type="tel"
-            name="phone"
-            value={values.phone}
-            onChange={updateValue}
-            autoComplete="tel"
-            inputMode="tel"
-            aria-invalid={Boolean(errors.phone)}
-            aria-describedby={errors.phone ? "phone-error" : undefined}
-            className={`${fieldClass} ${errors.phone ? "border-pigment-red" : ""}`}
-            placeholder="Phone number"
-          />
+          <div className="mt-2 flex gap-2">
+            <span className={`${fieldClass} mt-0 flex !w-20 shrink-0 items-center justify-center px-2`}>
+              +91
+            </span>
+            <input
+              type="tel"
+              name="phone"
+              value={values.phone}
+              onChange={updateValue}
+              autoComplete="tel-national"
+              inputMode="numeric"
+              maxLength={10}
+              pattern="[0-9]{10}"
+              aria-invalid={Boolean(errors.phone)}
+              aria-describedby={errors.phone ? "phone-error" : undefined}
+              className={`${fieldClass} mt-0 min-w-0 flex-1 ${errors.phone ? "border-pigment-red" : ""}`}
+              placeholder="10-digit number"
+            />
+          </div>
           {errors.phone && (
             <span
               id="phone-error"
@@ -230,24 +242,17 @@ export default function EnquiryForm() {
 
         <div className="mb-6 block text-[10px] font-bold uppercase tracking-[.15em]">
           <label htmlFor="productInterest">Product interest</label>
-          <select
-            id="productInterest"
-            name="productInterest"
+          <GlassSelect
             value={values.productInterest}
-            onChange={updateValue}
-            aria-invalid={Boolean(errors.productInterest)}
-            aria-describedby={
-              errors.productInterest ? "productInterest-error" : undefined
+            onChange={(value) =>
+              updateValue({ target: { name: "productInterest", value } })
             }
-            className={`${fieldClass} ${errors.productInterest ? "border-pigment-red" : ""}`}
-          >
-            <option value="">Choose a product interest</option>
-            {interests.map((interest) => (
-              <option key={interest} value={interest}>
-                {interest}
-              </option>
-            ))}
-          </select>
+            ariaLabel="Product interest"
+            options={[
+              { value: "", label: "Choose a product interest" },
+              ...interests.map((interest) => ({ value: interest, label: interest })),
+            ]}
+          />
           {errors.productInterest && (
             <span
               id="productInterest-error"

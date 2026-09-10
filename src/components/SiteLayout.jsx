@@ -20,8 +20,24 @@ const links = [
   ["Technical Resources", "/technical-resources"],
   ["Contact", "/contact"],
 ];
-const footerLinkColors = ["#ef1678", "#ff761c", "#ffc21c", "#20d9ff", "#a78bfa"];
-const headerLinkColors = ["#ef1678", "#ff761c", "#ffc21c", "#20d9ff", "#a78bfa"];
+const footerLinkColors = [
+  "#ef1678",
+  "#ff761c",
+  "#ffc21c",
+  "#20d9ff",
+  "#a78bfa",
+  "#67ff5d",
+  "#ff4f81",
+];
+const headerLinkColors = [
+  "#ef1678",
+  "#ff761c",
+  "#ffc21c",
+  "#20d9ff",
+  "#a78bfa",
+  "#67ff5d",
+  "#ff4f81",
+];
 const SocialIcon = ({ name }) => {
   if (name === "instagram")
     return (
@@ -177,14 +193,15 @@ export default function SiteLayout({ children }) {
               className="flex flex-col divide-y"
               style={{ borderColor: "var(--border)" }}
             >
-              {links.map(([label, path]) => (
+              {links.map(([label, path], index) => (
                 <NavLink
                   end={path === "/"}
                   key={path}
                   to={path}
                   onClick={() => setIsOpen(false)}
+                  style={{ "--header-link-color": headerLinkColors[index] }}
                   className={({ isActive }) =>
-                    `flex items-center justify-between px-6 py-4 text-lg font-semibold transition-colors ${isActive ? "text-[var(--accent-color)]" : "text-[#f8fafc] hover:text-[#f8fafc]"}`
+                    `mobile-nav-link flex items-center justify-between px-6 py-4 text-lg font-semibold transition-colors ${isActive ? "is-active" : ""}`
                   }
                 >
                   <span>{label}</span>

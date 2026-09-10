@@ -24,7 +24,7 @@ export default function ApplicationSelector() {
               type="button"
               aria-pressed={selectedId === application.id}
               onClick={() => setSelectedId(application.id)}
-              className={`min-h-16 rounded-xl border px-5 py-4 text-left text-sm font-semibold transition-colors ${selectedId === application.id ? 'border-pigment-magenta bg-card text-pigment-magenta' : 'border-theme bg-card/60 text-primary hover:border-pigment-orange'}`}
+              className={`min-h-16 cursor-pointer rounded-xl border px-5 py-4 text-left text-sm font-semibold transition-colors ${selectedId === application.id ? 'border-pigment-magenta bg-card text-pigment-magenta' : 'border-theme bg-card/60 text-primary hover:border-pigment-orange'}`}
             >
               {application.label}
             </button>

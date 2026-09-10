@@ -7,6 +7,7 @@ import ProductDetailModal from "../components/ProductDetailModal";
 import PageIntro from "../components/PageIntro";
 import { productFilters, products } from "../data/products";
 import CustomShadeSection from "../components/CustomShadeSection";
+import GlassSelect from "../components/GlassSelect";
 
 export default function Products() {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -70,7 +71,7 @@ export default function Products() {
             placeholder="Search products..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="glass-card glass-search w-full rounded-full py-2.5 pl-11 pr-4 text-sm text-primary outline-none transition-[border-color,box-shadow] focus:border-pigment-magenta focus:ring-1 focus:ring-pigment-magenta"
+            className="product-filter-control glass-card glass-search w-full rounded-full py-2.5 pl-11 pr-4 text-sm text-primary outline-none transition-[border-color,box-shadow] focus:border-pigment-magenta focus:ring-1 focus:ring-pigment-magenta"
           />
         </div>
         <div
@@ -99,36 +100,30 @@ export default function Products() {
         <div className="mb-10 grid gap-3 sm:grid-cols-3">
           <label className="text-[10px] font-bold uppercase tracking-[.15em] text-secondary">
             Colour family
-            <select
+            <GlassSelect
               value={activeColour}
-              onChange={(event) => setActiveColour(event.target.value)}
-              className="mt-2 min-h-11 w-full rounded border border-theme bg-card px-3 text-sm font-medium text-primary outline-none focus:border-pigment-magenta"
-            >
-              <option value="all">All shades</option>
-              {colourOptions.map((colour) => <option key={colour} value={colour}>{colour}</option>)}
-            </select>
+              onChange={setActiveColour}
+              ariaLabel="Colour family"
+              options={[{ value: "all", label: "All shades" }, ...colourOptions.map((colour) => ({ value: colour, label: colour }))]}
+            />
           </label>
           <label className="text-[10px] font-bold uppercase tracking-[.15em] text-secondary">
             Application
-            <select
+            <GlassSelect
               value={activeApplication}
-              onChange={(event) => setActiveApplication(event.target.value)}
-              className="mt-2 min-h-11 w-full rounded border border-theme bg-card px-3 text-sm font-medium text-primary outline-none focus:border-pigment-magenta"
-            >
-              <option value="all">All applications</option>
-              {applicationOptions.map((application) => <option key={application} value={application}>{application}</option>)}
-            </select>
+              onChange={setActiveApplication}
+              ariaLabel="Application"
+              options={[{ value: "all", label: "All applications" }, ...applicationOptions.map((application) => ({ value: application, label: application }))]}
+            />
           </label>
           <label className="text-[10px] font-bold uppercase tracking-[.15em] text-secondary">
             Grade
-            <select
+            <GlassSelect
               value={activeGrade}
-              onChange={(event) => setActiveGrade(event.target.value)}
-              className="mt-2 min-h-11 w-full rounded border border-theme bg-card px-3 text-sm font-medium text-primary outline-none focus:border-pigment-magenta"
-            >
-              <option value="all">All grades</option>
-              {gradeOptions.map((grade) => <option key={grade} value={grade}>{grade}</option>)}
-            </select>
+              onChange={setActiveGrade}
+              ariaLabel="Grade"
+              options={[{ value: "all", label: "All grades" }, ...gradeOptions.map((grade) => ({ value: grade, label: grade }))]}
+            />
           </label>
         </div>
         <p className="mb-8 text-sm text-secondary">
@@ -149,7 +144,7 @@ export default function Products() {
                 setActiveApplication("all");
                 setActiveGrade("all");
               }}
-              className="rounded-full border border-theme bg-card px-6 py-2.5 text-sm font-medium transition-colors hover:border-pigment-magenta hover:text-pigment-magenta"
+              className="glass-action-button rounded-full border border-theme px-6 py-2.5 text-sm font-medium transition-colors hover:border-pigment-magenta hover:text-pigment-magenta"
             >
               Clear Filters
             </button>

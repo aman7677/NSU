@@ -473,6 +473,52 @@ html.light .bg-card {
   background: color-mix(in srgb, var(--bg-card) 24%, transparent);
 }
 
+.product-filter-control {
+  border: 1px solid color-mix(in srgb, var(--text-primary) 20%, transparent);
+  border-radius: 0.75rem;
+  background: color-mix(in srgb, var(--bg-card) 48%, transparent);
+  box-shadow: 0 14px 32px rgba(2, 6, 23, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px) saturate(135%);
+  -webkit-backdrop-filter: blur(16px) saturate(135%);
+}
+
+.product-filter-control:hover {
+  border-color: color-mix(in srgb, var(--accent-color) 48%, var(--border) 52%);
+}
+
+.product-filter-control:focus {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-color) 20%, transparent), 0 14px 32px rgba(2, 6, 23, 0.16);
+}
+
+.glass-action-button {
+  border-radius: 0.75rem !important;
+  border-color: color-mix(in srgb, var(--text-primary) 22%, transparent) !important;
+  background: color-mix(in srgb, var(--bg-card) 42%, transparent) !important;
+  box-shadow: 0 14px 32px rgba(2, 6, 23, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px) saturate(135%);
+  -webkit-backdrop-filter: blur(16px) saturate(135%);
+}
+
+.glass-action-button:hover,
+.glass-action-button:focus-visible {
+  border-color: color-mix(in srgb, var(--accent-color) 62%, var(--border) 38%) !important;
+  background: color-mix(in srgb, var(--accent-color) 22%, var(--bg-card) 48%) !important;
+  box-shadow: 0 18px 38px rgba(2, 6, 23, 0.24), 0 0 0 1px color-mix(in srgb, var(--accent-color) 22%, transparent);
+}
+
+.product-filter-menu {
+  border: 1px solid color-mix(in srgb, var(--text-primary) 20%, transparent);
+  background: color-mix(in srgb, var(--bg-card) 70%, transparent);
+  box-shadow: 0 18px 42px rgba(2, 6, 23, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(22px) saturate(145%);
+  -webkit-backdrop-filter: blur(22px) saturate(145%);
+}
+
+html.light .product-filter-menu {
+  background: color-mix(in srgb, #ffffff 78%, transparent);
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
 .theme-scrollbar {
   scrollbar-color: color-mix(in srgb, var(--accent-color) 72%, #0f172a 28%) color-mix(in srgb, var(--bg-primary) 72%, transparent);
   scrollbar-width: thin;
@@ -501,6 +547,11 @@ html.light .bg-card {
 
 html.light .glass-search {
   background: color-mix(in srgb, #ffffff 26%, transparent);
+}
+
+html.light .product-filter-control {
+  background: color-mix(in srgb, #ffffff 62%, transparent);
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .neon-quote-text {
@@ -622,25 +673,24 @@ html.light .product-catalogue-card {
     var(--footer-link-color) 78%,
     transparent
   );
-  width: 300%;
-  left: -100%;
+  width: 100%;
+  left: 0;
   box-shadow: 0 0 12px var(--footer-link-color);
   transition-property: transform, opacity;
 }
 
 .footer-nav-link:hover .footer-nav-link__glow,
 .footer-nav-link:focus-visible .footer-nav-link__glow {
-  animation: linkFlow 1.15s linear infinite;
 }
 
 /* Header navigation uses the same per-link flowing pigment treatment. */
 .header-nav-link::after {
   content: "";
   position: absolute;
-  left: -100%;
+  left: 0;
   top: calc(50% + 11px);
   height: 2px;
-  width: 300%;
+  width: 100%;
   transform: scaleX(0);
   transform-origin: center;
   background: linear-gradient(
@@ -665,7 +715,21 @@ html.light .product-catalogue-card {
 .header-nav-link:hover::after,
 .header-nav-link:focus-visible::after {
   transform: scaleX(1);
-  animation: linkFlow 1.15s linear infinite;
+}
+
+.mobile-nav-link {
+  border-left: 2px solid transparent;
+  color: #f8fafc;
+  transition: color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link:focus-visible,
+.mobile-nav-link.is-active {
+  border-left-color: var(--header-link-color);
+  background: color-mix(in srgb, var(--header-link-color) 10%, transparent);
+  color: var(--header-link-color);
+  text-shadow: 0 0 14px color-mix(in srgb, var(--header-link-color) 42%, transparent);
 }
 
 @keyframes linkFlow {

@@ -2,6 +2,14 @@ import { useState, useRef, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageCircle, X, Send, Bot, User, ChevronDown, Sparkles } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { products } from '../data/products';
+import { applications as applicationAreas } from '../data/applications';
+import { companyDetails } from '../data/company';
+
+const catalogueProducts = products.length;
+const fluorescentProducts = products.filter((product) => product.filter === 'fluorescent');
+const fluorescentProductNames = fluorescentProducts.map((product) => product.name).join(', ');
+const applicationNames = applicationAreas.map((application) => application.title).join('\n');
 
 /* ─── Knowledge base with synonym groups ─── */
 const KNOWLEDGE = [
@@ -22,16 +30,16 @@ const KNOWLEDGE = [
   /* ── Contact & Communication ── */
   {
     keys: ['contact', 'reach', 'call', 'talk', 'connect', 'get in touch', 'speak'],
-    reply: "You can reach **Shivam Sharma** at:\n📞 +91 72800 12300\n✉️ enquiry@nsucolours.com\n💬 [WhatsApp](https://wa.me/917280012300)\n\nOr fill out our enquiry form on the Contact page!",
+    reply: `You can reach the Narayan Sindur Udyog team at:\n📞 ${companyDetails.phone}\n✉️ ${companyDetails.email}\n💬 [WhatsApp](https://wa.me/917280012300)\n\nOr fill out our enquiry form on the Contact page!`,
     nav: { label: 'Go to Contact Page →', to: '/contact' },
   },
   {
     keys: ['phone', 'number', 'mobile', 'telephone'],
-    reply: "Our phone number is 📞 **+91 72800 12300** (Shivam Sharma). We're available during business hours!",
+    reply: `Our phone number is 📞 **${companyDetails.phone}**. We're available during business hours!`,
   },
   {
     keys: ['email', 'mail'],
-    reply: "Drop us a line at ✉️ **enquiry@nsucolours.com** — we typically respond within 24 hours.",
+    reply: `Drop us a line at ✉️ **${companyDetails.email}** — we typically respond within 24 hours.`,
   },
   {
     keys: ['whatsapp', 'wa'],
@@ -63,12 +71,12 @@ const KNOWLEDGE = [
   /* ── Products Overview ── */
   {
     keys: ['product', 'range', 'catalogue', 'catalog', 'what do you', 'sell', 'offer', 'make', 'item'],
-    reply: "We specialise in four product categories:\n🔴 **Sindoor Colour** — Traditional reds & custom shades\n🟡 **Fluorescent Pigments** — 6 vivid neon colours\n🟠 **Bright Colour Powders** — 5 powder colours + custom\n🎨 **Custom Colour Solutions** — Tailored to your needs\n\nWant me to tell you more about any of these?",
+    reply: `Our current catalogue has **${catalogueProducts} product entries** across Sindoor Colour, Fluorescent Pigments, Colour Powder, and custom/application-led colour solutions.\n\nProducts are documented by shade, grade, application, and technical availability. Want to explore a specific range?`,
     nav: { label: 'View All Products →', to: '/products' },
   },
   {
     keys: ['how many product', 'how many colour', 'how many color', 'total product', 'full list'],
-    reply: "We currently offer **16 products** across 4 categories:\n• 4 Sindoor Colours\n• 6 Fluorescent Pigments\n• 6 Colour Powders (including custom shades)\n\nEach product is available for bulk orders and custom formulations!",
+    reply: `We currently list **${catalogueProducts} product entries** in the catalogue, including **${fluorescentProducts.length} fluorescent pigment entries**. Product availability, grades, and application fit should be confirmed with the team for your requirement.`,
     nav: { label: 'Browse Full Catalogue →', to: '/products' },
   },
 
@@ -97,7 +105,7 @@ const KNOWLEDGE = [
   /* ── Fluorescent Pigments (detailed) ── */
   {
     keys: ['fluorescent', 'neon', 'glow', 'bright pigment', 'uv'],
-    reply: "Our **Fluorescent Pigments** range includes 6 vivid colours:\n🔴 Fluorescent Red\n💗 Fluorescent Pink\n🟠 Fluorescent Orange\n🟡 Fluorescent Yellow\n🟢 Fluorescent Green\n💜 Fluorescent Magenta\n\nAll designed for high-visibility, attention-grabbing applications!",
+    reply: `Our **Fluorescent Pigments** range currently includes **${fluorescentProducts.length} catalogue entries**:\n${fluorescentProductNames}\n\nThese entries carry application metadata for paints, coatings, inks, industrial markers, detection uses, and other listed requirements.`,
     nav: { label: 'See Fluorescent Pigments →', to: '/products' },
   },
   {
@@ -173,7 +181,7 @@ const KNOWLEDGE = [
   /* ── Applications & Industries ── */
   {
     keys: ['application', 'use case', 'industry', 'where used', 'which industry'],
-    reply: "Our pigments serve **6 key application areas**:\n1️⃣ Sindoor & Traditional Products\n2️⃣ Textile Applications\n3️⃣ Plastic & Polymer Applications\n4️⃣ Printing & Ink Applications\n5️⃣ Industrial Colour Applications\n6️⃣ Custom Colour Development\n\nWant details on any specific application?",
+    reply: `Our catalogue is organised around these application areas:\n${applicationNames}\n\nTell me the application, substrate, process, or target shade and I can point you to the relevant page.`,
     nav: { label: 'Explore Applications →', to: '/applications' },
   },
   {
@@ -200,7 +208,7 @@ const KNOWLEDGE = [
   /* ── About & Company ── */
   {
     keys: ['about', 'company', 'nsu', 'narayan', 'who are', 'story'],
-    reply: "**Narayan Sindoor Udyog (NSU)** is a Bihar-based colour manufacturer specialising in high-quality pigments and colour powders. We combine traditional expertise with modern manufacturing to deliver exceptional colour solutions.",
+    reply: "**Narayan Sindur Udyog (NSU)** is a Bihar-based colour manufacturer specialising in pigments, Sindoor, colour powders, fluorescent pigments, and application-led colour development.",
     nav: { label: 'Read Our Story →', to: '/about' },
   },
   {
@@ -210,11 +218,11 @@ const KNOWLEDGE = [
   },
   {
     keys: ['owner', 'founder', 'shivam', 'sharma', 'who runs', 'management'],
-    reply: "NSU is managed by **Shivam Sharma**. For any business enquiries, you can reach him directly at 📞 +91 72800 12300 or ✉️ enquiry@nsucolours.com.",
+    reply: `The Narayan Sindur Udyog team can help with business enquiries at 📞 ${companyDetails.phone} or ✉️ ${companyDetails.email}.`,
   },
   {
     keys: ['full form', 'what is nsu', 'stand for', 'meaning of nsu', 'abbreviation'],
-    reply: "**NSU** stands for **Narayan Sindoor Udyog** — a name rooted in our heritage of traditional colour manufacturing from Bihar, India. 🇮🇳",
+    reply: "**NSU** stands for **Narayan Sindur Udyog** — a name rooted in our heritage of traditional colour manufacturing from Bihar, India. 🇮🇳",
   },
 
   /* ── Quality, Safety & Certifications ── */
@@ -228,7 +236,7 @@ const KNOWLEDGE = [
   },
   {
     keys: ['certificate', 'certification', 'certified', 'iso', 'lab test', 'test report'],
-    reply: "📋 For specific product certifications or lab test reports, please contact our team directly at ✉️ enquiry@nsucolours.com or 📞 +91 72800 12300. We'd be happy to share relevant documentation!",
+    reply: `📋 For specific product certifications or lab test reports, contact us at ✉️ ${companyDetails.email} or 📞 ${companyDetails.phone}. We'll share relevant documentation where available.`,
     nav: { label: 'Contact for Certificates →', to: '/contact' },
   },
 
@@ -250,7 +258,7 @@ const KNOWLEDGE = [
   },
   {
     keys: ['minimum order', 'moq', 'min order', 'smallest order'],
-    reply: "📏 For minimum order quantities (MOQ), please reach out to our team — it varies by product category and formulation. Contact us at ✉️ enquiry@nsucolours.com or 📞 +91 72800 12300.",
+    reply: `📏 Minimum order quantities vary by product category and formulation. Contact us at ✉️ ${companyDetails.email} or 📞 ${companyDetails.phone}.`,
     nav: { label: 'Ask About MOQ →', to: '/contact' },
   },
   {
@@ -260,7 +268,7 @@ const KNOWLEDGE = [
   },
   {
     keys: ['payment', 'pay', 'payment method', 'upi', 'bank', 'transfer'],
-    reply: "💳 For payment methods and terms, please discuss directly with our team at 📞 +91 72800 12300 or ✉️ enquiry@nsucolours.com. We accommodate various payment arrangements for our partners.",
+    reply: `💳 For payment methods and terms, please discuss directly with our team at 📞 ${companyDetails.phone} or ✉️ ${companyDetails.email}.`,
   },
 
   /* ── Shipping & Delivery ── */
@@ -271,7 +279,7 @@ const KNOWLEDGE = [
   },
   {
     keys: ['international', 'export', 'outside india', 'abroad', 'overseas', 'global'],
-    reply: "🌍 For international enquiries and export possibilities, please reach out to our team directly at ✉️ enquiry@nsucolours.com. We'd be happy to discuss how we can serve your needs!",
+    reply: `🌍 For international enquiries and export possibilities, reach out to us at ✉️ ${companyDetails.email}. We'd be happy to discuss how we can serve your market.`,
     nav: { label: 'International Enquiry →', to: '/contact' },
   },
 
@@ -284,7 +292,7 @@ const KNOWLEDGE = [
   /* ── FAQ-Mirrored Queries ── */
   {
     keys: ['what type', 'specialise', 'specialize', 'speciali'],
-    reply: "NSU specialises in **traditional colour products**, with a primary focus on high-quality **Sindoor** and other cultural colour applications — along with **Fluorescent Pigments** and **Bright Colour Powders** for industrial and decorative use.",
+    reply: "Narayan Sindur Udyog specialises in **Sindoor**, **Fluorescent Pigments**, **Colour Powders**, and custom colour development for traditional, decorative, and industrial applications.",
     nav: { label: 'View Our Specialities →', to: '/products' },
   },
   {
@@ -294,7 +302,7 @@ const KNOWLEDGE = [
   },
   {
     keys: ['unique', 'special', 'what makes', 'why choose', 'why nsu', 'different from', 'better than', 'advantage'],
-    reply: "What makes NSU special? ✨\n• **40+ years** of experience since 1983\n• Deep connection to **Indian traditions and culture**\n• **Strict quality control** at our own manufacturing unit\n• **16 products** across 4 specialised categories\n• **Custom colour development** for unique needs\n• Personal attention from our dedicated team",
+    reply: `What makes NSU special? ✨\n• **40+ years** of experience since 1983\n• Deep connection to **Indian traditions and culture**\n• **Strict quality control** at our own manufacturing unit\n• **${catalogueProducts} catalogue entries** across the current product ranges\n• **Custom colour development** for unique needs\n• Personal attention from our dedicated team`,
     nav: { label: 'Discover NSU →', to: '/about' },
   },
 
@@ -342,7 +350,7 @@ const KNOWLEDGE = [
   },
   {
     keys: ['faq', 'frequently asked', 'common question'],
-    reply: "❓ Our **FAQ section** covers common questions about NSU's products, safety, grades, bulk supply, and what makes our Sindoor unique. You'll find it on the homepage!",
+    reply: "I can answer questions about our products, applications, grades, bulk supply, samples, safety guidance, and ordering. For product-specific confirmation, please send your requirement through the Contact page.",
     nav: { label: 'View FAQs →', to: '/' },
   },
 
@@ -353,25 +361,25 @@ const KNOWLEDGE = [
   },
   {
     keys: ['career', 'job', 'hiring', 'work at', 'vacancy', 'recruitment', 'intern'],
-    reply: "💼 For career opportunities or internship enquiries, please reach out to us at ✉️ enquiry@nsucolours.com with your details. We're always excited to hear from talented individuals!",
+    reply: `💼 For career opportunities or internship enquiries, reach out to us at ✉️ ${companyDetails.email} with your details.`,
   },
   {
     keys: ['feedback', 'complaint', 'issue', 'problem', 'not satisfied', 'improve'],
-    reply: "📝 We value your feedback! Please share your thoughts, suggestions, or concerns through our Contact page or email us at ✉️ enquiry@nsucolours.com. We're committed to improving!",
+    reply: `📝 We value your feedback! Please share your thoughts through our Contact page or email us at ✉️ ${companyDetails.email}.`,
     nav: { label: 'Share Feedback →', to: '/contact' },
   },
   {
     keys: ['partnership', 'collaborate', 'partner', 'tie up', 'b2b', 'business'],
-    reply: "🤝 Interested in a business partnership or collaboration? We'd love to hear from you! Contact **Shivam Sharma** at 📞 +91 72800 12300 or ✉️ enquiry@nsucolours.com to discuss opportunities.",
+    reply: `🤝 Interested in a business partnership or collaboration? Contact the Narayan Sindur Udyog team at 📞 ${companyDetails.phone} or ✉️ ${companyDetails.email}.`,
     nav: { label: 'Discuss Partnership →', to: '/contact' },
   },
   {
     keys: ['return', 'refund', 'exchange', 'replace', 'damaged'],
-    reply: "🔄 For return, refund, or exchange requests, please contact our team directly at 📞 +91 72800 12300 or ✉️ enquiry@nsucolours.com with your order details. We'll resolve it promptly!",
+    reply: `🔄 For return, refund, or exchange requests, contact our team at 📞 ${companyDetails.phone} or ✉️ ${companyDetails.email} with your order details.`,
   },
   {
     keys: ['shelf life', 'expiry', 'expire', 'how long last', 'storage', 'store'],
-    reply: "🗄️ For specific shelf life, storage conditions, and product handling guidelines, please contact our team at ✉️ enquiry@nsucolours.com. Proper storage varies by product type.",
+    reply: `🗄️ Shelf life, storage conditions, and handling guidance vary by product. Contact our team at ✉️ ${companyDetails.email} for product-specific information.`,
   },
   {
     keys: ['packaging', 'pack', 'packing', 'packet', 'bag', 'container', 'kg', 'kilogram', 'weight'],
@@ -380,7 +388,7 @@ const KNOWLEDGE = [
   },
   {
     keys: ['help', 'support', 'assist', 'what can you do', 'what can i ask', 'capability'],
-    reply: "I can help you with:\n🎨 **Products** — Details on all 16 products\n📞 **Contact** — Phone, email, WhatsApp\n📍 **Locations** — Office & factory addresses\n💰 **Pricing** — How to get a quote\n🔬 **Applications** — Industry use cases\n📖 **Company** — Our story & history\n📦 **Orders** — Bulk, samples, MOQ\n🚚 **Shipping** — Delivery info\n\nJust ask away! 😊",
+    reply: `I can help you with:\n🎨 **Products** — Details on the current ${catalogueProducts}-entry catalogue\n📞 **Contact** — Phone, email, WhatsApp\n📍 **Locations** — Office and manufacturing unit\n💰 **Pricing** — How to request a quote\n🔬 **Applications** — Industry use cases\n📖 **Company** — Our story and history\n📦 **Orders** — Bulk orders, samples, and MOQ\n🚚 **Shipping** — Delivery information\n\nJust ask away! 😊`,
   },
 ];
 

@@ -9,11 +9,29 @@ const fallbackPigments = [
   "#d91179",
 ];
 
+const pigmentByShade = {
+  "lemon yellow": "#f1ed35",
+  green: "#4fd35b",
+  pink: "#ff4fa3",
+  "golden yellow": "#ffd447",
+  "red orange": "#ff5b2e",
+  orange: "#ff8a24",
+  violet: "#8c4de8",
+  "red violet": "#c13cc4",
+  magenta: "#ef238f",
+  "blood red": "#d71936",
+  "scarlet red": "#f04432",
+  "royal blue": "#356bff",
+  "tor blue": "#16b9df",
+};
+
 /** Original product-visual treatment: a studio-lit packet, pigment pile, swatch and particulate texture. */
 export function PigmentVisual({ product, className = "", mode = "swatch" }) {
   const reduceMotion = useReducedMotion();
+  const shade = (product.shade || product.colour || product.name || "").toLowerCase();
   const pigment =
     product.pigment ||
+    Object.entries(pigmentByShade).find(([name]) => shade.includes(name))?.[1] ||
     fallbackPigments[
       (Number.parseInt(product.code, 10) || 1) % fallbackPigments.length
     ];
@@ -155,11 +173,11 @@ export default function ProductCatalogueCard({ product, onSelect }) {
         </p>
         <div className="mt-7 flex flex-wrap gap-2">
           {product.slug ? (
-            <Button to={detailAction.to} icon={false} className="px-4 py-2.5">
+            <Button to={detailAction.to} icon={false} className="glass-action-button px-4 py-2.5">
               View product
             </Button>
           ) : (
-            <Button type="button" onClick={detailAction.onClick} icon={false} className="px-4 py-2.5">
+            <Button type="button" onClick={detailAction.onClick} icon={false} className="glass-action-button px-4 py-2.5">
               View details
             </Button>
           )}
@@ -167,7 +185,7 @@ export default function ProductCatalogueCard({ product, onSelect }) {
             to={`/contact?product=${encodeURIComponent(product.name)}&intent=sample`}
             variant="secondary"
             icon={false}
-            className="px-4 py-2.5"
+            className="glass-action-button px-4 py-2.5"
           >
             Request sample
           </Button>
@@ -175,7 +193,7 @@ export default function ProductCatalogueCard({ product, onSelect }) {
             to={`/contact?product=${encodeURIComponent(product.name)}&intent=quote`}
             variant="secondary"
             icon={false}
-            className="px-4 py-2.5"
+            className="glass-action-button px-4 py-2.5"
           >
             Request quote
           </Button>

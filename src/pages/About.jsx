@@ -8,9 +8,9 @@ import SectionTitle from "../components/SectionTitle";
 
 const storyParagraphs = [
   "Our journey began in 1983, when three brothers came together with a shared vision, determination, and a simple belief to build something that would stand the test of time.",
-  "With humble beginnings, NSU started its journey with Sindoor, a product deeply connected with Indian traditions, culture, and emotions. What began as a small business was never just about selling a product; it was about creating something people could trust.",
-  "The early years were filled with challenges. Building a business from the ground up required patience, dedication, and countless hours of hard work. Step by step, NSU continued to develop its colour offering.",
-  "Over the years, NSU expanded beyond Sindoor to include additional fluorescent pigments and a wider spectrum of colour directions.",
+  "With humble beginnings, Narayan Sindur Udyog started its journey with Sindoor, a product deeply connected with Indian traditions, culture, and emotions. What began as a small business was never just about selling a product; it was about creating something people could trust.",
+  "The early years were filled with challenges. Building a business from the ground up required patience, dedication, and countless hours of hard work. Step by step, Narayan Sindur Udyog continued to develop its colour offering.",
+  "Over the years, Narayan Sindur Udyog expanded beyond Sindoor to include additional fluorescent pigments and a wider spectrum of colour directions.",
   "But our journey is not defined only by the number of products or fluorescent pigments we offer. It is defined by the relationships, trust, and experience built over more than four decades.",
 ];
 
@@ -25,7 +25,7 @@ const whatWeDoSection = {
   ),
   description:
     "Built for makers, brands and businesses that need colour they can rely on.",
-  body: "NSU creates vibrant Sindoor, bright colour powders, fluorescent pigments and custom colour solutions for businesses that want their products to look distinctive and perform consistently. We solve the challenge of finding colour that is both expressive and dependable—helping every application carry the same visual confidence, batch after batch.",
+  body: "Narayan Sindur Udyog creates vibrant Sindoor, bright colour powders, fluorescent pigments and custom colour solutions for businesses that want their products to look distinctive and perform consistently. We solve the challenge of finding colour that is both expressive and dependable—helping every application carry the same visual confidence, batch after batch.",
   quote:
     "\u201CEvery shade is an opportunity to make an ordinary product feel unmistakably its own.\u201D",
 };
@@ -41,7 +41,7 @@ const ourVisionSection = {
   ),
   description:
     "A more colourful future starts with quality people can trust.",
-  body: "We see colour as more than a finish. It carries tradition, identity and emotion; it helps a product be recognised and a moment be remembered. By pairing decades of experience with a forward-looking approach to colour, NSU aims to remain the dependable partner behind brighter ideas.",
+  body: "We see colour as more than a finish. It carries tradition, identity and emotion; it helps a product be recognised and a moment be remembered. By pairing decades of experience with a forward-looking approach to colour, Narayan Sindur Udyog aims to remain the dependable partner behind brighter ideas.",
 };
 
 const coreBeliefSection = {
@@ -100,7 +100,7 @@ export default function About() {
       <ColourParticles particleCount={140} interactive={false} speed={0.32} />
 
       <PageIntro
-        eyebrow="About NSU"
+        eyebrow="About Narayan Sindur Udyog"
         title={
           <>
             BUILT AROUND COLOUR.
@@ -108,7 +108,7 @@ export default function About() {
             DRIVEN BY POSSIBILITY.
           </>
         }
-        description="NSU is focused on delivering vibrant colour and pigment solutions for businesses looking to bring consistency, visual impact and distinctive colour to their products."
+        description="Narayan Sindur Udyog is focused on delivering vibrant colour and pigment solutions for businesses looking to bring consistency, visual impact and distinctive colour to their products."
         titleClassName="hero-gradient-text drop-shadow-[0_2px_18px_rgba(15,23,42,.18)]"
         descriptionClassName="!mt-5"
         className="relative z-10 pb-8 md:pb-10"
@@ -126,7 +126,7 @@ export default function About() {
                 spectrum of colours.
               </>
             }
-            description="About Us — The Story of NSU"
+            description="About Us — The Story of Narayan Sindur Udyog"
           />
 
           <motion.div
@@ -160,7 +160,7 @@ export default function About() {
               </p>
               <p className="mt-4 text-base leading-relaxed text-secondary md:text-lg">
                 As we move forward, we remain committed to the values that
-                started NSU — quality, consistency, trust, and innovation. We
+                started Narayan Sindur Udyog — quality, consistency, trust, and innovation. We
                 believe that every colour has the power to add life, expression,
                 and meaning, and our goal is to make those colours better,
                 brighter, and more accessible with every passing year.

@@ -26,12 +26,6 @@ export const applicationSelectorOptions = [
     note: 'Technical compatibility awaiting official NSU confirmation. Results reflect existing candle application tags.',
   },
   {
-    id: 'leather',
-    label: 'Leather',
-    matchTerms: [],
-    note: 'Technical compatibility awaiting official NSU confirmation. Leather compatibility is not represented in the current product data.',
-  },
-  {
     id: 'specialty-industrial',
     label: 'Specialty Industrial Applications',
     matchTerms: ['Industrial Markers', 'Crack Detection', 'Leak Detection', 'Security Pigments', 'Paint Balls'],
