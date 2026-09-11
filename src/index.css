@@ -519,20 +519,25 @@ html.light .product-filter-menu {
   box-shadow: 0 18px 42px rgba(15, 23, 42, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
+/* ── Main-page scrollbar (html) + reusable class ── */
+html,
 .theme-scrollbar {
   scrollbar-color: color-mix(in srgb, var(--accent-color) 72%, #0f172a 28%) color-mix(in srgb, var(--bg-primary) 72%, transparent);
   scrollbar-width: thin;
 }
 
+html::-webkit-scrollbar,
 .theme-scrollbar::-webkit-scrollbar {
   width: 10px;
 }
 
+html::-webkit-scrollbar-track,
 .theme-scrollbar::-webkit-scrollbar-track {
   background: color-mix(in srgb, var(--bg-primary) 72%, transparent);
   border-radius: 999px;
 }
 
+html::-webkit-scrollbar-thumb,
 .theme-scrollbar::-webkit-scrollbar-thumb {
   background: color-mix(in srgb, var(--accent-color) 72%, #0f172a 28%);
   border: 2px solid transparent;
@@ -540,6 +545,7 @@ html.light .product-filter-menu {
   background-clip: padding-box;
 }
 
+html::-webkit-scrollbar-thumb:hover,
 .theme-scrollbar::-webkit-scrollbar-thumb:hover {
   background: var(--accent-color);
   background-clip: padding-box;
