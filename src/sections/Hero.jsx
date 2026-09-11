@@ -21,7 +21,7 @@ export default function Hero() {
         className="pointer-events-none absolute inset-0"
         style={{ background: "var(--hero-vignette)" }}
       />
-      <div className="relative z-20 mx-auto flex w-full max-w-[1440px] flex-col px-6 pb-8 pt-20 sm:pt-24 md:px-10 md:pb-10 md:pt-28 lg:px-14">
+      <div className="relative z-20 mx-auto flex w-full max-w-[1440px] flex-col px-6 pb-8 pt-32 sm:pt-24 md:px-10 md:pb-10 md:pt-28 lg:px-14">
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
