@@ -508,14 +508,14 @@ html.light .bg-card {
 
 .product-filter-menu {
   border: 1px solid color-mix(in srgb, var(--text-primary) 20%, transparent);
-  background: color-mix(in srgb, var(--bg-card) 88%, transparent);
-  box-shadow: 0 18px 42px rgba(2, 6, 23, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  background: var(--bg-card);
+  box-shadow: 0 18px 42px rgba(2, 6, 23, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(22px) saturate(145%);
   -webkit-backdrop-filter: blur(22px) saturate(145%);
 }
 
 html.light .product-filter-menu {
-  background: color-mix(in srgb, #ffffff 92%, transparent);
+  background: #ffffff;
   box-shadow: 0 18px 42px rgba(15, 23, 42, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
