@@ -135,26 +135,27 @@ export default function FollowCursor({
       mouse.y = e.clientY
     }
 
-    // ─── Hover detection via event delegation ────────────────────
-    // More reliable than elementFromPoint — tracks actual DOM hover state
-    let hoverDepth = 0  // track nested interactive elements
+    // ─── Hover detection — self-correcting per-frame check ───────
+    // Instead of relying on mouseover/mouseout event counters (which
+    // lose sync when DOM nodes are removed under the cursor — e.g.
+    // chatbot AnimatePresence, theme-toggle re-renders), we check the
+    // element under the cursor on every frame. This makes the hover
+    // state self-correcting: even if DOM mutations cause missed events,
+    // the very next frame auto-recovers.
+    let hoverCheckThrottle = 0
 
-    const handleMouseOver = (e) => {
-      if (!hideOnHover) return
-      const interactive = e.target.closest(HOVER_SELECTORS)
-      if (interactive) {
-        hoverDepth++
-        isHovering = true
-      }
-    }
+    const checkHover = () => {
+      if (!hideOnHover) { isHovering = false; return }
+      // Only re-check every 3 frames (~20 Hz at 60fps) for perf
+      if (++hoverCheckThrottle % 3 !== 0) return
+      // Guard: cursor off-screen
+      if (mouse.x < 0 || mouse.y < 0) { isHovering = false; return }
 
-    const handleMouseOut = (e) => {
-      if (!hideOnHover) return
-      const interactive = e.target.closest(HOVER_SELECTORS)
-      if (interactive) {
-        hoverDepth = Math.max(0, hoverDepth - 1)
-        if (hoverDepth === 0) isHovering = false
-      }
+      const el = document.elementFromPoint(mouse.x, mouse.y)
+      if (!el) { isHovering = false; return }
+
+      // Walk up from the element to see if it (or an ancestor) matches
+      isHovering = !!el.closest(HOVER_SELECTORS)
     }
 
     const handlePointerDown = () => {
@@ -174,7 +175,6 @@ export default function FollowCursor({
       mouse.x = -200
       mouse.y = -200
       isHovering = false
-      hoverDepth = 0
       isPressed = false
     }
 
@@ -190,6 +190,9 @@ export default function FollowCursor({
 
       // Off-screen guard — don't draw if cursor left the viewport
       if (mouse.x < -100 || mouse.y < -100) return
+
+      // ── Per-frame hover check (self-correcting) ───────────────
+      checkHover()
 
       // ── Smooth opacity transition on hover ────────────────────
       const targetOpacity = isHovering ? 0 : 1
@@ -301,8 +304,6 @@ export default function FollowCursor({
     window.addEventListener('pointerdown', handlePointerDown)
     window.addEventListener('pointerup', handlePointerUp)
     window.addEventListener('pointerleave', handlePointerLeave)
-    document.addEventListener('mouseover', handleMouseOver, { passive: true })
-    document.addEventListener('mouseout', handleMouseOut, { passive: true })
 
     // ─── Cleanup ──────────────────────────────────────────────────
     return () => {
@@ -312,8 +313,6 @@ export default function FollowCursor({
       window.removeEventListener('pointerdown', handlePointerDown)
       window.removeEventListener('pointerup', handlePointerUp)
       window.removeEventListener('pointerleave', handlePointerLeave)
-      document.removeEventListener('mouseover', handleMouseOver)
-      document.removeEventListener('mouseout', handleMouseOut)
     }
   }, [size, colors, colorMode, colorSpeed, smoothing, glow, glowIntensity, trail, trailLength, hideOnHover])
 
