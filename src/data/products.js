@@ -112,67 +112,67 @@ const createFluorescentProduct = ({ name, grade, shade }) => {
 
 export const nsuFluorescentPigments = [
   createFluorescentProduct({
-    name: 'NSU Fluorescent Lemon Yellow',
+    name: 'Fluorescent Lemon Yellow',
     grade: 418,
     shade: 'Lemon Yellow',
   }),
   createFluorescentProduct({
-    name: 'NSU Fluorescent Green',
+    name: 'Fluorescent Green',
     grade: 435,
     shade: 'Green',
   }),
   createFluorescentProduct({
-    name: 'NSU Fluorescent Pink',
+    name: 'Fluorescent Pink',
     grade: 435,
     shade: 'Pink',
   }),
   createFluorescentProduct({
-    name: 'NSU Fluorescent Golden Yellow',
+    name: 'Fluorescent Golden Yellow',
     grade: 515,
     shade: 'Golden Yellow',
   }),
   createFluorescentProduct({
-    name: 'NSU Fluorescent Red Orange',
+    name: 'Fluorescent Red Orange',
     grade: 515,
     shade: 'Red Orange',
   }),
   createFluorescentProduct({
-    name: 'NSU Fluorescent Orange',
+    name: 'Fluorescent Orange',
     grade: 520,
     shade: 'Orange',
   }),
   createFluorescentProduct({
-    name: 'NSU Fluorescent Violet',
+    name: 'Fluorescent Violet',
     grade: 430,
     shade: 'Violet',
   }),
   createFluorescentProduct({
-    name: 'NSU Fluorescent Red Violet',
+    name: 'Fluorescent Red Violet',
     grade: 430,
     shade: 'Red Violet',
   }),
   createFluorescentProduct({
-    name: 'NSU Fluorescent Magenta',
+    name: 'Fluorescent Magenta',
     grade: 430,
     shade: 'Magenta',
   }),
   createFluorescentProduct({
-    name: 'NSU Fluorescent Blood Red',
+    name: 'Fluorescent Blood Red',
     grade: 498,
     shade: 'Blood Red',
   }),
   createFluorescentProduct({
-    name: 'NSU Fluorescent Scarlet Red',
+    name: 'Fluorescent Scarlet Red',
     grade: 530,
     shade: 'Scarlet Red',
   }),
   createFluorescentProduct({
-    name: 'NSU Fluorescent Royal Blue',
+    name: 'Fluorescent Royal Blue',
     grade: 430,
     shade: 'Royal Blue',
   }),
   createFluorescentProduct({
-    name: 'NSU Fluorescent Tor Blue',
+    name: 'Fluorescent Tor Blue',
     grade: 430,
     shade: 'Tor Blue',
   }),
