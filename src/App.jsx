@@ -1,5 +1,5 @@
 import { AnimatePresence } from "framer-motion";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import SiteLayout from "./components/SiteLayout";
 import Seo from "./components/Seo";
@@ -16,6 +16,10 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 
 export default function App() {
   const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [location.pathname, location.search]);
 
   return (
     <SiteLayout>

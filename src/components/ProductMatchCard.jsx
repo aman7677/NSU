@@ -3,6 +3,10 @@ import { getProductApplications } from '../data/applicationSelector'
 
 export default function ProductMatchCard({ product }) {
   const applications = getProductApplications(product)
+  const grade = product.grade || product.code
+  const displayGrade = /^\d+$/.test(String(grade || ""))
+    ? `${grade} (ASDBN)`
+    : grade
   const viewTarget = product.slug ? `/products/${product.slug}` : '/products'
 
   return (
@@ -12,7 +16,7 @@ export default function ProductMatchCard({ product }) {
       <dl className="mt-5 grid grid-cols-2 gap-4 border-y border-theme py-4 text-sm">
         <div>
           <dt className="text-[10px] font-bold uppercase tracking-[.14em] text-secondary">Grade</dt>
-          <dd className="mt-1 font-medium">{product.grade || product.code || 'Available on request'}</dd>
+          <dd className="mt-1 font-medium">{displayGrade || 'Available on request'}</dd>
         </div>
         <div>
           <dt className="text-[10px] font-bold uppercase tracking-[.14em] text-secondary">Shade</dt>

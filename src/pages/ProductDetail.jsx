@@ -27,6 +27,9 @@ export default function ProductDetail() {
   }
 
   const applications = product.applications || product.tags || [];
+  const productTitle = product.grade && !product.name.includes(String(product.grade))
+    ? `${product.name} ${product.grade}`
+    : product.name;
   const relatedProducts = products.filter(
     (item) => item.slug && item.slug !== product.slug && item.filter === product.filter,
   ).slice(0, 3);
@@ -35,9 +38,9 @@ export default function ProductDetail() {
     <>
       <PageIntro
         eyebrow="NSU Fluorescent Pigments · Narayan Sindur Udyog"
-        title={`${product.name} ${product.grade}`}
+        title={productTitle}
         description={product.description}
-        titleClassName="max-w-5xl"
+        titleClassName="max-w-5xl leading-[1.05]"
       />
       <Container className="pb-20 md:pb-28">
         <Link to="/products" className="mb-8 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[.14em] text-secondary transition-colors hover:text-pigment-magenta">

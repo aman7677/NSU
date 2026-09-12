@@ -19,6 +19,10 @@ export default function Seo({ pathname }) {
     ? { title: product.seoTitle, description: product.metaDescription }
     : pages[pathname] || { title: 'Page not found — NSU', description: 'The requested NSU page could not be found.' }
 
+  const productDisplayName = product && product.grade && !product.name.includes(String(product.grade))
+    ? `${product.name} ${product.grade}`
+    : product?.name
+
   useEffect(() => {
     const origin = window.location.origin
     const canonicalUrl = `${origin}${pathname || '/'}`
@@ -55,7 +59,7 @@ export default function Seo({ pathname }) {
       graph.push({
         '@type': 'Product',
         '@id': `${canonicalUrl}#product`,
-        name: `${product.name} ${product.grade}`,
+        name: productDisplayName,
         description: product.description,
         url: canonicalUrl,
         sku: product.grade,
@@ -69,7 +73,7 @@ export default function Seo({ pathname }) {
     if (product) {
       breadcrumbItems.push(
         { name: 'Products', url: `${origin}/products` },
-        { name: `${product.name} ${product.grade}`, url: canonicalUrl },
+        { name: productDisplayName, url: canonicalUrl },
       )
     } else if (pathname === '/products') {
       breadcrumbItems.push({ name: 'Products', url: `${origin}/products` })

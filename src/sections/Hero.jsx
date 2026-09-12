@@ -56,11 +56,13 @@ export default function Hero() {
           className="mt-10 flex flex-col items-start gap-7 md:mt-12 md:flex-row md:items-end md:justify-between"
         >
           <p
-            className="max-w-md text-base leading-relaxed md:text-lg"
+            className="max-w-2xl text-base leading-relaxed md:text-lg"
             style={{ color: "var(--hero-body)" }}
           >
-            Vibrant colour and pigment solutions designed to make every
-            application stand out.
+            We are a trusted pigment manufacturer supplying fluorescent pigments,
+            colour powders, and specialised shades with consistent quality, careful
+            formulation, and dependable performance for paints, coatings, and
+            industrial applications across industries.
           </p>
           <div className="flex w-full sm:w-auto">
             <Button

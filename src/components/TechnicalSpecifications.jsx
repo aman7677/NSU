@@ -1,12 +1,11 @@
 const specificationFields = [
-  ['physicalForm', 'Physical Form'],
+  ['bulkDensity', 'Bulk Density'],
+  ['specificGravity', 'Specific Gravity'],
+  ['softeningPoint', 'Softening Point'],
   ['particleSize', 'Particle Size'],
-  ['heatStability', 'Heat Stability'],
-  ['lightFastness', 'Light Fastness'],
-  ['moisture', 'Moisture'],
-  ['recommendedDosage', 'Recommended Dosage'],
-  ['packaging', 'Packaging'],
-  ['storage', 'Storage'],
+  ['thermalStability', 'Thermal Stability'],
+  ['oilAbsorptionValue', 'Oil Absorption Value'],
+  ['ph', 'pH (10% aq. Solution)'],
 ]
 
 export default function TechnicalSpecifications({ product }) {
@@ -23,6 +22,9 @@ export default function TechnicalSpecifications({ product }) {
           </div>
         ))}
       </dl>
+      <p className="mt-5 text-xs leading-relaxed text-secondary">
+        * Typical reference values. Actual values may vary by product, shade, batch, and application. Certificate of Analysis (COA) is available on request. Confirm approved technical data with NSU before use.
+      </p>
     </div>
   )
 }

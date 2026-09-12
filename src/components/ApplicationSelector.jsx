@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
 import Button from './Button'
 import Container from './Container'
 import ProductMatchCard from './ProductMatchCard'
@@ -9,6 +10,17 @@ export default function ApplicationSelector() {
   const selectedApplication = applicationSelectorOptions.find((item) => item.id === selectedId)
   const matches = selectedId ? productsForApplication(selectedId) : []
 
+  useEffect(() => {
+    if (!selectedId) return
+
+    requestAnimationFrame(() => {
+      document.getElementById('application-results')?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      })
+    })
+  }, [selectedId])
+
   return (
     <section className="border-y border-theme bg-secondary py-20 md:py-28">
       <Container>
@@ -17,7 +29,7 @@ export default function ApplicationSelector() {
           <h2 className="mt-5 text-4xl font-semibold leading-[.94] tracking-[-.07em] md:text-6xl">Find colour options for your application.</h2>
           <p className="mt-6 text-base leading-relaxed text-secondary md:text-lg">Choose an application to see only products supported by the application data currently available in the NSU catalogue.</p>
         </div>
-        <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {applicationSelectorOptions.map((application) => (
             <button
               key={application.id}
@@ -31,7 +43,13 @@ export default function ApplicationSelector() {
           ))}
         </div>
         {selectedApplication && (
-          <div className="mt-10 border-t border-theme pt-8">
+          <motion.div
+            id="application-results"
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+            className="mt-10 scroll-mt-24 border-t border-theme pt-8"
+          >
             <p className="max-w-3xl text-sm leading-relaxed text-secondary">{selectedApplication.note}</p>
             {matches.length > 0 ? (
               <>
@@ -47,7 +65,7 @@ export default function ApplicationSelector() {
                 <Button to="/contact?intent=technical" className="mt-6">Contact technical team</Button>
               </div>
             )}
-          </div>
+          </motion.div>
         )}
       </Container>
     </section>

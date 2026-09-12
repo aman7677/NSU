@@ -94,6 +94,10 @@ export function PigmentVisual({ product, className = "", mode = "swatch" }) {
 
 export default function ProductCatalogueCard({ product, onSelect }) {
   const applications = product.applications || product.tags || [];
+  const grade = product.grade || product.code;
+  const displayGrade = /^\d+$/.test(String(grade || ""))
+    ? `${grade} (ASDBN)`
+    : grade;
   const detailAction = product.slug
     ? { to: `/products/${product.slug}` }
     : { onClick: () => onSelect(product) };
@@ -135,12 +139,12 @@ export default function ProductCatalogueCard({ product, onSelect }) {
           {product.name}
         </h2>
         <dl className="mt-7 space-y-3 border-y border-theme py-4 text-xs">
-          {(product.grade || product.code) && (
+          {displayGrade && (
             <div className="flex justify-between gap-6">
               <dt className="uppercase tracking-[.12em] text-secondary">
                 Grade
               </dt>
-              <dd className="text-right font-medium">{product.grade || product.code}</dd>
+              <dd className="text-right font-medium">{displayGrade}</dd>
             </div>
           )}
           <div className="flex justify-between gap-6">

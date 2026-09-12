@@ -1,4 +1,4 @@
-import { Factory, Globe2, Handshake, Palette } from "lucide-react";
+import { Factory, Globe2, Handshake } from "lucide-react";
 import Container from "../components/Container";
 import Button from "../components/Button";
 import PageIntro from "../components/PageIntro";
@@ -7,8 +7,6 @@ const businessAudience = [
   { title: "Manufacturers", icon: Factory, description: "Colour and pigment discussions shaped around your product and process requirements." },
   { title: "Distributors", icon: Handshake, description: "A starting point for discussing range, application needs, and customer requirements." },
   { title: "Importers", icon: Globe2, description: "Connect with NSU to discuss product requirements for your market." },
-  { title: "Masterbatch Producers", icon: Palette, description: "Share your polymer, process, and target shade requirements for technical review." },
-  { title: "Ink Manufacturers", icon: Palette, description: "Discuss colour direction and intended ink application with the NSU team." },
   { title: "Coating Companies", icon: Factory, description: "Bring your coating substrate and process brief to an application-led conversation." },
   { title: "Industrial Buyers", icon: Handshake, description: "Start a conversation about standard products, samples, or technical requirements." },
 ];

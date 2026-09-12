@@ -1,6 +1,5 @@
 export const productFilters = [
   { id: 'all', label: 'All' },
-  { id: 'sindoor', label: 'Sindoor' },
   { id: 'fluorescent', label: 'Fluorescent' },
   { id: 'colour-powder', label: 'Colour Powder' },
   { id: 'custom', label: 'Custom' },
@@ -38,13 +37,57 @@ export const emptyFluorescentTechnicalSpecifications = {
   storage: null,
 }
 
+export function getFluorescentReferenceTechnicalSpecifications(shade = '') {
+  const normalizedShade = shade.toLowerCase()
+  const isBlueOrViolet = normalizedShade.includes('blue') || normalizedShade.includes('violet')
+  const isWarmShade = ['yellow', 'orange', 'red', 'pink', 'magenta'].some((colour) => normalizedShade.includes(colour))
+
+  if (isWarmShade) {
+    return {
+      bulkDensity: '0.25 – 0.30 g/cm³',
+      specificGravity: 'To be confirmed',
+      softeningPoint: '130° – 140° C',
+      particleSize: '2.5 – 4.0 μm',
+      thermalStability: '210° C',
+      oilAbsorptionValue: '50 – 60 g/100 g pigment',
+      ph: '7 – 8',
+    }
+  }
+
+  return {
+    bulkDensity: '0.32 – 0.36 g/cm³',
+    specificGravity: '1.35 – 1.40',
+    softeningPoint: isBlueOrViolet ? '165° – 175° C' : '160° – 170° C',
+    particleSize: isBlueOrViolet ? '4.5 – 6.0 μm' : '3.0 – 5.5 μm',
+    thermalStability: isBlueOrViolet ? '230° C' : '210° – 230° C',
+    oilAbsorptionValue: '50 – 60 g/100 g pigment',
+    ph: '7 – 8',
+  }
+}
+
+export function getReferenceTechnicalSpecifications({ category = '', shade = '' } = {}) {
+  if (category === 'Fluorescent Pigments') {
+    return getFluorescentReferenceTechnicalSpecifications(shade)
+  }
+
+  return {
+    bulkDensity: '0.35 – 0.60 g/cm³',
+    specificGravity: '1.2 – 1.6',
+    softeningPoint: '130° – 180° C',
+    particleSize: '2 – 10 μm',
+    thermalStability: '180° – 230° C',
+    oilAbsorptionValue: '40 – 70 g/100 g pigment',
+    ph: '6 – 8',
+  }
+}
+
 const createFluorescentProduct = ({ name, grade, shade }) => {
   const slug = `fluorescent-${shade.toLowerCase().replaceAll(' ', '-')}-${grade}`
 
   return {
     id: slug,
     slug,
-    name,
+    name: `${name} (ASDBN)`,
     grade: String(grade),
     code: String(grade),
     shade,
@@ -55,7 +98,9 @@ const createFluorescentProduct = ({ name, grade, shade }) => {
     applications: fluorescentApplications,
     application: fluorescentApplicationSummary,
     tags: fluorescentApplications,
-    technicalSpecifications: { ...emptyFluorescentTechnicalSpecifications },
+    technicalSpecifications: {
+      ...getReferenceTechnicalSpecifications({ category: 'Fluorescent Pigments', shade }),
+    },
     tds: null,
     sds: null,
     coa: null,
@@ -151,4 +196,35 @@ export const products = [
   { id: 'asdbn-14', slug: 'asdbn-14', name: 'Orange R (ASDBN-14)', grade: 'ASDBN-14', shade: 'Orange R (ASDBN-14)', category: 'Fluorescent Pigments', colour: 'Orange R (ASDBN-14)', application: 'Fluorescent pigment powder for application-led colour requirements', description: 'Orange R fluorescent pigment powder for application-led colour requirements. Review the intended use with the NSU team.', filter: 'fluorescent', pigment: '#ff6a2a', code: 'ASDBN-14', tags: ['Fluorescent Pigment Powder', 'Solvent Based Paints', 'Aerosol Spray Paints', 'Paper Coating'], technicalSpecifications: { ...emptyFluorescentTechnicalSpecifications }, tds: null, sds: null, coa: null, seoTitle: 'Orange R (ASDBN-14) | Fluorescent Pigments', metaDescription: 'Orange R fluorescent pigment powder for application-led colour requirements. Review the intended use with the NSU team.' },
   { id: 'asdbn-15', slug: 'asdbn-15', name: 'Red Orange (ASDBN-15)', grade: 'ASDBN-15', shade: 'Red Orange (ASDBN-15)', category: 'Colour Powder', colour: 'Red Orange (ASDBN-15)', application: 'Water based paints, solvent based paints, poster colours, holi colours & traditional colour applications', description: 'A warm red-orange pigment powder that balances vibrancy with a rich, traditional finish for water based paints, solvent based paints, aerosol spray paints, poster colours, holi colour, and rangoli applications.', filter: 'colour-powder', pigment: '#e65a2c', code: 'ASDBN-15', tags: ['Water Based Paints', 'Solvent Based Paints', 'Aerosol Spray Paints', 'Poster Colours', 'Water Colours', 'Paper Coating', 'PVC Coating', 'Wax Crayons', 'Rangoli', 'Holi', 'Candles', 'Soap'], technicalSpecifications: { ...emptyFluorescentTechnicalSpecifications }, tds: null, sds: null, coa: null, seoTitle: 'Red Orange (ASDBN-15) | Colour Powder', metaDescription: 'A warm red-orange pigment powder that balances vibrancy with a rich, traditional finish for water based paints, solvent based paints, aerosol spray paints, poster colours, holi colour, and rangoli applications.' },
   ...nsuFluorescentPigments,
-]
+].map((product) => {
+  if (!product.code?.startsWith('ASDBN-')) return product
+
+  const code = 'ASDBN'
+  const stripNumericCode = (value) => value?.replace(/ASDBN-\d+/g, code)
+  const displayName = stripNumericCode(product.name).replace(/\s*\(ASDBN\)\s*$/i, '')
+  const displaySeoTitle = stripNumericCode(product.seoTitle)
+  const normalizedTags = product.tags?.map((tag) => tag === 'Sindhoor' ? 'Sindur' : tag)
+  const applicationTags = ['asdbn-14', 'asdbn-15'].includes(product.id)
+    ? [...new Set([...(normalizedTags || []), 'Sindur'])]
+    : normalizedTags
+
+  return {
+    ...product,
+    technicalSpecifications: {
+      ...getReferenceTechnicalSpecifications({ category: product.category, shade: product.shade || product.colour }),
+    },
+    name: product.id === 'asdbn-13' ? 'Chrome / Golden Yellow (ASDBN)' : `${displayName} (ASDBN)`,
+    grade: code,
+    shade: stripNumericCode(product.shade),
+    colour: stripNumericCode(product.colour),
+    code,
+    application: product.id === 'asdbn-15'
+      ? `${product.application}, Sindoor making`
+      : product.application,
+    tags: product.id === 'asdbn-15'
+      ? [...new Set([...(applicationTags || []), 'Sindur Making'])]
+      : applicationTags,
+    pigment: product.id === 'asdbn-13' ? '#d4af37' : product.pigment,
+    seoTitle: product.id === 'asdbn-13' ? 'Chrome / Golden Yellow | Colour Powder' : displaySeoTitle,
+  }
+}).filter((product) => product.filter !== 'sindoor')

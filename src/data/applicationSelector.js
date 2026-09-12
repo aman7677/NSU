@@ -1,37 +1,30 @@
 import { products } from './products.js'
 
 export const applicationSelectorOptions = [
-  {
-    id: 'plastics-masterbatch',
-    label: 'Plastics & Masterbatch',
-    matchTerms: ['PVC Coating'],
-    note: 'Technical compatibility awaiting official NSU confirmation. Results are based on existing PVC Coating application data.',
-  },
-  {
-    id: 'printing-inks',
-    label: 'Printing Inks',
-    matchTerms: ['Gravure Coating', 'Highlighter Ink'],
-    note: 'Results reflect the existing gravure coating and highlighter ink application data.',
-  },
-  {
-    id: 'paper-coatings',
-    label: 'Paper & Coatings',
-    matchTerms: ['Paper Coating', 'Gravure Coating'],
-    note: 'Results reflect the existing paper coating and gravure coating application data.',
-  },
-  {
-    id: 'wax-candle',
-    label: 'Wax & Candle',
-    matchTerms: ['Candles'],
-    note: 'Technical compatibility awaiting official NSU confirmation. Results reflect existing candle application tags.',
-  },
-  {
-    id: 'specialty-industrial',
-    label: 'Specialty Industrial Applications',
-    matchTerms: ['Industrial Markers', 'Crack Detection', 'Leak Detection', 'Security Pigments', 'Paint Balls'],
-    note: 'Results reflect the existing industrial application data for these products.',
-  },
-]
+  'Fluorescent Pigment Powder',
+  'Water Based Paints',
+  'Solvent Based Paints',
+  'Aerosol Spray Paints',
+  'Poster Colours',
+  'Paper Coating',
+  'PVC Coating',
+  'Gravure Coating',
+  'Clay Coating',
+  'Seed Coating',
+  'Industrial Markers',
+  'Highlighter Ink',
+  'Paint Balls',
+  'Wax Crayons',
+  'Rangoli',
+  'Candles',
+  'Clay Dough',
+  'Sindur',
+].map((label) => ({
+  id: label.toLowerCase().replaceAll(/[^a-z0-9]+/g, '-'),
+  label,
+  matchTerms: [label],
+  note: `Products currently tagged for ${label.toLowerCase()} applications are shown below.`,
+}))
 
 export function getProductApplications(product) {
   return product.applications || product.tags || []
@@ -40,6 +33,10 @@ export function getProductApplications(product) {
 export function productsForApplication(applicationId) {
   const application = applicationSelectorOptions.find((item) => item.id === applicationId)
   if (!application || application.matchTerms.length === 0) return []
+
+  if (applicationId === 'fluorescent-pigment-powder') {
+    return products.filter((product) => product.category === 'Fluorescent Pigments')
+  }
 
   return products.filter((product) => {
     const productApplications = getProductApplications(product)
