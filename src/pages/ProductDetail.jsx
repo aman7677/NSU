@@ -65,6 +65,9 @@ export default function ProductDetail() {
               </div>
             </dl>
             <p className="mt-7 text-base leading-relaxed text-secondary">{product.description}</p>
+            {product.productDescription && (
+              <p className="mt-4 text-sm leading-relaxed text-secondary/80">{product.productDescription}</p>
+            )}
             <div className="mt-8 flex flex-wrap gap-3">
               <Button to={`/contact?product=${encodeURIComponent(product.name)}&intent=sample`}>Request sample</Button>
               <Button to={`/contact?product=${encodeURIComponent(product.name)}&intent=quote`} variant="secondary">Request quote</Button>

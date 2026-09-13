@@ -95,6 +95,7 @@ const createFluorescentProduct = ({ name, grade, shade }) => {
     category: 'Fluorescent Pigments',
     filter: 'fluorescent',
     description: `NSU ${shade} fluorescent pigment for application-led colour requirements.`,
+    productDescription: 'ASDBN Pigments are thermoplastic fluorescent pigments recommended for use in a wide range of applications where resistance to strong solvents is not required. These are especially useful for water based systems. These pigments are non-toxic and contain no heavy metal constituents.',
     applications: fluorescentApplications,
     application: fluorescentApplicationSummary,
     tags: fluorescentApplications,
@@ -178,6 +179,21 @@ export const nsuFluorescentPigments = [
   }),
 ]
 
+const productDescriptions = {
+  'asdbn-11': 'ASDBN Pigments are thermoplastic colour pigments well suited for water based and clay based systems. These pigments are non-toxic and contain no heavy metal constituents, making them ideal for seed coating, clay dough, soap making, rangoli, and holi colour preparations.',
+  'asdbn-16': 'ASDBN Pigments are thermoplastic colour pigments designed for water based and PVC based coating systems. These pigments are non-toxic and contain no heavy metal constituents, making them well suited for sindur making, soap, rangoli, holi colours, and traditional colour applications.',
+  'asdbn-02': 'ASDBN Pigments are thermoplastic colour pigments recommended for water based systems and seed coating applications. These pigments are non-toxic and contain no heavy metal constituents, suitable for clay dough, rangoli, holi colours, and decorative use.',
+  'asdbn-17': 'ASDBN Pigments are thermoplastic colour pigments recommended for water based systems. These pigments are non-toxic and contain no heavy metal constituents, making them ideal for soap making, clay dough, rangoli, holi colours, and decorative colour applications.',
+  'asdbn-12': 'ASDBN Pigments are thermoplastic fluorescent pigments recommended for solvent based and aerosol spray systems. These pigments are non-toxic and contain no heavy metal constituents, designed for paper coating and high-visibility colour applications.',
+  'asdbn-18': 'ASDBN Pigments are thermoplastic colour pigments designed for water based and PVC coating systems. These pigments are non-toxic and contain no heavy metal constituents, well suited for soap making, rangoli, holi colours, and expressive colour applications.',
+  'asdbn-13': 'ASDBN Pigments are thermoplastic colour pigments formulated for solvent based and PVC coating systems. These pigments are non-toxic and contain no heavy metal constituents, ideal for gravure coating, clay dough, candle making, and metallic finish applications.',
+  'asdbn-19': 'ASDBN Pigments are thermoplastic colour pigments recommended for water based systems. These pigments are non-toxic and contain no heavy metal constituents, well suited for rangoli, holi colours, candle making, and decorative colour applications.',
+  'asdbn-04': 'ASDBN Pigments are thermoplastic colour pigments well suited for water based and clay coating systems. These pigments are non-toxic and contain no heavy metal constituents, making them ideal for soap making, rangoli, holi colours, and vibrant surface applications.',
+  'asdbn-20': 'ASDBN Pigments are thermoplastic colour pigments recommended for water based and gravure coating systems. These pigments are non-toxic and contain no heavy metal constituents, suited for rangoli, holi colours, candle making, and premium colour applications.',
+  'asdbn-14': 'ASDBN Pigments are thermoplastic fluorescent pigments recommended for solvent based and aerosol spray systems. These pigments are non-toxic and contain no heavy metal constituents, designed for paper coating, sindur making, and high-visibility colour applications.',
+  'asdbn-15': 'ASDBN Pigments are thermoplastic colour pigments designed for water based and PVC coating systems. These pigments are non-toxic and contain no heavy metal constituents, making them well suited for sindur making, soap, rangoli, holi colours, and traditional colour applications.',
+}
+
 export const products = [
   { id: 'sindoor-red', slug: 'sindoor-red', name: 'Red Sindoor Colour', grade: 'Standard', shade: 'Classic red', category: 'Sindoor Colour', colour: 'Classic red', application: 'Sindhoor, Rangoli, Holi colours & traditional colour products', description: 'A vivid red colour option suited to traditional sindhoor applications, rangoli preparations, and festive colour products with a direct, recognisable visual character.', filter: 'sindoor', pigment: '#d91818', code: null, tags: ['Sindhoor', 'Rangoli', 'Holi', 'Idol Coating', 'Poster Colours'], technicalSpecifications: { ...emptyFluorescentTechnicalSpecifications }, tds: null, sds: null, coa: null, seoTitle: 'Red Sindoor Colour | Sindoor Colour', metaDescription: 'A vivid red colour option suited to traditional sindhoor applications, rangoli preparations, and festive colour products with a direct, recognisable visual character.' },
   { id: 'sindoor-bright-red', slug: 'sindoor-bright-red', name: 'Bright Red Sindoor', grade: 'Standard', shade: 'Bright red', category: 'Sindoor Colour', colour: 'Bright red', application: 'Sindhoor, Rangoli, Holi colours & festive colour products', description: 'A high-impact bright red shade for sindhoor, rangoli, and holi colour applications where a more immediate colour impression is needed.', filter: 'sindoor', pigment: '#ff3220', code: null, tags: ['Sindhoor', 'Rangoli', 'Holi', 'Idol Coating'], technicalSpecifications: { ...emptyFluorescentTechnicalSpecifications }, tds: null, sds: null, coa: null, seoTitle: 'Bright Red Sindoor | Sindoor Colour', metaDescription: 'A high-impact bright red shade for sindhoor, rangoli, and holi colour applications where a more immediate colour impression is needed.' },
@@ -226,5 +242,6 @@ export const products = [
       : applicationTags,
     pigment: product.id === 'asdbn-13' ? '#d4af37' : product.pigment,
     seoTitle: product.id === 'asdbn-13' ? 'Chrome / Golden Yellow | Colour Powder' : displaySeoTitle,
+    productDescription: productDescriptions[product.id] || product.productDescription || null,
   }
 }).filter((product) => product.filter !== 'sindoor')
