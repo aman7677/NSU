@@ -24,7 +24,7 @@ export default function Seo({ pathname }) {
     : product?.name
 
   useEffect(() => {
-    const origin = window.location.origin
+    const origin = import.meta.env.VITE_SITE_URL?.replace(/\/+$/, '') || window.location.origin
     const canonicalUrl = `${origin}${pathname || '/'}`
 
     document.title = page.title
