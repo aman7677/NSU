@@ -1,4 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion";
+import { Link } from "react-router-dom";
 import Button from "./Button";
 
 const fallbackPigments = [
@@ -111,33 +112,63 @@ export default function ProductCatalogueCard({ product, onSelect }) {
       transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
       className="product-catalogue-card group flex flex-col p-5 transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-1 md:p-6"
     >
-      <button
-        type="button"
-        onClick={() => onSelect(product)}
-        aria-label={`View details for ${product.name}`}
-        className="group/image relative aspect-[16/10] w-full overflow-hidden rounded-[0.55rem] text-left focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-pigment-magenta"
-      >
-        <motion.div
-          whileHover={{ scale: 1.07 }}
-          transition={{ duration: 0.65, ease: "easeOut" }}
-          className="h-full"
+      {product.slug ? (
+        <Link
+          to={`/products/${product.slug}`}
+          aria-label={`View details for ${product.name}`}
+          className="group/image relative aspect-[16/10] w-full overflow-hidden rounded-[0.55rem] block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-pigment-magenta"
         >
-          <PigmentVisual product={product} className="h-full" />
-        </motion.div>
-        <span className="absolute bottom-4 left-4 border-l-2 border-theme pl-2 text-[10px] font-bold uppercase tracking-[.16em] text-primary">
-          {product.colour}
-        </span>
-        <span className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/35 text-xs font-bold uppercase tracking-[.18em] text-white opacity-0 transition-opacity duration-300 group-hover/image:opacity-100">
-          Click to view
-        </span>
-      </button>
+          <motion.div
+            whileHover={{ scale: 1.07 }}
+            transition={{ duration: 0.65, ease: "easeOut" }}
+            className="h-full"
+          >
+            <PigmentVisual product={product} className="h-full" />
+          </motion.div>
+          <span className="absolute bottom-4 left-4 border-l-2 border-theme pl-2 text-[10px] font-bold uppercase tracking-[.16em] text-primary">
+            {product.colour}
+          </span>
+          <span className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/35 text-xs font-bold uppercase tracking-[.18em] text-white opacity-0 transition-opacity duration-300 group-hover/image:opacity-100">
+            Click to view
+          </span>
+        </Link>
+      ) : (
+        <button
+          type="button"
+          onClick={() => onSelect(product)}
+          aria-label={`View details for ${product.name}`}
+          className="group/image relative aspect-[16/10] w-full overflow-hidden rounded-[0.55rem] text-left focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-pigment-magenta"
+        >
+          <motion.div
+            whileHover={{ scale: 1.07 }}
+            transition={{ duration: 0.65, ease: "easeOut" }}
+            className="h-full"
+          >
+            <PigmentVisual product={product} className="h-full" />
+          </motion.div>
+          <span className="absolute bottom-4 left-4 border-l-2 border-theme pl-2 text-[10px] font-bold uppercase tracking-[.16em] text-primary">
+            {product.colour}
+          </span>
+          <span className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/35 text-xs font-bold uppercase tracking-[.18em] text-white opacity-0 transition-opacity duration-300 group-hover/image:opacity-100">
+            Click to view
+          </span>
+        </button>
+      )}
       <div className="flex flex-1 flex-col pt-7">
         <p className="text-[10px] font-bold uppercase tracking-[.17em] text-secondary">
           {product.category}
         </p>
-        <h2 className="mt-3 text-2xl font-semibold leading-none tracking-[-.065em]">
-          {product.name}
-        </h2>
+        {product.slug ? (
+          <h2 className="mt-3 text-2xl font-semibold leading-none tracking-[-.065em]">
+            <Link to={`/products/${product.slug}`} className="transition-colors hover:text-pigment-magenta">
+              {product.name}
+            </Link>
+          </h2>
+        ) : (
+          <h2 className="mt-3 text-2xl font-semibold leading-none tracking-[-.065em]">
+            {product.name}
+          </h2>
+        )}
         <dl className="mt-7 space-y-3 border-y border-theme py-4 text-xs">
           {displayGrade && (
             <div className="flex justify-between gap-6">

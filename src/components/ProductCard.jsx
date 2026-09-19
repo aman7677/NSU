@@ -8,9 +8,12 @@ const pigments = ["#d91818", "#ef1678", "#ff761c", "#ffc21c"];
 export default function ProductCard({ product, index = 0 }) {
   const visualProduct = {
     ...product,
-    name: product.title,
+    name: product.title || product.name,
     pigment: pigments[index % pigments.length],
   };
+  const productUrl = product.slug
+    ? `/products/${product.slug}`
+    : "/products";
   return (
     <motion.article
       initial={{ opacity: 0, y: 20 }}
@@ -20,12 +23,12 @@ export default function ProductCard({ product, index = 0 }) {
       transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
       className="glass-card group flex flex-col rounded-lg transition-[border-color,box-shadow] duration-300"
     >
-      <div className="relative rounded-lg aspect-[4/3] overflow-hidden bg-[color:var(--bg-secondary)]">
+      <Link to={productUrl} className="relative rounded-lg aspect-[4/3] overflow-hidden bg-[color:var(--bg-secondary)] block">
         <div className="h-full transition-transform duration-700 ease-out group-hover:scale-105">
           {product.image ? (
             <img
               src={product.image}
-              alt={`${product.title} pigment powder`}
+              alt={`${product.title || product.name} pigment powder`}
               width={product.imageWidth}
               height={product.imageHeight}
               loading="lazy"
@@ -45,16 +48,18 @@ export default function ProductCard({ product, index = 0 }) {
         >
           NSU / {product.code}
         </span>
-      </div>
+      </Link>
       <div className="flex flex-1 flex-col p-6 md:p-7">
         <h3 className="mt-8 text-2xl font-semibold tracking-[-.055em]">
-          {product.title}
+          <Link to={productUrl} className="transition-colors hover:text-pigment-magenta">
+            {product.title || product.name}
+          </Link>
         </h3>
         <p className="mt-3 max-w-sm text-sm leading-relaxed text-secondary">
           {product.description}
         </p>
         <Link
-          to="/products"
+          to={productUrl}
           className="mt-7 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[.14em] hover:text-pigment-magenta"
         >
           <span>Explore Product</span>
