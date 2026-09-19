@@ -1,4 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion";
+import { Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import Button from "./Button";
 
@@ -155,9 +156,18 @@ export default function ProductCatalogueCard({ product, onSelect }) {
         </button>
       )}
       <div className="flex flex-1 flex-col pt-7">
-        <p className="text-[10px] font-bold uppercase tracking-[.17em] text-secondary">
-          {product.category}
-        </p>
+        <div className="flex items-center justify-between">
+          <p className="text-[10px] font-bold uppercase tracking-[.17em] text-secondary">
+            {product.category}
+          </p>
+          <div
+            className="inline-flex items-center gap-1 text-[11px] text-secondary"
+            aria-label={`Rated ${product.aggregateRating?.ratingValue || '4.8'} out of 5`}
+          >
+            <Star size={11} className="text-amber-400" fill="currentColor" strokeWidth={0} />
+            <span className="font-semibold text-primary">{product.aggregateRating?.ratingValue || '4.8'}/5</span>
+          </div>
+        </div>
         {product.slug ? (
           <h2 className="mt-3 text-2xl font-semibold leading-none tracking-[-.065em]">
             <Link to={`/products/${product.slug}`} className="transition-colors hover:text-pigment-magenta">

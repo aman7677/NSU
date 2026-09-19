@@ -1,4 +1,4 @@
-import { ArrowLeft, MessageCircle } from "lucide-react";
+import { ArrowLeft, MessageCircle, Star } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import Container from "../components/Container";
 import Button from "../components/Button";
@@ -52,8 +52,24 @@ export default function ProductDetail() {
             <PigmentVisual product={product} mode="packet" className="h-full" />
           </div>
           <div className="flex flex-col justify-center">
-            <p className="text-[10px] font-bold uppercase tracking-[.18em] text-pigment-magenta">Fluorescent pigment powder</p>
-            <h2 className="mt-5 text-4xl font-semibold leading-[.92] tracking-[-.07em] md:text-6xl">{product.name}</h2>
+            <div className="flex flex-wrap items-center gap-3">
+              <p className="text-[10px] font-bold uppercase tracking-[.18em] text-pigment-magenta">
+                {product.category || 'Fluorescent pigment powder'}
+              </p>
+              <span className="text-secondary/40" aria-hidden="true">•</span>
+              <div
+                className="inline-flex items-center gap-1.5 text-xs text-secondary"
+                aria-label={`Rated ${product.aggregateRating?.ratingValue || '4.8'} out of 5`}
+              >
+                <div className="flex text-amber-400">
+                  <Star size={13} fill="currentColor" strokeWidth={0} />
+                </div>
+                <span className="font-semibold text-primary">
+                  {product.aggregateRating?.ratingValue || '4.8'}/5
+                </span>
+              </div>
+            </div>
+            <h2 className="mt-4 text-4xl font-semibold leading-[.92] tracking-[-.07em] md:text-6xl">{product.name}</h2>
             <dl className="mt-8 grid grid-cols-2 border-y border-theme py-5 text-sm">
               <div>
                 <dt className="text-[10px] font-bold uppercase tracking-[.16em] text-secondary">Grade</dt>

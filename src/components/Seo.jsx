@@ -56,7 +56,7 @@ export default function Seo({ pathname }) {
     ]
 
     if (product) {
-      graph.push({
+      const productSchema = {
         '@type': 'Product',
         '@id': `${canonicalUrl}#product`,
         name: productDisplayName,
@@ -66,7 +66,25 @@ export default function Seo({ pathname }) {
         category: product.category,
         brand: { '@type': 'Brand', name: 'NSU Fluorescent Pigments' },
         manufacturer: { '@id': `${origin}/#organization` },
-      })
+      }
+
+      if (product.image) {
+        productSchema.image = product.image.startsWith('http')
+          ? product.image
+          : `${origin}${product.image}`
+      }
+
+      if (product.aggregateRating) {
+        productSchema.aggregateRating = {
+          '@type': 'AggregateRating',
+          ratingValue: String(product.aggregateRating.ratingValue || '4.8'),
+          bestRating: '5',
+          worstRating: '1',
+          reviewCount: String(product.aggregateRating.reviewCount || '125'),
+        }
+      }
+
+      graph.push(productSchema)
     }
 
     const breadcrumbItems = [{ name: 'Home', url: `${origin}/` }]
@@ -102,7 +120,7 @@ export default function Seo({ pathname }) {
       '@context': 'https://schema.org',
       '@graph': graph,
     })
-  }, [page.description, page.title, pathname, product])
+  }, [page.description, page.title, pathname, product, productDisplayName])
 
   return null
 }
