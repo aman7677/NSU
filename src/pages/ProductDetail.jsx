@@ -56,9 +56,8 @@ export default function ProductDetail() {
               <p className="text-[10px] font-bold uppercase tracking-[.18em] text-pigment-magenta">
                 {product.category || 'Fluorescent pigment powder'}
               </p>
-              <span className="text-secondary/40" aria-hidden="true">•</span>
               <div
-                className="inline-flex items-center gap-1.5 text-xs text-secondary"
+                className="inline-flex items-center gap-2 rounded-full border border-theme bg-card/60 px-3.5 py-1.5 text-xs text-secondary shadow-sm"
                 aria-label={`Rated ${product.aggregateRating?.ratingValue || '4.8'} out of 5`}
               >
                 <div className="flex text-amber-400">
@@ -67,6 +66,7 @@ export default function ProductDetail() {
                 <span className="font-semibold text-primary">
                   {product.aggregateRating?.ratingValue || '4.8'}/5
                 </span>
+                <span className="text-secondary/70">Rating</span>
               </div>
             </div>
             <h2 className="mt-4 text-4xl font-semibold leading-[.92] tracking-[-.07em] md:text-6xl">{product.name}</h2>

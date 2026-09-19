@@ -1,5 +1,5 @@
 import { AnimatePresence } from "framer-motion";
-import { Search } from "lucide-react";
+import { Search, Star } from "lucide-react";
 import { useMemo, useState } from "react";
 import Container from "../components/Container";
 import ProductCatalogueCard from "../components/ProductCatalogueCard";
@@ -126,12 +126,24 @@ export default function Products() {
             />
           </label>
         </div>
-        <p className="mb-8 text-sm text-secondary">
-          <span className="font-semibold text-primary">
-            {visibleProducts.length}
-          </span>{" "}
-          product entries
-        </p>
+        <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
+          <p className="text-sm text-secondary">
+            <span className="font-semibold text-primary">
+              {visibleProducts.length}
+            </span>{" "}
+            product entries
+          </p>
+          <div
+            className="inline-flex items-center gap-2 rounded-full border border-theme bg-card/60 px-3.5 py-1.5 text-xs text-secondary shadow-sm"
+            aria-label="Rated 4.8 out of 5"
+          >
+            <div className="flex text-amber-400">
+              <Star size={13} fill="currentColor" strokeWidth={0} />
+            </div>
+            <span className="font-semibold text-primary">4.8/5</span>
+            <span className="text-secondary/70">Rating</span>
+          </div>
+        </div>
         
         {visibleProducts.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-24 text-center">
